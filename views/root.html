@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html class='no-js'>
+	<head>
+        <title>Личный кабинет</title>
+        <meta charset='utf-8'>
+
+    	<link href='app/views/assets/css/bootstrap.min.css' rel='stylesheet' media='screen'>
+    	<link href='app/views/assets/css/bootstrap-responsive.min.css' rel='stylesheet' media='screen'>
+    	<link href='app/views/assets/css/jquery.easy-pie-chart.css' rel='stylesheet' media='screen'>
+    	<link href='app/views/assets/css/fullcalendar.css' rel='stylesheet' media='screen'>
+    	<link href='app/views/assets/css/jquery.jgrowl.css' rel='stylesheet' media='screen'>
+    	<link href='app/views/assets/css/uniform.default.css' rel='stylesheet' media='screen'>
+        <link href='app/views/assets/css/chosen.min.css' rel='stylesheet' media='screen'>
+        <link rel='stylesheet' href='//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css'>
+       	<link href='app/views/assets/css/styles.css' rel='stylesheet'>
+        
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+        <script src='app/views/assets/js/modernizr-2.6.2-respond-1.1.0.min.js'></script>
+        <script src='app/views/assets/js/calendar.js'></script>
+        <script src='app/views/assets/js/bootstrap.min.js'></script>
+        <script src='app/views/assets/js/scripts.js'></script>
+        <script src='app/views/assets/js/jquery.uniform.min.js'></script>
+        <script src='//code.jquery.com/ui/1.11.4/jquery-ui.js'></script>
+        <script src='app/views/assets/js/datePick.js'></script>
+        <script src='app/views/assets/js/ajax.js'></script>
+        <script src='app/views/assets/js/root.js'></script>
+
+        <script src="/app/views/assets/js/fileupload/jquery.knob.js"></script>
+        <script src="/app/views/assets/js/fileupload/jquery.ui.widget.js"></script>
+        <script src="/app/views/assets/js/fileupload/jquery.iframe-transport.js"></script>
+        <script src="/app/views/assets/js/fileupload/jquery.fileupload.js"></script>
+        <script src="/app/views/assets/js/fileupload/script.js"></script>
+
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+        <div id="page-preloader"><span class="spinner"></span></div>
+		{% include 'navi.html' %}
+		{% block navi %}
+		{% endblock %}
+		<div class='container-fluid'>
+            <div class='row-fluid'>
+                {% include 'menu.html' %}
+            	{% block menu %}
+            	{% endblock %}
+                <div class='span9' id='content'>
+            	   <div class='row-fluid'></div>
+      				{% include 'lenta.html' %}
+    				{% block lenta %}
+    				{% endblock %}
+    				{% include 'calendar.html' %}
+      				{% block calendar %}
+      				{% endblock %}
+                </div>
+            </div>
+		<hr>
+        <footer>
+            <p>Copyright © <a target='blank' href='http://www.alexkam.ru'>Alexkam</a> - All Rights Reserved | Moscow 2016</p>
+        </footer>
+        <script>
+        $(function() {
+            $('.uniform_on').uniform();
+        });
+        </script>
+        
+	</body>
+</html>
