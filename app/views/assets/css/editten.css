@@ -1,0 +1,33 @@
+.fabtn {
+  margin-right:10px;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+       -o-user-select: none;
+          user-select: none;
+}
+.deletebtn {
+	color: red;
+}
+.deletebtn:hover {
+  color: #cc4036;
+}
+.editbtn {
+  color:#49afcd;
+}
+.editbtn:hover {
+  color:#1f6377;
+}

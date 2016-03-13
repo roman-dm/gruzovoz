@@ -1,0 +1,123 @@
+{% block calendar %}
+<div class="row-fluid">
+    <div class="block">
+        <div class="navbar navbar-inner block-header">
+            <div class="muted pull-left">Мой календарь</div>
+        </div>
+        <div class="block-content collapse in">
+        {% if profile.sMainPage != 'teacher' %}
+            {% include 'buttons.html' %}
+            {% block buttons %}
+            {% endblock %}
+        {% endif %}
+            <div class="span10">
+                <div id="calendar" class="fc">
+                    <table class="fc-header" style="width:100%">
+                        <tbody>
+                            <tr>
+                                <td class="fc-header-left">
+                                    <span class="fc-button fc-button-prev fc-state-default fc-corner-left">
+                                        <span class="fc-button-inner">
+                                            <span class="fc-button-content">&nbsp;◄&nbsp;
+                                            </span>
+                                            <span class="fc-button-effect">
+                                            <span>    
+                                            </span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                    <span class="fc-button fc-button-next fc-state-default fc-corner-right">
+                                        <span class="fc-button-inner">
+                                            <span class="fc-button-content">&nbsp;►&nbsp;
+                                            </span>
+                                            <span class="fc-button-effect">
+                                                <span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="fc-header-center">
+                                    <span class="fc-header-title">
+                                        <td class="fc-header-center">
+                                            <span class="fc-header-title">
+                                                <select id="month" disabled>
+                                                    <option value="0">Январь</option>
+                                                    <option value="1">Февраль</option>
+                                                    <option value="2">Март</option>
+                                                    <option value="3">Апрель</option>
+                                                    <option value="4">Май</option>
+                                                    <option value="5">Июнь</option>
+                                                    <option value="6">Июль</option>
+                                                    <option value="7">Август</option>
+                                                    <option value="8">Сентябрь</option>
+                                                    <option value="9">Октябрь</option>
+                                                    <option value="10">Ноябрь</option>
+                                                    <option value="11">Декабрь</option>
+                                                </select>
+                                                <td><input type="number" id="year_calendar" value="" min="0" max="9999" size="4">
+                                                </td>
+                                            </span>
+                                        </td>
+                                    </span>
+                                </td>
+                                <td class="fc-header-right">
+                                    <span class="fc-button fc-button-month fc-state-default fc-corner-left fc-state-active">
+                                        <span class="fc-button-inner">
+                                            <span class="fc-button-content">Месяц
+                                            </span>
+                                            <span class="fc-button-effect">
+                                                <span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                    <span class="fc-button fc-button-basicWeek fc-state-default">
+                                        <span class="fc-button-inner">
+                                            <span class="fc-button-content">Неделя (в разработке)
+                                            </span>
+                                            <span class="fc-button-effect">
+                                                <span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                    <span class="fc-button fc-button-basicDay fc-state-default fc-corner-right">
+                                        <span class="fc-button-inner">
+                                            <span class="fc-button-content">День (в разработке)
+                                            </span>
+                                            <span class="fc-button-effect">
+                                                <span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="fc-content" style="position: relative; min-height: 1px;">
+                        <div class="fc-view fc-view-month fc-grid" style="position: relative;" unselectable="on">
+                            <table class="fc-border-separate" style="width:100%" cellspacing="0" >
+                                <thead>
+                                    <tr class="fc-first fc-last">
+                                        <th class="fc-mon fc-widget-header fc-first" style="width: 103px;">Понедельник</th>
+                                        <th class="fc-tue fc-widget-header" style="width: 103px;">Вторник</th>
+                                        <th class="fc-wed fc-widget-header" style="width: 103px;">Среда</th>
+                                        <th class="fc-thu fc-widget-header" style="width: 103px;">Четверг</th>
+                                        <th class="fc-fri fc-widget-header" style="width: 103px;">Пятница</th>
+                                        <th class="fc-sat fc-widget-header" style="width: 103px;">Суббота</th>
+                                        <th class="fc-san fc-widget-header fc-last">Воскресенье</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="calendar3">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

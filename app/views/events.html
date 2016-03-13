@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class='no-js'>
+	<head>
+        <title>Личный кабинет</title>
+        <meta charset='utf-8'>
+
+    	<link href='/app/views/assets/css/bootstrap.min.css' rel='stylesheet' media='screen'>
+    	<link href='/app/views/assets/css/bootstrap-responsive.min.css' rel='stylesheet' media='screen'>
+    	<link href='/app/views/assets/css/jquery.easy-pie-chart.css' rel='stylesheet' media='screen'>
+    	<link href='/app/views/assets/css/fullcalendar.css' rel='stylesheet' media='screen'>
+    	<link href='/app/views/assets/css/jquery.jgrowl.css' rel='stylesheet' media='screen'>
+    	<link href='/app/views/assets/css/uniform.default.css' rel='stylesheet' media='screen'>
+        <link href='/app/views/assets/css/chosen.min.css' rel='stylesheet' media='screen'>
+        <link rel='stylesheet' href='//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css'>
+       	<link href='/app/views/assets/css/styles.css' rel='stylesheet'>
+        
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+        <script src='/app/views/assets/js/modernizr-2.6.2-respond-1.1.0.min.js'></script>
+        <script src='/app/views/assets/js/bootstrap.min.js'></script>
+        <script src='/app/views/assets/js/scripts.js'></script>
+        <script src='/app/views/assets/js/jquery.uniform.min.js'></script>
+        <script src='//code.jquery.com/ui/1.11.4/jquery-ui.js'></script>
+        <script src='/app/views/assets/js/datePick.js'></script>
+        <script src='/app/views/assets/js/ajax.js'></script>
+        <script src='/app/views/assets/js/root.js'></script>
+
+        <script src="/app/views/assets/js/fileupload/jquery.knob.js"></script>
+        <script src="/app/views/assets/js/fileupload/jquery.ui.widget.js"></script>
+        <script src="/app/views/assets/js/fileupload/jquery.iframe-transport.js"></script>
+        <script src="/app/views/assets/js/fileupload/jquery.fileupload.js"></script>
+        <script src="/app/views/assets/js/fileupload/script.js"></script>
+
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+        <div id="page-preloader"><span class="spinner"></span></div>
+		{% include 'navi.html' %}
+		{% block navi %}
+		{% endblock %}
+		<div class='container-fluid'>
+            <div class='row-fluid'>
+                {% include 'menu.html' %}
+            	{% block menu %}
+            	{% endblock %}
+                <div class='span9' id='content'>
+                    <div class="row-fluid">
+                        <div class="block">
+                            <div class="navbar navbar-inner block-header">
+                                <div class="muted pull-left">Ваши события</div>
+                            </div>
+                            <div class="block-content collapse in">
+                                <div class="span12">
+                                    <table class="fc-header" style="width:100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="fc-header-right">
+                                                    <span class="fc-button fc-button-month fc-state-default fc-corner-left fc-state-active">
+                                                        <span class="fc-button-inner alltasks" id="">
+                                                            <span class="fc-button-content">Все
+                                                            </span>
+                                                            <span class="fc-button-effect">
+                                                                <span>
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="fc-button fc-button-basicWeek fc-state-default">
+                                                        <span class="fc-button-inner nowtasks" id="">
+                                                            <span class="fc-button-content">Актуальные
+                                                            </span>
+                                                            <span class="fc-button-effect">
+                                                                <span>
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="fc-button fc-button-basicWeek fc-state-default">
+                                                        <span class="fc-button-inner donetasks" id="">
+                                                            <span class="fc-button-content">Прошедшие
+                                                            </span>
+                                                            <span class="fc-button-effect">
+                                                                <span>
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="alltasks_table hideblock">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Виза</th>
+                                                    <th>Название задачи</th>
+                                                    <th>Крайний срок</th>
+                                                    <th>Кто поставил</th>
+                                                </tr>
+                                            </thead>
+                                                <tbody class="alltasks_body">
+                                                    все задачи юзера
+                                                </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="nowtasks_table hideblock" style="display:none">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Виза</th>
+                                                    <th>Название задачи</th>
+                                                    <th>Крайний срок</th>
+                                                    <th>Кто поставил</th>
+                                                </tr>
+                                            </thead>
+                                                <tbody class="nowtasks_body">
+                                                    дата >= текущая и невыполнены
+                                                </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="donetasks_table hideblock" style="display:none">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Виза</th>
+                                                    <th>Название задачи</th>
+                                                    <th>Крайний срок</th>
+                                                    <th>Кто поставил</th>
+                                                </tr>
+                                            </thead>
+                                                <tbody class="donetasks_body">
+                                                    дата любая + выполнено
+                                                </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="expiredtasks_table hideblock" style="display:none">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Виза</th>
+                                                    <th>Название задачи</th>
+                                                    <th>Крайний срок</th>
+                                                    <th>Кто поставил</th>
+                                                </tr>
+                                            </thead>
+                                                <tbody class="expiredtasks_body">
+                                                    не выполнено + дата < текущей
+                                                </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		<hr>
+        <footer>
+            <p>Copyright © <a target='blank' href='http://www.alexkam.ru'>Alexkam</a> - All Rights Reserved | Moscow 2016</p>
+        </footer>
+        <script>
+        $(function() {
+            $('.uniform_on').uniform();
+        });
+        </script>
+        
+	</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<title>Редактирование</title>
+		<meta charset="utf-8">
+		<link href='/app/views/assets/css/bootstrap.min.css' rel='stylesheet' media='screen'> 
+		<link href='/app/views/assets/css/bootstrap-responsive.min.css' rel='stylesheet' media='screen'>
+		<link href='/app/views/assets/css/jquery.easy-pie-chart.css' rel='stylesheet' media='screen'>
+		<link href='/app/views/assets/css/fullcalendar.css' rel='stylesheet' media='screen'>
+		<link href='/app/views/assets/css/jquery.jgrowl.css' rel='stylesheet' media='screen'>
+		<link href='/app/views/assets/css/uniform.default.css' rel='stylesheet' media='screen'>
+	    <link href='/app/views/assets/css/chosen.min.css' rel='stylesheet' media='screen'>
+	    <link rel='stylesheet' href='//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css'>
+	   	<link href='/app/views/assets/css/styles.css' rel='stylesheet' media='screen'>
+	  	<link href="/app/views/assets/css/editten.css" rel="stylesheet" media="screen">
+	    
+	    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+	    <script src='/app/views/assets/js/modernizr-2.6.2-respond-1.1.0.min.js'></script>
+	    <script src='/app/views/assets/js/bootstrap.min.js'></script>
+	    <script src='/app/views/assets/js/scripts.js'></script>
+	    <script src='/app/views/assets/js/jquery.uniform.min.js'></script>
+	    <script src='//code.jquery.com/ui/1.11.4/jquery-ui.js'></script>
+	    <script src='/app/views/assets/js/datePick.js'></script>
+	    <script src='/app/views/assets/js/ajax.js'></script>
+	    <script src='/app/views/assets/js/root.js'></script>
+
+    	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		{% include 'navi.html' %}
+		{% block navi %}
+		{% endblock %}
+		<div class="container-fluid">
+            <div class="row-fluid">
+                {% include 'menu.html' %}
+            	{% block menu %}
+            	{% endblock %}
+                <div class="span9" id="content">
+            	   <div class="row-fluid">
+					   <div class="block">
+					        <div class="navbar navbar-inner block-header">
+					            <div class="muted pull-left">Редактирование / удаление </div>
+					        </div>
+					        <div class="block-content collapse in">
+					            <div class="span12">
+						            <table class="fc-header" style="width:100%">
+				                        <tbody>
+				                            <tr>
+				                                <td class="fc-header-right">
+					                                <span class="fc-button fc-button-month fc-state-default fc-corner-left fc-state-active">
+		                                				<span class="fc-button-inner allten" id="ten_all">
+		                                    				<span class="fc-button-content">Все
+		                                    				</span>
+		                                    				<span class="fc-button-effect">
+		                                        				<span>
+		                                        				</span>
+		                                    				</span>
+		                                				</span>
+		                            				</span>
+				                                    <span class="fc-button fc-button-basicWeek fc-state-default">
+				                                        <span class="fc-button-inner taskten">
+				                                            <span class="fc-button-content">Задачи
+				                                            </span>
+				                                            <span class="fc-button-effect">
+				                                                <span>
+				                                                </span>
+				                                            </span>
+				                                        </span>
+				                                    </span>
+				                                    <span class="fc-button fc-button-basicWeek fc-state-default">
+				                                        <span class="fc-button-inner eventten">
+				                                            <span class="fc-button-content">События
+				                                            </span>
+				                                            <span class="fc-button-effect">
+				                                                <span>
+				                                                </span>
+				                                            </span>
+				                                        </span>
+				                                    </span>
+				                                    <span class="fc-button fc-button-basicDay fc-state-default fc-corner-right">
+				                                        <span class="fc-button-inner newsten">
+				                                            <span class="fc-button-content">Новости (в разработке)
+				                                            </span>
+				                                            <span class="fc-button-effect">
+				                                                <span>
+				                                                </span>
+				                                            </span>
+				                                        </span>
+				                                    </span>
+				                                </td>
+				                            </tr>
+				                        </tbody>
+				                    </table>
+									<div class="ten_table hideblock">
+										<table class="table">
+									        <thead>
+									            <tr>
+							                      <th>Название задачи</th>
+							                      <th>Крайний срок</th>
+							                  	  <th>Действия</th>
+									            </tr>
+									        </thead>
+									            <tbody class="ten_body_edit">
+									            </tbody>
+									    </table>
+									</div>
+									<div class="task_table hideblock" style="display:none">
+									    <table class="table">
+									        <thead>
+									            <tr>
+							                      <th>Название задачи</th>
+							                      <th>Крайний срок</th>
+							                  	  <th>Действия</th>
+									            </tr>
+									        </thead>
+									            <tbody class="task_body_edit">
+									            </tbody>
+									    </table>
+									</div>
+									<div class="event_table hideblock" style="display:none">
+									    <table class="table">
+									        <thead>
+									            <tr>
+							                      <th>Название задачи</th>
+							                      <th>Крайний срок</th>
+							                  	  <th>Действия</th>
+									            </tr>
+									        </thead>
+									            <tbody class="event_body_edit">
+									            </tbody>
+									    </table>
+									</div>
+									<div id='editevent' class='modal hide' aria-hidden='true' style='display: none;'>
+        	<div class='modal-header'>
+            	<button data-dismiss='modal' class='close' type='button'>×</button>
+                <h3>Редактировать событие</h3>
+            </div>
+            <div class='modal-body'>
+                <form id='form_event' class='form-horizontal' novalidate='novalidate' action="upload/" enctype="multipart/form-data" method="post">
+                    <fieldset>
+                        <div class='control-group'>
+                            <label class='control-label'>Название события<span class='required'>*</span></label>
+                            <div class='controls'>
+                                <input type='text' name='name' id='name_event' data-required='1' class='span6 m-wrap myinpt'>
+                            </div>
+                        </div>
+                        <div class='control-group'>
+                            <label class='control-label'>Список пользователей<span class='required'>*</span></label>
+                            <div class='controls'>
+                                <div class='group'>
+                                    <div class='leadgroup'>
+                                        <label class='uniform inline'>
+                                                <input class='uniform_on check_all' type='checkbox' checked="checked" disabled id='solouser' value='option1'>
+                                        </label>
+                                        <div class='inline' id='{{profile.iUserId}}_name'>{{profile.sUserSecondName}} {{profile.sUserName | slice(0,1) }}. {{profile.sUserThirdName | slice(0,1) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='controls'>
+                                <div class='group'>
+                                {% for user in user_list %}
+                                    <div class='leadgroup'>
+                                        <label class='uniform inline'>
+                                                <input class='uniform_on check_all' type='checkbox' id='{{user.name_group}}' value='option1'>
+                                        </label>
+                                        <div class='inline' id='{{user.name_group}}_name'>{{user.name_group_russia}} <img src='/app/views/assets/img/rotatearrow.png' id='rotategroup' class='rotatearrow'>
+                                        </div>
+                                        {% for user_group in user.group %}
+                                        {% if user_group.iUserId != profile.iUserId %} 
+                                        <div class='subgroup' style='display:none'>
+                                            <label class='uniform inline'>
+                                                <input class='uniform_on chk' type='checkbox' data-user="{{user_group.iUserId}}"  value='option1'>
+                                            </label>
+                                            <div class='inline'>{{user_group.sUserSecondName}} {{user_group.sUserName | slice(0,1) }}. {{user_group.sUserThirdName | slice(0,1) }}.</div>
+                                        </div>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class='control-group'>
+                            <label class='control-label'>Ответственный<span class='required'>*</span></label>
+                            <div class='controls'>
+                                <select class='span6 m-wrap myinpt' id='ot_event' name='category'>
+                                    {% for user in user_list %}
+                                        {% for user_group in user.group %}
+                                            <option value='{{user_group.iUserId}}'>{{user_group.sUserSecondName}} {{user_group.sUserName | slice(0,1) }}. {{user_group.sUserThirdName | slice(0,1) }}.</option>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class='control-group'>
+                            <label class='control-label'>Начало/окончание<span class='required'>*</span></label>
+                            <div class='controls'>
+                                <input class='span4 m-wrap datepicker' type='text' id='startdateevent' placeholder='Начало'> - 
+                                <input class='span4 m-wrap datepicker' type='text' id='enddateevent' placeholder='Окончание'>
+                            </div>
+                        </div>
+                        <div class='control-group'>
+                            <label class='control-label'>Текст<span class='required'>*</span></label>
+                            <div class='controls'>
+                                <textarea name='creditcard' type='text' id='text_event' class='span8 m-wrap mytext'></textarea>
+                            </div>
+                        </div>
+                        <div class='control-group'>
+                        	{% include 'downloadfile.html' %}
+							{% block file %}
+							{% endblock %}
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class='modal-footer'>
+                <a data-dismiss='modal' class='btn btn-primary' id='EditEventBtn' href='#'>Создать</a>
+                <a data-dismiss='modal' class='btn' href='#'>Отмена</a>
+            </div>
+       	</div>
+									<div id='edittask' class='modal hide' aria-hidden='true' style='display: none;'>
+        	<div class='modal-header'>
+            	<button data-dismiss='modal' class='close' type='button'>×</button>
+                    <h3>Редактировать задачу</h3>
+            </div>
+            <div class='modal-body'>
+                <form id='form_task' class='form-horizontal' novalidate='novalidate' action="upload/" enctype="multipart/form-data" method="post">
+                    <fieldset>
+                        <div class='control-group'>
+                            <label class='control-label'>Название задачи<span class='required'>*</span></label>
+                            <div class='controls'>
+                                <input type='text' name='name' id='name_task' data-required='1' class='span6 m-wrap myinpt'>
+                            </div>
+                        </div>
+                        <div class='control-group'>
+                            <label class='control-label'>Кто видит задачу<span class='required'>*</span></label>
+                            <div class='controls'>
+                                <div class='group'>
+                                    <div class='leadgroup'>
+                                        <label class='uniform inline'>
+                                                <input class='uniform_on check_all' type='checkbox' checked="checked" disabled id='solouser' value='option1'>
+                                        </label>
+                                        <div class='inline' id='{{profile.iUserId}}_name'>{{profile.sUserSecondName}} {{profile.sUserName | slice(0,1) }}. {{profile.sUserThirdName | slice(0,1) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='controls'>
+                                <div class='group'>
+                                {% for user in user_list %}
+                                    <div class='leadgroup'>
+                                        <label class='uniform inline'>
+                                                <input class='uniform_on check_all' type='checkbox' id='optionsCheckbox' value='option1'>
+                                        </label>
+                                        <div class='inline'>{{user.name_group_russia}} <img src='/app/views/assets/img/rotatearrow.png' id='rotategroup' class='rotatearrow'>
+                                        </div>
+                                        {% for user_group in user.group %}
+                                        {% if user_group.iUserId != profile.iUserId %} 
+                                        <div class='subgroup' style='display:none'>
+                                            <label class='uniform inline'>
+                                                    <input class='uniform_on chk' type='checkbox' data-user="{{user_group.iUserId}}"  value='option1'>
+                                            </label>
+                                            <div class='inline'>{{user_group.sUserSecondName}} {{user_group.sUserName | slice(0,1) }}. {{user_group.sUserThirdName | slice(0,1) }}.</div>
+                                        </div>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class='control-group'>
+                            <label class='control-label'>Ответственный<span class='required'>*</span></label>
+                            <div class='controls'>
+                                <select class='span6 m-wrap myinpt' id='taskot' name='category'>
+                                    {% for user in user_list %}
+                                        {% for user_group in user.group %}
+                                            <option value='{{user_group.iUserId}}'>{{user_group.sUserSecondName}} {{user_group.sUserName | slice(0,1) }}. {{user_group.sUserThirdName | slice(0,1) }}.</option>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class='control-group'>
+                            <label class='control-label'>Начало/окончание<span class='required'>*</span></label>
+                            <div class='controls'>
+                                <input class='span4 m-wrap datepicker' type='text' id='startdatetask' placeholder='Начало'> - 
+                                <input class='span4 m-wrap datepicker' type='text' id='enddatetask' placeholder='Окончание'>
+                            </div>
+                        </div>
+                        <div class='control-group'>
+                            <label class='control-label'>Текст<span class='required'>*</span></label>
+                            <div class='controls'>
+                                <textarea name='creditcard' type='text' id='text_task' class='span8 m-wrap mytext'></textarea>
+                            </div>
+                        </div>
+                        <div class='control-group'>
+							{% include 'downloadfile.html' %}
+							{{ block('file') }}
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class='modal-footer'>
+                <a data-dismiss='modal' class='btn btn-primary' id='EditTaskBtn' href='#'>Создать</a>
+                <a data-dismiss='modal' class='btn' href='#'>Отмена</a>
+            </div>
+       	</div>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+                </div>
+            </div>
+           	<hr>
+	        <footer>
+	            <p>Copyright © <a target="blank" href="http://www.alexkam.ru">Alexkam</a> - All Rights Reserved | Moscow 2016</p>
+	        </footer>
+        </div>
+
+        <script>
+        $(function() {
+            $(".uniform_on").uniform();
+        });
+        </script>
+	</body>
+</html>

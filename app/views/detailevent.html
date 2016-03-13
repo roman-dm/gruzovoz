@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<title>Событие детально</title>
+		<meta charset="utf-8">
+		<link href='/app/views/assets/css/bootstrap.min.css' rel='stylesheet' media='screen'> 
+		<link href='/app/views/assets/css/bootstrap-responsive.min.css' rel='stylesheet' media='screen'>
+		<link href='/app/views/assets/css/jquery.easy-pie-chart.css' rel='stylesheet' media='screen'>
+		<link href='/app/views/assets/css/jquery.jgrowl.css' rel='stylesheet' media='screen'>
+		<link href='/app/views/assets/css/uniform.default.css' rel='stylesheet' media='screen'>
+	    <link href='/app/views/assets/css/chosen.min.css' rel='stylesheet' media='screen'>
+	    <link rel='stylesheet' href='//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css'>
+	   	<link href='/app/views/assets/css/styles.css' rel='stylesheet' media='screen'>
+	  	<link href="/app/views/assets/css/detail.css" rel="stylesheet" media="screen">
+
+	    
+	    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+	    <script src='/app/views/assets/js/modernizr-2.6.2-respond-1.1.0.min.js'></script>
+	    <script src='/app/views/assets/js/bootstrap.min.js'></script>
+	    <script src='/app/views/assets/js/scripts.js'></script>
+	    <script src='/app/views/assets/js/jquery.uniform.min.js'></script>
+	    <script src='//code.jquery.com/ui/1.11.4/jquery-ui.js'></script>
+	    <script src='/app/views/assets/js/datePick.js'></script>
+	    <script src='/app/views/assets/js/ajax.js'></script>
+	    <script src='/app/views/assets/js/.js'></script>
+
+    	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		{% include 'navi.html' %}
+		{% block navi %}
+		{% endblock %}
+		<div class="container-fluid">
+            <div class="row-fluid">
+                {% include 'menu.html' %}
+            	{% block menu %}
+            	{% endblock %}
+            	<div class="span9" id="content">
+            	   <div class="row-fluid">
+					   <div class="block">
+					        <div class="navbar navbar-inner block-header">
+					            <div class="muted pull-left">Событие</div>
+					            <input type="hidden" value="{{event_info.iEventId}}" id="idEvent"/>
+					        </div>
+					        <div class="block-content collapse in">
+					            <div class="span12">
+						            <div class="caption">
+						            	{{event_info.sEventName}}
+						            </div>
+						            <div class="subcaption">
+						            	<div class="inline subhead">
+						            		<span class="menuitem red">Автор<span class="line">{{event_info.creater[0].sUserSecondName}} {{event_info.creater[0].sUserName | slice(0,1) }}. {{event_info.creater[0].sUserThirdName | slice(0,1) }}.</span></span>
+						            	</div>
+						            	<div class="inline subhead">
+						            		<span class="menuitem orange">Дата создания<span class="line">{{event_info.dEventDateEnd|date("d.m.Y") }}</span></span>
+						            	</div>
+						            	<div class="inline subhead">
+						            		<span class="menuitem cyan">Ответственный<span class="line">{{ event_info.respond[0].sUserSecondName}} {{event_info.respond[0].sUserName | slice(0,1) }}. {{event_info.respond[0].sUserThirdName | slice(0,1) }}.</span></span>
+						            	</div>
+						            	<div class="inline subhead">
+						            		<span class="menuitem green">Виза<span class="line">
+						            		{% if event_info.iVisaEvent !=0 %}
+						            			{{event_info.visa[0].sUserSecondName}} {{event_info.visa[0].sUserName | slice(0,1) }}. {{event_info.visa[0].sUserThirdName | slice(0,1) }}.
+						            		{% else %}
+						            			нет
+						            		{% endif %}
+						            		</span></span>
+						            	</div>
+						            </div>
+						            <div class="detail">
+						            	<p>{{event_info.sEventDesc}}</p>
+						            </div>
+						            <div>
+						            	<div class="low_caption">
+						            		Файлы, приложенные к событию:
+						            	</div>
+						            	{% for files in event_info.files %}
+						            	<div>
+							            	<div class="inline martop">
+							            		{% set ext = files.sEventFilesName | split ('.') %}
+								            		{% if ext[ext|length-1] == 'pdf' %}
+								            			<i class="fa fa-file-pdf-o" style="color:red; font-size:30px; margin-right:10px;"></i>
+								            		{% endif %}
+								            		{% if ext[ext|length-1] == 'doc' or ext[ext|length-1] == 'docx' %}
+								            			<i class="fa fa-file-word-o" style="color:blue; font-size:30px; margin-right:10px;"></i>
+								            		{% endif %}
+								            		{% if ext[ext|length-1] == 'xls' or ext[ext|length-1] == 'xlsx' %}
+								            			<i class="fa fa-file-excel-o" style="color:green; font-size:30px; margin-right:10px;"></i>
+								            		{% endif %}
+								            		{% if ext[ext|length-1] == 'png' or ext[ext|length-1] == 'jpg' %}
+								            			<i class="fa fa-file-image-o" style="color:cyan; font-size:30px; margin-right:10px;"></i>
+								            		{% endif %}
+
+							            	</div>
+							            	<div class="inline filetext">
+							            		<a href="/upload_folder/{{ files.sEventFilesPath }}/{{ files.sEventFilesName }}" download>{{ files.sEventFilesName }}</a>
+							            	</div>
+							            </div>
+							            {% endfor %}
+						            </div>
+						            <div class="present">
+						            	<div class="low_caption">
+						            		На событие подписаны: 
+						            	</div>
+						            	{% for user in event_info.who_see %}
+						            		{{ user.sUserSecondName}} {{user.sUserName | slice(0,1) }}. {{user.sUserThirdName | slice(0,1) }}.&nbsp&nbsp&nbsp
+						            	{% endfor %}
+						            </div>
+						         	{% if profile.sMainPage == 'root' %}
+						         	{% if event_info.iVisaEvent == 0 %}
+						           	<div class="need_visa">
+						           		<div class="low_caption">
+						            		Виза:
+						            	</div>
+						            	<div class="curvisaevent">
+						           			<button class="btn bigbtn green" id="okevent"><i class="curvisabtn fa fa-thumbs-o-up"></i></i></button>
+						           			<button class="btn bigbtn red" id="neokevent"><i class="curvisabtn fa fa-thumbs-o-down"></i></button>
+						           		</div>
+						           	</div>
+						           	{% endif %}
+						           	{% if event_info.iVisaEvent > 0 %}
+						           	<div class="need_visa">
+						           		<div class="low_caption">
+						            		Виза:
+						            	</div>
+						            	<div class='alert alert-success' style='width:200px'><strong>Одобрено!</strong> {{event_info.visa[0].sUserSecondName}} {{event_info.visa[0].sUserName | slice(0,1) }}. {{event_info.visa[0].sUserThirdName | slice(0,1) }}.</div>
+						            </div>
+						           	{% endif %}
+						           	{% if event_info.iVisaEvent < 0 %}
+						           	<div class="need_visa">
+						           		<div class="low_caption">
+						            		Виза:
+						            	</div>
+						            	<div class='alert alert-error' style='width:200px'><strong>Отказано!</strong> {{event_info.visa[0].sUserSecondName}} {{event_info.visa[0].sUserName | slice(0,1) }}. {{event_info.visa[0].sUserThirdName | slice(0,1) }}.</div>
+						            </div>
+						           	{% endif %}
+						           	{% endif %}
+					            </div>
+					        </div>
+					    </div>
+					</div>
+                </div>
+            </div>
+           	<hr>
+	        <footer>
+	            <p>Copyright © <a target="blank" href="http://www.alexkam.ru">Alexkam</a> - All Rights Reserved | Moscow 2016</p>
+	        </footer>
+        </div>
+
+        <script>
+        $(function() {
+            $(".uniform_on").uniform();
+        });
+        </script>
+	</body>
+</html>
