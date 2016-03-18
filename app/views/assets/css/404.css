@@ -444,3 +444,27 @@ input[type="search"] {
 @media only screen and (max-width: 479px) {
     .checkbacksoon p span { font-size: 150px; line-height: 160px; }.error {font-size: 14px;}.search {width: 220px;}
 }
+.oops {
+  margin-top: 40px;
+}
+.error404 {
+  font-size: 100px;
+  color:gray;
+  margin:0 auto;
+  text-align: center;
+}
+.sub404{
+  font-size: 25px;
+  margin-top: 50px;
+  margin:0 auto;
+  text-align: center;
+}
+.mid{
+  text-align: center;
+}
+.mar {
+  margin:50px 0 50px 0;
+}
+.btn span{
+  padding-left: 20px;
+}

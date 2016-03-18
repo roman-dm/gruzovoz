@@ -214,6 +214,8 @@ body {
 }
 
 #month{
+  -moz-appearance: none;
+  appearance: none;
   -webkit-appearance: none;
   background: transparent;
   border:none;
@@ -223,8 +225,12 @@ body {
   height: 40px;
   width:140px;
 }
+#year_calendar:hover,#year_calendar:focus{
+  -moz-appearance: number-input;
+}
 #year_calendar{
-    -webkit-appearance: none;
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
   background: transparent;
   border:none;
   font-size: 25px;
@@ -297,7 +303,7 @@ hr {
   cursor: pointer;
   text-align: center;
   font-size: .85em;
-  margin-bottom:2px;
+  margin-bottom:10px;
 }
 .calendar_task {
   background:#dff0d8;
@@ -305,7 +311,7 @@ hr {
   cursor: pointer;
   text-align: center;
   font-size: .85em;
-  margin-bottom:2px;
+  margin-bottom:10px;
 }
 .calendar_task:hover {
   background:#62c462;
@@ -369,27 +375,13 @@ hr {
 .cursor{
   cursor:pointer!important;
 }
-.oops {
-  margin-top: 40px;
+.marleft{
+  margin-left: 20px;
 }
-.error404 {
-  font-size: 100px;
-  color:gray;
-  margin:0 auto;
-  text-align: center;
+.delete a{
+	color:red;
 }
-.sub404{
-  font-size: 25px;
-  margin-top: 50px;
-  margin:0 auto;
-  text-align: center;
-}
-.mid{
-  text-align: center;
-}
-.mar {
-  margin:50px 0 50px 0;
-}
-.btn span{
-  padding-left: 20px;
+.label-important {
+	margin-left: 20px;
+	font-size: 10px;
 }

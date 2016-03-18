@@ -32,7 +32,13 @@ class route extends base
 			$controller->$method_name();
 		}
 		else{
-			echo $this->view->render('404.html');
+			echo $_SESSION["status"];
+			if((isset($_SESSION["status"])) && (!empty($_SESSION["status"])) ){
+				$access_array=array(1=>"root",2=>"teacher",3=>"respond",4=>"admin");
+				$main_page=$access_array[$_SESSION["status"]];
+			}
+			echo $main_page;
+			echo $this->view->render('404.html',array("profile"=>$main_page));
 		}
 	}
 }

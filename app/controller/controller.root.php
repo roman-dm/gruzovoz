@@ -57,7 +57,7 @@
 			echo $this->view->render('info.html',array('profile'=>$this->profile[0],"user_list"=>$this->user_mas));
 		}
 		public function detailnews(){
-			echo parent::accessEventTaskNews("news",$_SESSION["id"],$_GET["id_news"]);
+			//echo parent::accessEventTaskNews("news",$_SESSION["id"],$_GET["id_news"]);
 			$this->model=new News();
 			$this->modelUser=new User();
 			$mass_news=$this->model->getOneNews($_GET["id_news"]);

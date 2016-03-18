@@ -79,6 +79,7 @@
 				$this->model=new User();
 				echo json_encode($this->model->getUser($_POST));
 		}
+		//Запрос календаря
 		public function getCurDate(){
 			$this->modelTask=new Task();
 			$this->modelEvent=new Event();
@@ -94,6 +95,7 @@
 			//print_r($this->addDateArray($mass_task,"task"));
 			echo json_encode($two_mass);
 		}
+		//Запрос ленты
 		public function getListEventTask(){
 			$this->modelTask=new Task();
 			$this->modelEvent=new Event();

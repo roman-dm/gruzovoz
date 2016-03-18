@@ -65,7 +65,7 @@
 			return $query->fetchAll(PDO::FETCH_ASSOC);
 		}
 		public function getTaskInMonth($month,$year,$iUserId){
-			$query = $this->db->prepare("SELECT tasks.iTaskUserIdOt,tasks.sTaskName,tasks.dTaskDateStart,tasks.dTaskDateEnd,tasks.iTaskId FROM tasks_users, tasks WHERE tasks_users.iTaskId=tasks.iTaskId and ((month(tasks.dTaskDateStart)=:month AND year(tasks.dTaskDateStart)=:year) or month(tasks.dTaskDateEnd)=:month AND year(tasks.dTaskDateEnd)=:year) AND tasks_users.iUserId=:iUserId");
+			$query = $this->db->prepare("SELECT tasks.iTaskUserIdOt,tasks.sTaskName,tasks.dTaskDateStart,tasks.dTaskDateEnd,tasks.iTaskId FROM tasks_users, tasks WHERE tasks_users.iTaskId=tasks.iTaskId and ((month(tasks.dTaskDateStart)=:month AND year(tasks.dTaskDateStart)=:year) or month(tasks.dTaskDateEnd)=:month AND year(tasks.dTaskDateEnd)=:year) AND tasks_users.iUserId=:iUserId AND tasks.iStateTask=0");
 			$query->bindParam('month', $month);
 			$query->bindParam('year', $year);
 			$query->bindParam('iUserId', $iUserId);
@@ -100,7 +100,7 @@
 				case 10:
 					$rows='tasks.iVisaTask,tasks.iTaskUserIdOt,tasks.sTaskName,tasks.dTaskDateStart,tasks.dTaskDateEnd,tasks.iTaskId,users.sUserName, users.sUserSecondName, users.sUserThirdName  ';
 					$tables='tasks_users, tasks,users ';
-					$dop='WHERE tasks_users.iTaskId=tasks.iTaskId AND tasks_users.iUserId=:iUserId and tasks.iTaskUserCreate=users.iUserId and tasks.dTaskDateEnd >= CURDATE()  ORDER BY tasks.dTaskDateEnd asc LIMIT 0, 10';
+					$dop='WHERE tasks.iStateTask=0 AND tasks_users.iTaskId=tasks.iTaskId AND tasks_users.iUserId=:iUserId and tasks.iTaskUserCreate=users.iUserId and tasks.dTaskDateEnd >= CURDATE()  ORDER BY tasks.dTaskDateEnd asc LIMIT 0, 10';
 					break;
 				case "all":
 					$rows='tasks.iVisaTask,tasks.iTaskUserIdOt,tasks.sTaskName,tasks.dTaskDateStart,tasks.dTaskDateEnd,tasks.iTaskId,users.sUserName, users.sUserSecondName, users.sUserThirdName  ';

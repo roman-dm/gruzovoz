@@ -11,6 +11,10 @@ digitalWatch();
     setTimeout("digitalWatch()", 1000);
   }
 $(function() {
+	$( document ).on('click','.rotatearrow', function(){
+		$(this).parent().siblings(".subgroup").slideToggle();
+		$(this).toggleClass("rotate");
+	});
     $('.hide-sidebar').click(function() {
 	  $('#sidebar').hide('fast', function() {
 	  	$('#content').removeClass('span9');
@@ -32,11 +36,13 @@ $(function() {
   	if (link.is(':checked')){
   		$(this).closest(".leadgroup").find(".subgroup").each(function(){
   			$(this).find(".chk").attr("checked","checked");
+  			$(this).find(".chk").prop("checked", true);
   			$(this).find(".chk").parent().addClass("checked");
   		});
   	}else{
   		$(this).closest(".leadgroup").find(".subgroup").each(function(){
   			$(this).find(".chk").removeAttr("checked");
+  			$(this).find(".chk").prop("checked", false);
   			 $(this).find(".chk").parent().removeClass("checked");
   		});
   	}
@@ -168,5 +174,31 @@ $(function() {
 	});
 	$(document).on('click', '#AddNewsBtnOpen', function () {
 		$(".uploader").attr("id","NewsOpenForm");
+	});
+	$(document).on('click', '.edit', function (e) {
+		e.preventDefault();
+		$(this).find("a").html("Сохранить");
+		$(this).removeClass("edit");
+		$(this).addClass("save");
+		$(".redactor_icon").each(function(){
+			$(this).css("display","inline-block");
+		});
+	});
+	$(document).on('click', '.save', function (e) {
+		e.preventDefault();
+		$(this).find("a").html("Редактировать");
+		$(this).removeClass("save");
+		$(this).addClass("edit");
+		$(".redactor_icon").each(function(){
+			$(this).css("display","none");
+		});
+	});
+	$(document).on('click', '#EditName', function (e) {
+		e.preventDefault();
+		$(".caption").html("<input value='"+$.trim($(".caption").text())+"'>")
+	});
+	$(document).on('click', '#EditDesc', function (e) {
+		e.preventDefault();
+		$(".detail").html("<textarea>"+$.trim($(".detail").text())+"</textarea>")
 	});
 });

@@ -46,14 +46,20 @@ $(document).ready (function () {
 			}
 		}).done(function(data){
 			result=JSON.parse(data);
-			console.log(result);
+			// console.log(result);
 			visa='';
 			icon='';
+			resp="";
 			for (var i = 0; i < result.all.length; i++) {
 				if (result.all[i].viza[0].length == 0){
 					visa='нет';
 					if (result.all[i].type == 'task'){
-						$(".visa_body").append("<tr class='success'><td class='visa'>"+visa+"</td><td><a href='/"+$('.mainPageUser').val()+"/detailtask/?id_task="+result.all[i].iTaskId+"'>"+result.all[i].sTaskName+"</a></td><td>"+ReversDate2(result.all[i].dTaskDateEnd)+"</td><td>"+result.all[i].sUserSecondName+' '+result.all[i].sUserName.substr(0,1)+'. '+result.all[i].sUserThirdName.substr(0,1)+'.'+"</td></tr>");
+						if (result.all[i].iTaskUserIdOt == $(".idUser").val()){
+							resp="<span class='label label-important'>Вы ответственный</span>";
+						} else {
+							resp='';
+						}
+						$(".visa_body").append("<tr class='success'><td class='visa'>"+visa+"</td><td><a href='/"+$('.mainPageUser').val()+"/detailtask/?id_task="+result.all[i].iTaskId+"'>"+result.all[i].sTaskName+"</a>"+resp+"</td><td>"+ReversDate2(result.all[i].dTaskDateEnd)+"</td><td>"+result.all[i].sUserSecondName+' '+result.all[i].sUserName.substr(0,1)+'. '+result.all[i].sUserThirdName.substr(0,1)+'.'+"</td></tr>");
 					}
 					if (result.all[i].type == 'event'){
 						$(".visa_body").append("<tr class='info'><td class='visa'>"+visa+"</td><td><a href='/"+$('.mainPageUser').val()+"/detailevent/?id_event="+result.all[i].iEventId+"'>"+result.all[i].sEventName+"</a></td><td>"+ReversDate2(result.all[i].dEventDateEnd)+"</td><td>"+result.all[i].sUserSecondName+' '+result.all[i].sUserName.substr(0,1)+'. '+result.all[i].sUserThirdName.substr(0,1)+'.'+"</td></tr>");
@@ -62,10 +68,15 @@ $(document).ready (function () {
 				if (result.all[i].viza[0].length !== 0){
 					visa="<span class='check'>"+getIcon(result.all[i].iVisa)+"</span>"+result.all[i].viza[0].sUserSecondName+' '+result.all[i].viza[0].sUserName.substr(0,1)+'. '+result.all[i].viza[0].sUserThirdName.substr(0,1)+'.';
 				} else {
-					visa='Нет'
+					visa='Нет';
 				}
 				if (result.all[i].type == 'task'){
-					$(".ten_body").append("<tr class='success'><td class='visa'>"+visa+"</td><td><a href='/"+$('.mainPageUser').val()+"/detailtask/?id_task="+result.all[i].iTaskId+"'>"+result.all[i].sTaskName+"</a></td><td>"+ReversDate2(result.all[i].dTaskDateEnd)+"</td><td>"+result.all[i].sUserSecondName+' '+result.all[i].sUserName.substr(0,1)+'. '+result.all[i].sUserThirdName.substr(0,1)+'.'+"</td></tr>");
+					if (result.all[i].iTaskUserIdOt == $(".idUser").val()){
+							resp="<span class='label label-important'>Вы ответственный</span>";
+						} else {
+							resp='';
+						}
+					$(".ten_body").append("<tr class='success'><td class='visa'>"+visa+"</td><td><a href='/"+$('.mainPageUser').val()+"/detailtask/?id_task="+result.all[i].iTaskId+"'>"+result.all[i].sTaskName+"</a>"+resp+"</td><td>"+ReversDate2(result.all[i].dTaskDateEnd)+"</td><td>"+result.all[i].sUserSecondName+' '+result.all[i].sUserName.substr(0,1)+'. '+result.all[i].sUserThirdName.substr(0,1)+'.'+"</td></tr>");
 				}
 				if (result.all[i].type == 'event'){
 					$(".ten_body").append("<tr class='info'><td class='visa'>"+visa+"</td><td><a href='/"+$('.mainPageUser').val()+"/detailevent/?id_event="+result.all[i].iEventId+"'>"+result.all[i].sEventName+"</a></td><td>"+ReversDate2(result.all[i].dEventDateEnd)+"</td><td>"+result.all[i].sUserSecondName+' '+result.all[i].sUserName.substr(0,1)+'. '+result.all[i].sUserThirdName.substr(0,1)+'.'+"</td></tr>");
@@ -78,7 +89,12 @@ $(document).ready (function () {
 				} else {
 					visa='Нет'
 				}
-				$(".task_body").append("<tr class='success'><td class='visa'>"+visa+"</td><td><a href='/"+$('.mainPageUser').val()+"/detailtask/?id_task="+result.tasks[i].iTaskId+"'>"+result.tasks[i].sTaskName+"</a></td><td>"+ReversDate2(result.tasks[i].dTaskDateEnd)+"</td><td>"+result.tasks[i].sUserSecondName+' '+result.tasks[i].sUserName.substr(0,1)+'. '+result.tasks[i].sUserThirdName.substr(0,1)+'.'+"</td></tr>");
+				if (result.tasks[i].iTaskUserIdOt == $(".idUser").val()){
+							resp="<span class='label label-important'>Вы ответственный</span>";
+						} else {
+							resp='';
+						}
+				$(".task_body").append("<tr class='success'><td class='visa'>"+visa+"</td><td><a href='/"+$('.mainPageUser').val()+"/detailtask/?id_task="+result.tasks[i].iTaskId+"'>"+result.tasks[i].sTaskName+"</a>"+resp+"</td><td>"+ReversDate2(result.tasks[i].dTaskDateEnd)+"</td><td>"+result.tasks[i].sUserSecondName+' '+result.tasks[i].sUserName.substr(0,1)+'. '+result.tasks[i].sUserThirdName.substr(0,1)+'.'+"</td></tr>");
 			}
 
 			for (var i = 0; i < result.events.length; i++) {
@@ -102,6 +118,7 @@ $(document).ready (function () {
 			}
 		}).done(function(data){
 			result=JSON.parse(data);
+			resp='';
 			for (var i = 0; i < result.all.length; i++) {
 				if (result.all[i].type == 'task'){
 					$(".ten_body_edit").append("<tr class='success'><td><a href='/"+$('.mainPageUser').val()+"/detailtask/?id_task="+result.all[i].iTaskId+"'>"+result.all[i].sTaskName+"</a></td><td>"+ReversDate2(result.all[i].dTaskDateEnd)+"</td><td><div class='groupbtn'><div class='fabtn'><a class='deletebtn' name='task-"+result.all[i].iTaskId+"' href='#'><i class='fa fa-trash-o fa-fw'></i></a></div><div class='fabtn'>	<a class='edittask' href='#edittask' name="+result.all[i].iTaskId+" data-toggle='modal'><i class='fa fa-cog fa-fw'></i></a></div></div></td></tr>");
@@ -158,15 +175,16 @@ $(document).ready (function () {
 			}
 		}).done(function(data){
 			result=JSON.parse(data);
+			console.log(result);
 			for (var i = 0; i < result.length; i++) {
 				if (result[i].type == 'event'){
-					$("[data-current="+parseInt(result[i].dCurDate.substr(-2,2))+"]").find(".fc-day-content").append("<a href='/"+$('.mainPageUser').val()+"/detailevent/?id_event="+result[i].iEventId+"'><div class='calendar_event'><div class=''><span class=''>"+result[i].sEventName+"</span></div></div></a>");
+					$("[data-current="+parseInt(result[i].dCurDate.substr(-2,2))+"]").find(".fc-day-content").append("<a href='/"+$('.mainPageUser').val()+"/detailevent/?id_event="+result[i].iEventId+"' title='"+result[i].sEventName+"'><div class='calendar_event'><div class=''><span class=''>"+result[i].sEventName.substr(0,12)+"</span></div></div></a>");
 					if (result[i].iEventUserIdOt == $(".idUser").val()){
 						$(".calendar_event").addClass("ce_ot");
 					}
 				}
 				if (result[i].type == 'task'){
-					$("[data-current="+parseInt(result[i].dCurDate.substr(-2,2))+"]").find(".fc-day-content").append("<a href='/"+$('.mainPageUser').val()+"/detailtask/?id_task="+result[i].iTaskId+"'><div class='calendar_task'><div class=''><span class=''>"+result[i].sTaskName+"</span></div></div></a>");
+					$("[data-current="+parseInt(result[i].dCurDate.substr(-2,2))+"]").find(".fc-day-content").append("<a href='/"+$('.mainPageUser').val()+"/detailtask/?id_task="+result[i].iTaskId+"' title='"+result[i].sTaskName+"'><div class='calendar_task'><div class=''><span class=''>"+result[i].sTaskName.substr(0,12)+"</span></div></div></a>");
 					if (result[i].iTaskUserIdOt == $(".idUser").val()){
 						$(".calendar_task").addClass("ce_ot");
 					}
@@ -239,6 +257,7 @@ $(document).ready (function () {
 				user_list.push($(this).find("input[type=checkbox]").attr("data-user"));
 			}
 		});
+		console.log(user_list);
 		$("#AddTask").find(".ok").each(function(){
 			obj=new Object;
 			obj.fold=$(this).attr("data-fold");
@@ -335,7 +354,19 @@ $(document).ready (function () {
 			$(".need_done").html("<div class='martop inline'><div class='alert' style='width:145px' id='task_complite'>Вы выполнили задачу</div></div>");
 		});
 	});
-
+	$(document).on('click', '.delete', function () {
+		$.ajax({
+			url: '/ajax/',
+			type: 'POST',
+			data: {
+				typeiditem: $(this).attr("name"),
+				type_request: 'delete_item'
+			}
+		}).done(function(data){
+			alert("/"+$(".mainPageUser").val()+"/tasks/");
+			location.href = "/"+$(".mainPageUser").val()+"/tasks/"
+		});
+	});
 	$(document).on('click', '.deletebtn', function () {
 		$.ajax({
 			url: '/ajax/',
@@ -369,6 +400,25 @@ $(document).ready (function () {
 			data: {
 				idEvent: $(this).attr("name"),
 				type_request: 'get_one_event'
+			}
+		}).done(function(data){
+		});
+	});
+	$(document).on('click', '.save', function () {
+		idTen="";
+		if ($(".type").attr("value") == "task"){
+			idTen = "idTask";
+		}
+		if ($(".type").attr("value") == "event"){
+			idTen = "idEvent";
+		}
+		$.ajax({
+			url: '/ajax/',
+			type: 'POST',
+			data: {
+				type: $(".type").attr("value"),
+				idTen: $("#"+idTen).val(),
+				type_request: 'update_oneten'
 			}
 		}).done(function(data){
 		});
