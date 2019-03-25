@@ -1,0 +1,120 @@
+02-10 08:00:55 /api/v1/driver/registration/ | app | token=d230f84ddb71bbc069337581f59bfa54 | POST | 
+Параметры: | name= Миша country_id= 1 phone=  79852243233 city_id= 4 car_name= Ford Transit car_type= single body_type_id= 2 capacity= 2 volume= 5 driver_specialization= in_city loaders= true rate_in_city= 1500 rate_intercity= 2000  |...............................................................................................................................
+02-10 08:00:55 {"code":18,"message":"Не выбран не один тип загрузки","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:01:32 /api/v1/driver/registration/ | app | token=d230f84ddb71bbc069337581f59bfa54 | POST | 
+Параметры: | name= Миша country_id= 1 phone=  79852243233 city_id= 4 car_name= Ford Transit car_type= single body_type_id= 2 capacity= 2 volume= 5 driver_specialization= in_city loaders= true rate_in_city= 1500 rate_intercity= 2000 load_type_side= true  |...............................................................................................................................
+02-10 08:01:32 {"code":0,"message":"","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:02:21 /api/v1/driver/registration/ | app | token=d230f84ddb71bbc069337581f59bfa54 | POST | 
+Параметры: | name= Миша country_id= 1 phone=  79852243233 city_id= 4 car_name= Ford Transit car_type= single body_type_id= 2 capacity= 2 volume= 5 driver_specialization= in_city loaders= true rate_in_city= 1500 rate_intercity= 2000 load_type_side= true  |...............................................................................................................................
+02-10 08:02:21 {"code":0,"message":"","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:09:41 /api/v1/driver/registration/ | app | token=d230f84ddb71bbc069337581f59bfa54 | POST | 
+Параметры: | name= Миша country_id= 1 phone=  79852243233 city_id= 4 car_name= Ford Transit car_type= single body_type_id= 2 capacity= 2 volume= 5 driver_specialization= in_city loaders= true rate_in_city= 1500 rate_intercity= 2000 load_type_side= true  |...............................................................................................................................
+02-10 08:09:49 /api/v1/driver/registration/ | app | token=d230f84ddb71bbc069337581f59bfa54 | POST | 
+Параметры: | name= Миша country_id= 1 phone=  79852243233 city_id= 4 car_name= Ford Transit car_type= single body_type_id= 2 capacity= 2 volume= 5 driver_specialization= in_city loaders= true rate_in_city= 1500 rate_intercity= 2000 load_type_side= true  |...............................................................................................................................
+02-10 08:11:22 /api/v1/driver/registration/ | app | token=d230f84ddb71bbc069337581f59bfa54 | POST | 
+Параметры: | name= Миша country_id= 1 phone=  79852243233 city_id= 4 car_name= Ford Transit car_type= single body_type_id= 2 capacity= 2 volume= 5 driver_specialization= in_city loaders= true rate_in_city= 1500 rate_intercity= 2000 load_type_side= true  |...............................................................................................................................
+02-10 08:11:22 {"code":24,"message":"На данное устройство уже зарегистрирован аккаунт","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:12:03 /api/v1/driver/registration/ | app | token=d230f84ddb71bbc069337581f59bfa54 | POST | 
+Параметры: | name= Миша country_id= 1 phone=  79852243233 city_id= 4 car_name= Ford Transit car_type= single body_type_id= 2 capacity= 2 volume= 5 driver_specialization= in_city loaders= true rate_in_city= 1500 rate_intercity= 2000 load_type_side= true  |...............................................................................................................................
+02-10 08:12:04 {"code":0,"message":"","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:13:24 /api/v1/driver/registration/ | app | token=d230f84ddb71bbc069337581f59bfa54 | POST | 
+Параметры: | name= Миша country_id= 1 phone=  79852243233 city_id= 4 car_name= Ford Transit car_type= single body_type_id= 2 capacity= 2 volume= 5 driver_specialization= in_city loaders= true rate_in_city= 1500 rate_intercity= 2000 load_type_side= true  |...............................................................................................................................
+02-10 08:13:24 {"code":24,"message":"На данное устройство уже зарегистрирован аккаунт","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:13:30 /api/v1/driver/registration/ | app | token=d230f84ddb71bbc069337581f59bfa54 | POST | 
+Параметры: | name= Миша country_id= 1 phone=  79852243233 city_id= 4 car_name= Ford Transit car_type= single body_type_id= 2 capacity= 2 volume= 5 driver_specialization= in_city loaders= true rate_in_city= 1500 rate_intercity= 2000 load_type_side= true  |...............................................................................................................................
+02-10 08:13:30 {"code":24,"message":"На данное устройство уже зарегистрирован аккаунт","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:26:49 /api/v1/driver/profile/ | app | token=d230f84ddb71bbc069337581f59bfa54 | POST | 
+Параметры: | name= Миша country_id= 1 phone=  79852243233 city_id= 4 car_name= Ford Transit car_type= single body_type_id= 2 capacity= 2 volume= 5 driver_specialization= in_city loaders= true rate_in_city= 1500 rate_intercity= 2000 load_type_side= true  |...............................................................................................................................
+02-10 08:26:49 {"code":1,"message":"Проблемы с токеном","data":""} | 
+________________________________________________________________________________________________________________________________
+02-10 08:26:53 /api/v1/driver/profile/ | app | token=d230f84ddb71bbc069337581f59bfa54 | POST | 
+Параметры: | name= Миша country_id= 1 phone=  79852243233 city_id= 4 car_name= Ford Transit car_type= single body_type_id= 2 capacity= 2 volume= 5 driver_specialization= in_city loaders= true rate_in_city= 1500 rate_intercity= 2000 load_type_side= true  |...............................................................................................................................
+02-10 08:26:53 {"code":1,"message":"Проблемы с токеном","data":""} | 
+________________________________________________________________________________________________________________________________
+02-10 08:28:26 /api/v1/driver/profile/ | app | token=d230f84ddb71bbc069337581f59bfa54 | POST | 
+Параметры: | name= Миша country_id= 1 phone=  79852243233 city_id= 4 car_name= Ford Transit car_type= single body_type_id= 2 capacity= 2 volume= 5 driver_specialization= in_city loaders= true rate_in_city= 1500 rate_intercity= 2000 load_type_side= true  |...............................................................................................................................
+02-10 08:28:26 {"code":1,"message":"Проблемы с токеном","data":""} | 
+________________________________________________________________________________________________________________________________
+02-10 08:28:55 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | POST | 
+Параметры: | name= Миша country_id= 1 phone=  79852243233 city_id= 4 car_name= Ford Transit car_type= single body_type_id= 2 capacity= 2 volume= 5 driver_specialization= in_city loaders= true rate_in_city= 1500 rate_intercity= 2000 load_type_side= true  |...............................................................................................................................
+02-10 08:29:00 {"code":23,"message":"Не удалось изменить профиль","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:29:08 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:29:08 {"code":23,"message":"Не удалось изменить профиль","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:29:32 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:29:32 {"code":23,"message":"Не удалось изменить профиль","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:30:07 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:30:07 {"code":23,"message":"Не удалось изменить профиль","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:30:11 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:30:11 {"code":23,"message":"Не удалось изменить профиль","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:30:53 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:30:53 {"code":23,"message":"Не удалось изменить профиль","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:31:28 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:31:28 {"code":23,"message":"Не удалось изменить профиль","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:32:21 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:32:21 {"code":23,"message":"Не удалось изменить профиль","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:32:22 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:32:25 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:32:31 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:32:31 {"code":23,"message":"Не удалось изменить профиль","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:33:13 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:33:13 {"code":0,"message":"","data":{"profile":{"name":null,"phone":79852243233,"avatar":"","phone_confirmed":0,"car_name":null,"car_type":null,"body_type_id":null,"capacity":null,"volume":null,"load_type_top":null,"load_type_rear":null,"load_type_side":null,"driver_specialization":null,"loaders":null,"rate":null,"email_confirmed":0,"email":"","city":0}}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:33:28 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:33:28 {"code":0,"message":"","data":{"profile":{"name":null,"phone":79852243233,"avatar":"","phone_confirmed":0,"car_name":null,"car_type":null,"body_type_id":null,"capacity":null,"volume":null,"load_type_top":null,"load_type_rear":null,"load_type_side":null,"driver_specialization":null,"loaders":null,"rate":null,"email_confirmed":0,"email":"","city":0}}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:33:29 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:33:29 {"code":0,"message":"","data":{"profile":{"name":null,"phone":79852243233,"avatar":"","phone_confirmed":0,"car_name":null,"car_type":null,"body_type_id":null,"capacity":null,"volume":null,"load_type_top":null,"load_type_rear":null,"load_type_side":null,"driver_specialization":null,"loaders":null,"rate":null,"email_confirmed":0,"email":"","city":0}}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:33:50 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:33:50 {"code":0,"message":"","data":{"profile":{"name":null,"phone":79852243233,"avatar":"","phone_confirmed":0,"car_name":null,"car_type":null,"body_type_id":null,"capacity":null,"volume":null,"load_type_top":null,"load_type_rear":null,"load_type_side":null,"driver_specialization":null,"loaders":null,"rate":null,"email_confirmed":0,"email":"","city":0}}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:34:54 /api/v1/driver/registration/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | POST | 
+Параметры: | name= Миша country_id= 1 phone=  79852243233 city_id= 4 car_name= Ford Transit car_type= single body_type_id= 2 capacity= 2 volume= 5 driver_specialization= in_city loaders= true rate_in_city= 1500 rate_intercity= 2000 load_type_side= true  |...............................................................................................................................
+02-10 08:34:54 {"code":1,"message":"Проблемы с токеном","data":""} | 
+________________________________________________________________________________________________________________________________
+02-10 08:35:06 /api/v1/driver/registration/ | app | token=d230f84ddb71bbc069337581f59bfa54 | POST | 
+Параметры: | name= Миша country_id= 1 phone=  79852243233 city_id= 4 car_name= Ford Transit car_type= single body_type_id= 2 capacity= 2 volume= 5 driver_specialization= in_city loaders= true rate_in_city= 1500 rate_intercity= 2000 load_type_side= true  |...............................................................................................................................
+02-10 08:35:07 {"code":0,"message":"","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:35:27 /api/v1/driver/profile/ | app | token=d230f84ddb71bbc069337581f59bfa54 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:35:27 {"code":1,"message":"Проблемы с токеном","data":""} | 
+________________________________________________________________________________________________________________________________
+02-10 08:35:39 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:35:39 {"code":0,"message":"","data":{"profile":{"name":"Миша","phone":79852243233,"avatar":"","phone_confirmed":0,"car_name":"Ford Transit","car_type":"single","body_type_id":2,"capacity":5,"volume":2,"load_type_top":"","load_type_rear":"","load_type_side":"true","driver_specialization":"in_city","loaders":"true","rate":0,"email_confirmed":0,"email":"","city":{"id":null,"name":null,"parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+02-10 08:36:16 /api/v1/driver/profile/ | app | token=aa86724bb4eba3a0f7a15d1924e40e51 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-10 08:36:16 {"code":0,"message":"","data":{"profile":{"name":"Миша","phone":79852243233,"avatar":"","phone_confirmed":0,"car_name":"Ford Transit","car_type":"single","body_type_id":2,"capacity":5,"volume":2,"load_type_top":"","load_type_rear":"","load_type_side":"true","driver_specialization":"in_city","loaders":"true","rate":0,"email_confirmed":0,"email":"","city":{"id":null,"name":null,"parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________

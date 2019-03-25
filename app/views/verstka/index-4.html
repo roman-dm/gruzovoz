@@ -1,0 +1,358 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="wide smoothscroll wow-animation">
+<head>
+  <!-- Site Title -->
+  <title>Contacts</title>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+  <!-- Stylesheets -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700%7CExo+2:400,700,900,600,300%7CPT+Sans:400,700%7CRoboto:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!--[if lt IE 10]>
+  <script src="js/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<!-- The Main Wrapper -->
+<div class="page">
+
+  <!--For older internet explorer-->
+  <div class="old-ie"
+       style='background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
+      <img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+    </a>
+  </div>
+  <!--END block for older internet explorer-->
+
+  <!--========================================================
+                            HEADER
+  =========================================================-->
+
+  <header class="page-header bg">
+    <!-- RD Navbar -->
+    <div class="rd-navbar-wrap">
+      <nav class="rd-navbar" data-rd-navbar-lg="rd-navbar-static">
+        <div class="rd-navbar-inner">
+          <!-- RD Navbar Panel -->
+          <div class="rd-navbar-panel">
+
+            <!-- RD Navbar Toggle -->
+            <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar"><span></span></button>
+            <!-- END RD Navbar Toggle -->
+
+
+            <!-- RD Navbar Brand -->
+            <div class="rd-navbar-brand">
+              <a href="index.html" class="brand-name">
+              </a>
+            </div>
+            <!-- END RD Navbar Brand -->
+
+            <button class="rd-navbar-toggle list" data-rd-navbar-toggle=".rd-navbar-inline-list"><span></span></button>
+          </div>
+          <!-- END RD Navbar Panel -->
+
+          <div class="rd-navbar-nav-wrap">
+
+            <!-- RD Navbar Nav -->
+            <ul class="rd-navbar-nav">
+              <li class="">
+                <a href="index.html">Home</a>
+              </li>
+              <li class="">
+                <a href="index-1.html">About</a>
+              </li>
+              <li class="">
+                <a href="index-2.html">Cars</a>
+                <!-- RD Navbar Dropdown -->
+                <ul class="rd-navbar-dropdown">
+                  <li>
+                    <a href="#">A-Class</a>
+                  </li>
+
+                  <li>
+                    <a href="#">B-Class</a>
+                  </li>
+                  <li>
+                    <a href="#">C-Class</a>
+                    <ul class="rd-navbar-dropdown">
+                      <li>
+                        <a href='#'>Mercedes-Benz</a>
+                      </li>
+                      <li>
+                        <a href='#'>Audi</a>
+                      </li>
+                      <li>
+                        <a href='#'>BMW</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">E-Class</a>
+                  </li>
+                  <li>
+                    <a href="#">G-Class</a>
+                  </li>
+                </ul>
+                <!-- END RD Navbar Dropdown -->
+              </li>
+              <li class="">
+                <a href="index-3.html">News</a>
+              </li>
+              <li class="active">
+                <a href="index-4.html">Contacts</a>
+              </li>
+            </ul>
+            <!-- END RD Navbar Nav -->
+          </div>
+
+          <ul class="rd-navbar-inline-list">
+            <li><a class="icon icon-sm icon-silver fa-facebook" href="#"></a></li>
+            <li><a class="icon icon-sm icon-silver fa-twitter" href="#"></a></li>
+            <li><a class="icon icon-sm icon-silver fa-instagram" href="#"></a></li>
+            <li><a class="icon icon-sm icon-silver fa-google-plus" href="#"></a></li>
+          </ul>
+          <div class="rd-navbar-contact">
+            <a href="callto:#">1-800-1234-567</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- END RD Navbar -->
+  </header>
+  <!--========================================================
+                            CONTENT
+  =========================================================-->
+  <main class="page-content">
+    <!-- Feedback -->
+    <section class="well well-2 bg-image bg-yellow-green bg-image-2">
+      <div class="container">
+        <h2>Feedback</h2>
+        <!-- RD Mailform -->
+        <form class='rd-mailform' method="post" action="bat/rd-mailform.php">
+          <!-- RD Mailform Type -->
+          <input type="hidden" name="form-type" value="contact"/>
+          <!-- END RD Mailform Type -->
+          <fieldset>
+            <div class="row">
+              <div class="col-md-4">
+                <label data-add-placeholder>
+                  <input type="text"
+                         name="name"
+                         placeholder="Your name"
+                         data-constraints="@NotEmpty @LettersOnly"/>
+                </label>
+              </div>
+              <div class="col-md-4">
+                <label data-add-placeholder>
+                  <input type="text"
+                         name="email"
+                         placeholder="Your email"
+                         data-constraints="@NotEmpty @Email"/>
+                </label>
+              </div>
+              <div class="col-md-4">
+                <label data-add-placeholder>
+                  <input type="text"
+                         name="phone"
+                         placeholder="Your phone"
+                         data-constraints="@Phone"/>
+                </label>
+              </div>
+            </div>
+            <label data-add-placeholder>
+                                  <textarea name="message" placeholder="Message"
+                                            data-constraints="@NotEmpty"></textarea>
+            </label>
+            <div class="mfControls btn-group text-center">
+              <button class="btn btn-sm btn-sunglow" type="submit">Submit</button>
+            </div>
+            <div class="mfInfo">
+            </div>
+          </fieldset>
+        </form>
+        <!-- END RD Mailform -->
+      </div>
+    </section>
+    <!-- END Feedback -->
+
+    <!-- Contact Info -->
+    <section class="well well-2 bg-black-haze">
+      <div class="container">
+        <h2>Contact Info</h2>
+        <div class="row flow-offset-1 row-xs-center">
+          <div class="col-sm-6 col-md-4 wow fadeInLeft">
+            <div class="contact-info-1">
+              <p class="heading-5">8901 Marmora Road, <br class="hidden visible-lg-block">
+                Glasgow, D04 89GR.</p>
+              <dl>
+                <dt>Freephone</dt>
+                <dd><a href="callto:#">+1 800 559 6580</a>
+                </dd>
+              </dl>
+              <dl>
+                <dt>Telephone</dt>
+                <dd><a href="callto:#">+1 800 603 6035</a>
+                </dd>
+              </dl>
+              <dl>
+                <dt>FAX</dt>
+                <dd><a href="callto:#">+1 800 889 9898</a>
+                </dd>
+              </dl>
+              <dl>
+                <dt>E-mail</dt>
+                <dd><a href="mailto:#">mail@demolink.org</a>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="contact-info-1">
+              <p class="heading-5">9863 - 9867 Mill Road, <br class="hidden visible-lg-block">
+                Cambridge, MG09 99HT.
+              </p>
+              <dl>
+                <dt>Freephone</dt>
+                <dd><a href="callto:#">+1 800 559 6580</a>
+                </dd>
+              </dl>
+              <dl>
+                <dt>Telephone</dt>
+                <dd><a href="callto:#">+1 800 603 6035</a>
+                </dd>
+              </dl>
+              <dl>
+                <dt>FAX</dt>
+                <dd><a href="callto:#">+1 800 889 9898</a>
+                </dd>
+              </dl>
+              <dl>
+                <dt>E-mail</dt>
+                <dd><a href="mailto:#">mail@demolink.org</a>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 wow fadeInRight">
+            <div class="contact-info-1">
+              <p class="heading-5">9870 St Vincent Place, <br class="hidden visible-lg-block">
+                Glasgow, DC 45 Fr 45.</p>
+              <dl>
+                <dt>Freephone</dt>
+                <dd><a href="callto:#">+1 800 559 6580</a>
+                </dd>
+              </dl>
+              <dl>
+                <dt>Telephone</dt>
+                <dd><a href="callto:#">+1 800 603 6035</a>
+                </dd>
+              </dl>
+              <dl>
+                <dt>FAX</dt>
+                <dd><a href="callto:#">+1 800 889 9898</a>
+                </dd>
+              </dl>
+              <dl>
+                <dt>E-mail</dt>
+                <dd><a href="mailto:#">mail@demolink.org</a>
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END Contact Info -->
+    <!-- RD Google Map -->
+    <div class="rd-google-map">
+      <div id="google-map" class="rd-google-map__model" data-zoom="14" data-x="-73.9874068" data-y="40.643180"></div>
+      <ul class="rd-google-map__locations">
+        <li data-x="-73.9874068" data-y="40.643180">
+          <p>8901 Marmora Road,
+            Glasgow, D04 89GR.</p>
+        </li>
+      </ul>
+    </div>
+    <!-- END RD Google Map -->
+  </main>
+  <!--========================================================
+                            FOOTER
+  ==========================================================-->
+  <footer class="page-footer">
+    <div class="container text-center text-sm-left">
+      <div class="row flow-offset-1">
+
+        <div class="col-sm-6 col-md-preffix-1 col-md-2 col-sm-push-1 col-md-push-2">
+          <ul class="list">
+            <li class=""><a href="index.html">Home</a></li>
+            <li class=""><a href="index-1.html">About</a></li>
+            <li class=""><a href="index-2.html">Cars</a></li>
+            <li class=""><a href="index-3.html">News</a></li>
+            <li class="active"><a href="index-4.html">Contacts</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-md-3  col-md-push-3 col-sm-push-2">
+          <address class="contact-info">
+            <a href="#" class="address">4578 69 St, San Diego D04 89GR</a>
+            <div>
+              <a href="callto:#">1-800-1234-567</a>
+            </div>
+          </address>
+          <ul class="inline-list">
+            <li><a class="icon icon-sm icon-primary fa-facebook" href="#"></a></li>
+            <li><a class="icon icon-sm icon-primary fa-twitter" href="#"></a></li>
+            <li><a class="icon icon-sm icon-primary fa-instagram" href="#"></a></li>
+            <li><a class="icon icon-sm icon-primary fa-google-plus" href="#"></a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-md-preffix-1 col-md-3 col-sm-push-4 col-md-push-4">
+          <!-- Facebook widget -->
+          <div class="fb-page"
+               data-href="https://www.facebook.com/TemplateMonster"
+               data-small-header="false"
+               data-hide-cta="true"
+               data-hide-cover="false"
+               data-adapt-conainer-width="true"
+               data-show-facepile="true"
+               data-show-posts="false">
+            <div class="fb-xfbml-parse-ignore">
+              <blockquote cite="https://www.facebook.com/TemplateMonster"><a
+                  href="https://www.facebook.com/TemplateMonster">Facebook</a>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-2 col-sm-push-3 col-md-push-1">
+          <!-- RD Navbar Brand -->
+          <div class="rd-navbar-brand">
+            <a href="index.html" class="brand-name">
+            </a>
+          </div>
+          <!-- END RD Navbar Brand -->
+
+          <p class="copyright">
+            © <span id="copyright-year"></span>
+            <a href='index-5.html'>Privacy Policy</a>
+
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+</div>
+
+<!-- Core Scripts -->
+<script src="js/core.min.js"></script>
+<!-- Additional Functionality Scripts -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

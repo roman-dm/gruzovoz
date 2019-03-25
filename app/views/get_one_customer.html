@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru" class="wide smoothscroll wow-animation">
+<head>
+  <title>ЛК водитель</title>
+  {% include 'header.html' %}
+  {% block header %}
+  {% endblock %}
+
+  <!-- <link rel="stylesheet" href="/app/views/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="/app/views/css/DT_bootstrap.css">
+  <link rel="stylesheet" href="/app/views/css/profile-driver.css">
+  <link rel="stylesheet" href="/app/views/css/jquery.rating.css">
+  <link href="/app/views/css/styleup.css" rel="stylesheet" />
+
+<style>
+  .rd-navbar-static .rd-navbar-nav > li {
+    margin-left: 15px;
+  }
+  .alert{
+    padding: 13px;
+  }
+  label {
+    display: block;
+  }
+  .uploadButton {
+    padding: 14px 20px 16px;
+    margin-bottom: 20px;
+    color: #000;
+    background-color: #ffd630;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.2;
+    white-space: nowrap;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: "Exo 2", sans-serif;
+    letter-spacing: 0.06em;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    transition: .3s all ease;
+    font: inherit;
+    box-sizing: border-box;
+
+  }
+  .uploadButton:hover {
+    color: #000;
+  background-color: #ffbd30;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    {% include 'old-ie.html' %}
+    {% block oldie %}
+    {% endblock %}
+    <header class="page-header bg">
+      {% include 'navi.html' %}
+      {% block navi %}
+      {% endblock %}
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+          </div>
+          <div class="col-md-6">  
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <section class="well well-2">
+        <div class="container text-center">
+          <div class='col-lg-12' style='margin-top: 0px;'>
+            <div class="tab-content" style='padding-bottom: 50px;'>
+              <div id="" class="tab-pane fade in active">
+                <div style='padding: 50px;'>
+
+                  <div class="col-lg-4">
+                    <div class='div-avatar martop'>
+                      <div class='avatar'>
+                        {% if all_profile.avatar=='' %}
+                          <img src="/app/views/images/noavatar.png" width="306px" height="226px">
+                        {% else %}
+                          <img src="{{all_profile.avatar}}" width="306px" height="226px"/>
+                        {% endif %}
+                      </div>
+                      <div style='clear: both;'></div>
+                    </div> 
+                    <div  style='padding-top: 20px;'>
+                      <div class='col-lg-5 col-sm-5 col-xs-5'>
+                        <div class='caption-profile marbot'>Рейтинг:</div>
+                      </div>
+                      <div class='col-lg-2 col-sm-2 col-xs-2 rating' style='margin-left: -10px;'>{{all_profile.rating}}</div>
+                      <div id="rating_3">
+                        <input type="hidden" class="val" value="{{all_profile.rating}}"/>
+                        <!-- <input type="hidden" class="votes" value="48"/>    -->      
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <a href="#" class="btn btn-sm btn-sunglow offset-3 marbot" id="" style="margin-top: 15px;">Показать телефон</a>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-8" style='padding-top: 25px;'>
+                    <div class='col-lg-3 col-sm-3 col-xs-12'>
+                      <div class='caption-profile marbot'>Имя:</div>
+                    </div>
+                    <div class='col-lg-9 col-sm-9 col-xs-12'>
+                      <input type="text" id='' class="" readonly autocomplete="off" value='{{all_profile.name}}'/>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-8" style='padding-top: 25px;'>
+                    <div class='col-lg-3 col-sm-3 col-xs-12'>
+                      <div class='caption-profile marbot'>Город:</div>
+                    </div>
+                    <div class='col-lg-9 col-sm-9 col-xs-12'>
+                        <input type="text" class="city" readonly id='' placeholder="" autocomplete="off" value="{% if all_profile.city.name == '' %}{% else %}{{all_profile.city.name}} {{all_profile.city.parent_name|trim}} {{all_profile.city.country_name}}{% endif %}" city-id='{{all_profile.city.id}}' country_id='{{all_profile.city.country_id}}'/>
+                    </div>
+                  </div>
+
+                  {% if all_profile.organization!='' %}
+                  <div class="col-lg-8" style='padding-top: 25px;'>
+                    <div class='col-lg-3 col-sm-3 col-xs-12'>
+                      <div class='caption-profile marbot'>Организация:</div>
+                    </div>
+                    <div class='col-lg-9 col-sm-9 col-xs-12'>
+                      <input type="text" id='' class="" readonly autocomplete="off" value='{{all_profile.organization}}'/>
+                    </div>
+                  </div>
+                  {% endif %}
+
+                  <div class="col-lg-8" style='padding-top: 25px;'>
+                    <div class='col-lg-3 col-sm-3 col-xs-12'>
+                      <div class='caption-profile marbot'>Заказов:</div>
+                    </div>
+                    <div class='col-lg-9 col-sm-9 col-xs-12'>
+                      <input type="text" id='' class="" readonly autocomplete="off" value='{{all_profile.count}}'/>
+                    </div>
+                  </div>  
+                  {% set mnths = ['','января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'] %}
+
+                  <div class="col-lg-8" style='padding-top: 25px;'>
+                    <div class='col-lg-3 col-sm-3 col-xs-12'>
+                      <div class='caption-profile marbot'>Был в сети:</div>
+                    </div>
+                    <div class='col-lg-9 col-sm-9 col-xs-12'>
+                      <input type="text" id='' class="" readonly autocomplete="off" value='{{all_profile.date_enter|date("j")}} {{ mnths[all_profile.date_enter|date("n")] }} {{ all_profile.date_enter|date("Y") }}'/>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-12" style='padding-top: 25px;'>
+                    <a href="#" class="my_back_btn btn btn-sm btn-sunglow" id="">Назад</a>
+                  </div>
+
+                </div>
+              </div>
+              <div style="clear: both"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="well well-2 bg-image bg-image-2 bg-yellow-green">
+        {% include 'subscribe.html' %}
+        {% block subscribe %}
+        {% endblock %}        
+      </section>
+    </main>
+    <footer class="page-footer">
+      {% include 'footer.html' %}
+      {% block footer %}
+      {% endblock %}      
+    </footer>
+  </div>
+  {% include 'scripts.html' %}
+  {% block scripts %}
+  {% endblock %}
+  <script src="/app/views/js/Data_tables.js"></script>
+  <script src="/app/views/js/DT_bootstrap.js"></script>
+  <script type="text/javascript" src="/app/views/js/jquery.rating.min.js"></script>
+  <script src="/app/views/js/jquery.knob.js"></script>
+
+    <!-- jQuery File Upload Dependencies -->
+    <script src="/app/views/js/jquery.ui.widget.js"></script>
+    <script src="/app/views/js/jquery.iframe-transport.js"></script>
+    <script src="/app/views/js/jquery.fileupload.js"></script>
+    
+    <!-- Our main JS file -->
+    <script src="/app/views/js/scriptup.js"></script>
+  <script type="text/javascript">
+  $(function(){
+    $('#rating_3').rating({
+      fx: 'float',
+          image: '/app/views/images/stars.png',
+          width: 20,
+          minimal: 0.6,
+            readOnly: true,
+      url: 'rating.php'
+    });
+  })
+  </script>
+</body>
+</html>

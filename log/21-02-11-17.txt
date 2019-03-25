@@ -1,0 +1,18 @@
+02-11 21:51:50 /api/v1/customer/drivers_catalogue/ | app | token=17756655c3e2146708a24b2cd21dbb5e | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-11 21:52:30 /api/v1/customer/drivers_catalogue/ | app | token=17756655c3e2146708a24b2cd21dbb5e | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-11 21:52:30 {"code":0,"message":"","data":{"drivers":{}}} | 
+________________________________________________________________________________________________________________________________
+02-11 21:52:52 /api/v1/customer/drivers_catalogue/ | app | token=17756655c3e2146708a24b2cd21dbb5e | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-11 21:52:52 {"code":0,"message":"","data":{"drivers":{}}} | 
+________________________________________________________________________________________________________________________________
+02-11 21:53:22 /api/v1/customer/drivers_catalogue/ | app | token=17756655c3e2146708a24b2cd21dbb5e | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-11 21:53:22 {"code":0,"message":"","data":{"drivers":{}}} | 
+________________________________________________________________________________________________________________________________
+02-11 21:56:10 /api/v1/customer/drivers_catalogue/ | app | token=17756655c3e2146708a24b2cd21dbb5e | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-11 21:56:10 {"code":0,"message":"","data":{"drivers":[{"id":46,"name":"Alex danger","avatar":"/get_image/?image=a1648796c66b89df17a084be4111","car_name":"MAz-KamaZ","rating":0,"rate":0,"loaders":"false","capacity":0,"volume":0,"load_type_top":"true","load_type_rear":"true","load_type_side":"true","driver_specialization":"intercity","car_type":""},{"id":45,"name":"джонло","avatar":"/get_image/?image=a1648796c66b89df17a084be4","car_name":"маз","rating":3.9,"rate":1000,"loaders":"","capacity":25,"volume":90,"load_type_top":"true","load_type_rear":"true","load_type_side":"true","driver_specialization":"both","car_type":""},{"id":47,"name":"Васян","avatar":"","car_name":"мазай","rating":4,"rate":1000,"loaders":"","capacity":25,"volume":0,"load_type_top":"true","load_type_rear":"true","load_type_side":"true","driver_specialization":"both","car_type":""},{"id":48,"name":"Васисуалий","avatar":"","car_name":"МАЗ","rating":0,"rate":0,"loaders":"","capacity":56,"volume":12,"load_type_top":"true","load_type_rear":"","load_type_side":"","driver_specialization":"both","car_type":"single"},{"id":49,"name":"Васисуалий","avatar":"/get_image/?image=a1648796c66b89df17a084be41","car_name":"МАЗ","rating":2,"rate":0,"loaders":"","capacity":56,"volume":12,"load_type_top":"true","load_type_rear":"","load_type_side":"","driver_specialization":"both","car_type":"single"},{"id":56,"name":"Василий","avatar":"","car_name":"Маз","rating":0,"rate":100,"loaders":"","capacity":50,"volume":10,"load_type_top":"true","load_type_rear":"true","load_type_side":"false","driver_specialization":"intercity","car_type":"semitrailer"}]}} | 
+________________________________________________________________________________________________________________________________

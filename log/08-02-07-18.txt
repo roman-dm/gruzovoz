@@ -1,0 +1,48 @@
+02-07 08:51:26 /api/v1/driver/registration/ |  | POST | 
+Параметры: | name= Василий phone= 9991112233 country_id= 1 city_id= 1 car_name= Маз car_type= semitrailer body_type_id= 1 capacity= 10 volume= 50 intercity_driver= true in_city_driver= true load_type= {"top":"true","side":"true"} driver_specialization= intercity rate_intercity= 100  |...............................................................................................................................
+02-07 08:51:26 {"code":0,"message":"","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-07 08:51:56 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-07 08:51:56 {"code":0,"message":"","data":{"profile":{"name":"Василий","phone":"","phone_confirmed":"false","car_name":"Маз","car_type":"semitrailer","body_type_id":1,"capacity":50,"volume":10,"load_type":{"top":"true","side":"true"},"intercity_driver":true,"in_city_driver":false,"loaders":"","rate_intercity":100,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+02-07 08:52:12 /api/v1/driver/registration/ |  | POST | 
+Параметры: | name= Василий phone= 9991112233 country_id= 1 city_id= 1 car_name= Маз car_type= semitrailer body_type_id= 1 capacity= 10 volume= 50 intercity_driver= true in_city_driver= true load_type= {"top":"true","side":"true"} driver_specialization= intercity rate_intercity= 100  |...............................................................................................................................
+02-07 08:52:12 {"code":24,"message":"На данное устройство уже зарегистрирован аккаунт","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-07 08:52:27 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-07 08:52:27 {"code":1,"message":"Проблемы с токеном","data":""} | 
+________________________________________________________________________________________________________________________________
+02-07 08:52:52 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-07 08:52:52 {"code":0,"message":"","data":{"profile":{"name":"Василий","phone":"","phone_confirmed":"false","car_name":"Маз","car_type":"semitrailer","body_type_id":1,"capacity":50,"volume":10,"load_type":{"top":"true","side":"true"},"intercity_driver":true,"in_city_driver":false,"loaders":"","rate_intercity":100,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+02-07 08:53:22 /api/v1/driver/registration/ |  | POST | 
+Параметры: | name= Василий phone= 9991112233 country_id= 1 city_id= 1 car_name= Маз car_type= semitrailer body_type_id= 1 capacity= 10 volume= 50 intercity_driver= true in_city_driver= true load_type= {"top":"true","side":"true"} driver_specialization= intercity rate_intercity= 100  |...............................................................................................................................
+02-07 08:53:22 {"code":0,"message":"","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-07 08:53:27 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-07 08:53:27 {"code":0,"message":"","data":{"profile":{"name":"Василий","phone":"","phone_confirmed":"false","car_name":"Маз","car_type":"semitrailer","body_type_id":1,"capacity":50,"volume":10,"load_type":{"top":"true","side":"true"},"intercity_driver":true,"in_city_driver":false,"loaders":"","rate_intercity":100,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+02-07 08:55:49 /api/v1/driver/registration/ |  | POST | 
+Параметры: | name= Василий phone= 9991112233 country_id= 1 city_id= 1 car_name= Маз car_type= semitrailer body_type_id= 1 capacity= 10 volume= 50 intercity_driver= true in_city_driver= true load_type= {"top":"true","side":"true"} rate_intercity= 100  |...............................................................................................................................
+02-07 08:55:49 {"code":10,"message":"Проблемы с регистрацией водителя","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-07 08:56:24 /api/v1/driver/registration/ |  | POST | 
+Параметры: | name= Василий phone= 9991112233 country_id= 1 city_id= 1 car_name= Маз car_type= semitrailer body_type_id= 1 capacity= 10 volume= 50 intercity_driver= true in_city_driver= true load_type= {"top":"true","side":"true"} rate_intercity= 100  |...............................................................................................................................
+02-07 08:56:24 {"code":10,"message":"Проблемы с регистрацией водителя","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-07 08:56:32 /api/v1/driver/registration/ |  | POST | 
+Параметры: | name= Василий phone= 9991112233 country_id= 1 city_id= 1 car_name= Маз car_type= semitrailer body_type_id= 1 capacity= 10 volume= 50 intercity_driver= true in_city_driver= true load_type= {"top":"true","side":"true"} rate_intercity= 100  |...............................................................................................................................
+02-07 08:56:32 {"code":10,"message":"Проблемы с регистрацией водителя","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-07 08:57:14 /api/v1/driver/registration/ |  | POST | 
+Параметры: | name= Василий phone= 9991112233 country_id= 1 city_id= 1 car_name= Маз car_type= semitrailer body_type_id= 1 capacity= 10 volume= 50 intercity_driver= true in_city_driver= true load_type= {"top":"true","side":"true"} rate_intercity= 100  |...............................................................................................................................
+02-07 08:57:14 {"code":0,"message":"","data":{}} | 
+________________________________________________________________________________________________________________________________
+02-07 08:57:27 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-07 08:57:28 {"code":0,"message":"","data":{"profile":{"name":"Василий","phone":"","phone_confirmed":"false","car_name":"Маз","car_type":"semitrailer","body_type_id":1,"capacity":50,"volume":10,"load_type":{"top":"true","side":"true"},"intercity_driver":true,"in_city_driver":true,"loaders":"","rate_intercity":100,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________

@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="ru" class="wide smoothscroll wow-animation">
+<head>
+  <title>ЛК водитель</title>
+  {% include 'header.html' %}
+  {% block header %}
+  {% endblock %}
+
+  <!-- <link rel="stylesheet" href="/app/views/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="/app/views/css/DT_bootstrap.css">
+  <link rel="stylesheet" href="/app/views/css/profile-driver.css">
+  <link rel="stylesheet" href="/app/views/css/jquery.rating.css">
+  <link href="/app/views/css/styleup.css" rel="stylesheet" />
+
+<style>
+  .rd-navbar-static .rd-navbar-nav > li {
+    margin-left: 15px;
+  }
+  .alert{
+    padding: 13px;
+  }
+  label {
+    display: block;
+  }
+  .uploadButton {
+    padding: 14px 20px 16px;
+    margin-bottom: 20px;
+    color: #000;
+    background-color: #ffd630;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.2;
+    white-space: nowrap;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: "Exo 2", sans-serif;
+    letter-spacing: 0.06em;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    transition: .3s all ease;
+    font: inherit;
+    box-sizing: border-box;
+
+  }
+  .uploadButton:hover {
+    color: #000;
+  background-color: #ffbd30;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    {% include 'old-ie.html' %}
+    {% block oldie %}
+    {% endblock %}
+    <header class="page-header bg">
+      {% include 'navi.html' %}
+      {% block navi %}
+      {% endblock %}
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+          </div>
+          <div class="col-md-6">  
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <section class="well well-2">
+        <div class="container text-center">
+          <ul class="nav nav-tabs">
+            <li class="active col-lg-3 driver_tab" data='profile' style='margin-top: 0px;'><a data-toggle="tab" href="#profile"><i class="fa fa-user" aria-hidden="true"></i><span>Мой профиль</span></a></li>
+            <li class='col-lg-3 driver_tab' data='orders' style='margin-top: 0px;'><a data-toggle="tab" href="#orders"><i class="fa fa-bars" aria-hidden="true"></i><span>Мои заказы</span></a></li>
+            <li class='col-lg-3 driver_tab' data='car' style='margin-top: 0px;'><a data-toggle="tab" href="#car"><i class="fa fa-car" aria-hidden="true"></i><span>Мой автомобиль</span></a></li>
+            <li class='col-lg-3 driver_tab' data='subscribe' style='margin-top: 0px;'><a data-toggle="tab" href="#subscription"><i class="fa fa-globe" aria-hidden="true"></i><span>Мои подписки</span></a></li>
+          </ul>
+          <div class='col-lg-12' style='margin-top: 0px;'>
+            <div class="tab-content" style='padding-bottom: 50px;'>
+              <div id="profile" class="tab-pane fade in active">
+                <div style='padding: 50px;'>
+
+                  <div class="col-lg-4">
+                    <div class='div-avatar martop'>
+                      <div class='avatar'>
+                        {% if all_profile.avatar=='' %}
+                          <img src="/app/views/images/noavatar.png" width="306px" height="226px">
+                        {% else %}
+                          <img src="{{all_profile.avatar}}" width="306px" height="226px"/>
+                        {% endif %}
+                      </div>
+                      <a href="#" class="btn btn-sm btn-sunglow offset-3 marbot" id='change_avatar_driver' data-toggle="modal" data-target="#change_avatar" style='margin-top: 60px;'>Изменить аватар</a>
+                      <div style='clear: both;'></div>
+                    </div> 
+
+                    <div class='col-lg-5 col-sm-5 col-xs-5'>
+                      <div class='caption-profile marbot'>Рейтинг:</div>
+                    </div>
+                    <div class='col-lg-2 col-sm-2 col-xs-2 rating' style='margin-left: -10px;'>2.7</div>
+                    <div id="rating_3">
+                      <input type="hidden" class="val" value="2.7"/>
+                      <!-- <input type="hidden" class="votes" value="48"/>    -->      
+                    </div>
+                  </div>
+
+                  <div class="col-lg-8">
+                    <div class='col-lg-3 col-sm-3 col-xs-12'>
+                      <div class='caption-profile marbot'>Имя:</div>
+                    </div>
+                    <div class='col-lg-9 col-sm-9 col-xs-12'>
+                      <input type="text" id='name_driver' class="" autocomplete="off" value='{{all_profile.name}}'/>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-8" style='padding-top: 50px;'>
+                    <div class='col-lg-3 col-sm-3 col-xs-12'>
+                      <div class='caption-profile marbot'>Город:</div>
+                    </div>
+                    <div class='col-lg-8 col-sm-8 col-xs-10'>
+                      <label class="z-104 mfSelect" data-add-placeholder>
+                        <input type="text" class="city" id='profile-driver-from' placeholder="Ваш город" autocomplete="off" value="{% if all_profile.city.name == '' %}{% else %}{{all_profile.city.name}} {{all_profile.city.parent_name|trim}} {{all_profile.city.country_name}}{% endif %}" city-id='{{all_profile.city.id}}' country_id='{{all_profile.city.country_id}}'/>
+                        <ul class="dropdown" id="profile-driver-from-dropdown"></ul>
+                        <div class='loader' data-id-loader='profile-driver-from' style="top: 8px;right: 20px; display: none;"></div>
+                      </label>
+                    </div>
+                    <div class='col-lg-1 col-sm-1 col-xs-2'><i class="fa fa-times delete-city" data-id='profile-driver-from' aria-hidden="true"></i></div>
+                  </div>
+
+                  <div class="col-lg-8" style='padding-top: 50px;'>
+                    <div class='col-lg-3 col-sm-3 col-xs-12'>
+                      <div class='caption-profile marbot'>Телефон:</div>
+                    </div>
+                    <div class='col-lg-5 col-sm-4 col-xs-12'>
+                      <input type="text" class="" autocomplete="off" placeholder="+7 (___) ___-__-__" id='phone-driver-profile' value='{{all_profile.phone}}'/>
+                    </div>
+                    <div class='col-lg-4 col-sm-5 col-xs-12'>
+                    {% if all_profile.phone_confirmed==1 %}
+                      <div class="alert alert-success">
+                        <strong><i class="fa fa-check" aria-hidden="true"></i></strong> Подтвержден
+                      </div>
+                    {% else %}
+                      <a href="#" class="btn btn-sm btn-sunglow" style="float:right">Подтвердить</a>
+                    {% endif %}
+                    </div>
+                  </div>
+<!-- 
+                  <div class="col-lg-8" style='padding-top: 50px;'>
+                    <div class='col-lg-3 col-sm-3 col-xs-12'>
+                      <div class='caption-profile marbot'>Email:</div>
+                    </div>
+                    <div class='col-lg-5 col-sm-4 col-xs-12'>
+                      <input type="text" class="" id='mail_driver' autocomplete="off" value='{{all_profile.sEmail}}' placeholder="Это будет Ваш логин" />
+                    </div>
+                    <div class='col-lg-4 col-sm-5 col-xs-12'>
+                      <div class="alert alert-success">
+                        <strong><i class="fa fa-check" aria-hidden="true"></i></strong> Подтвержден
+                      </div>
+                      <a href="#" class="btn btn-sm btn-sunglow" style="float:right">Подтвердить</a>
+                    </div>
+                  </div> -->
+
+<!--                   <div class="col-lg-8" style='padding-top: 50px;'>
+                    <div class='col-lg-3 col-sm-3 col-xs-12'>
+                      <div class='caption-profile marbot'>Пароль:</div>
+                    </div>
+                    <div class='col-lg-5 col-sm-4 col-xs-12'>
+                      <input type="password" class="" id='pass_driver' autocomplete="off" value='' placeholder="" />
+                    </div>
+                  </div> -->
+
+                  <div class='col-lg-12 martop'><a href="#" class="btn btn-sm btn-sunglow" id='update_profile_driver'>Сохранить изменения</a></div>
+
+                </div>
+                <a href="#" class="" data-toggle="modal" data-target="#result" id='result-link'></a>
+                <div id="result" class="modal fade" role="dialog" >
+                  <div class='modal-dialog'>
+                    <div class='modal-content'>
+                      <div class='modal-header'>
+                        <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                        <h4 class='modal-title'>Статус</h4>
+                      </div>
+                      <div class='modal-body' id='result-modal-body'>
+                        <p></p>
+                      </div>
+                      <div class='modal-footer'>
+                        <button type='button' class='btn btn-default close_reload' data-dismiss='modal'>Закрыть</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="change_avatar" class="modal fade" role="dialog" style="top:10%">
+                 <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close mbd" data-dismiss="modal" data-name='driver'>&times;</button>
+                      <h4 class="modal-title">Загрузка новой фотографии</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>Вы можете загрузить изображение в формате JPG, GIF или PNG.</p>
+
+                      <form id="upload" method="post" action="/api/v1/add_avatar_driver/" enctype="multipart/form-data">
+                        <div id="drop">
+                          Перетащите сюда файл или<br/>
+                          <a style='margin-top: 10px;' class="btn btn-lg btn-sunglow offset-3 marbot" id='btn-file'>Выберите файл</a>
+                          <input type="file" name="upl" />
+                        </div>
+                        <div id='drop2' style='margin-top: 20px;'></div>
+
+                        <ul>
+                          <!-- The file uploads will be shown here -->
+                        </ul>
+                      </form>
+                      <hr>
+                      <p>Если у Вас возникают проблемы с загрузкой,<br/>попробуйте выбрать фотографию меньшего размера.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal" data-name='driver' id='delete-old-avatar'>Удалить текущий аватар</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal" id='save_avatar' style='display:none'>Сохранить</button>
+                      <button type="button" class="btn btn-default mbd" data-name='driver' data-dismiss="modal" id='close-or-delete'>Закрыть</button>
+                    </div>
+                  </div>
+                 </div>
+                </div>
+              </div>
+              <div style="clear: both"></div>
+
+
+
+
+
+              <div id="orders" class="tab-pane fade">
+                <div style='padding: 25px;'>
+                  <div class='col-lg-4' style='padding: 0 0 20px 0; text-align: left'>
+                    <button class="btn btn-info btn-large active tabs_table" data-id='all_table'>Все</button>
+                    <button class="btn btn-info btn-large tabs_table" data-id='now_table'>Текущие</button>
+                    <button class="btn btn-info btn-large tabs_table" data-id='done_table'>Выполненные</button>
+                  </div>
+                  <div style='clear: both;'></div>
+                  <div class="row-fluid tables" name='all_table'>
+                    <div class="block" >
+                      <div class="block-content collapse in">
+                        <div class="span12">
+                          <div id="example_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                            <div class="table-responsive">
+                              <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered dataTable" id="all_table" aria-describedby="example_info">
+                                <thead>
+                                  <tr role="row">
+                                    <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="all_table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">№ заказа</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="all_table" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Имя</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="all_table" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Город (откуда)<br/>Город (куда)</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="all_table" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Дата начала<br/>Дата окончания</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="all_table" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Оплата</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="all_table" rowspan="1" colspan="1" style="width: 110px" aria-label="CSS grade: activate to sort column ascending">Тип груза</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="all_table" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Вес</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="all_table" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Телефон</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="all_table" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Действия</th>
+                                  </tr>
+                                </thead>
+                                <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                {% for order in all_orders %}
+                                  <tr class="{% if loop.index % 2 == 1 %}gradeA odd{% else %}gradeA even{% endif %}">
+                                    <td class="  sorting_1">
+                                      <a class='link_a' href="/detail_order/{{order.id}}/" data-id='{{order.id}}'>{{order.id}}</a>
+                                    </td>
+                                    <td class=" ">{{order.customer.name}}</td>
+                                    <td class=" ">
+                                      {{order.start_city.name}}<br/>
+                                      {% if order.finish_city.id is empty %}
+                                        По городу
+                                      {% else %}
+                                        {{order.finish_city.name}}
+                                      {% endif %}
+                                    </td>
+                                    <td class="center ">
+                                      {{order.start_date}}<br/>
+                                      {% if order.finish_date=='null' %}
+                                        Открытая
+                                      {% else %}
+                                        {{order.finish_date}}
+                                      {% endif %}
+                                    </td>
+                                    <td class=" ">
+                                      {% if order.price > 0 %}
+                                        {{order.price}} 
+                                        {% if order.currency=='rub' %}
+                                          руб.
+                                        {% endif %}
+                                      {% else %}
+                                        Договорная
+                                      {% endif %}<br/>
+                                      {% if order.payment_type=='cash' %}
+                                        Нал
+                                      {% elseif order.payment_type=='non_cash' %}
+                                        Безнал
+                                      {% elseif order.payment_type=='both' %}
+                                        Нал/Безнал
+                                      {% endif %}
+                                    </td>
+                                    <td class="center ">{{order.cargo_name}}</td>
+                                    <td class="center ">
+                                      {{order.cargo_weight}} 
+                                      {% if order.weight_unit=='kilo' %}
+                                        кг
+                                      {% elseif order.weight_unit=='ton' %}
+                                        тонн
+                                      {% endif %}
+                                    </td>
+                                    <td class="center ">+79123456789</td>
+                                    <td class="group_icons">
+                                      <a class='link_a' href="/detail_order/{{order.id}}/">
+                                        <i class="fa fa-pencil-square-o edit_icon" aria-hidden="true"></i>
+                                      </a>
+                                      <a data-target="#ask" data-toggle="modal" href="#">
+                                        <i class="fa fa-trash delete_icon" id-order="{{order.id}}" aria-hidden="true"></i>
+                                      </a>
+                                    </td>
+                                  </tr>
+                                {% endfor %} 
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-fluid tables" name='now_table' style='display: none'>    
+                    <div class='block'>
+                      <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered dataTable" id="now_table" aria-describedby="example_info">
+                        <thead>
+                                  <tr role="row">
+                                    <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="now_table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">№ заказа</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="now_table" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Имя</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="now_table" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Город (откуда)<br/>Город (куда)</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="now_table" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Дата начала<br/>Дата окончания</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="now_table" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Оплата</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="now_table" rowspan="1" colspan="1" style="width: 110px" aria-label="CSS grade: activate to sort column ascending">Тип груза</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="now_table" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Вес</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="now_table" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Телефон</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="now_table" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Действия</th>
+                                  </tr>
+                                </thead>
+                                <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                {% for order in current_orders %}
+                                  <tr class="{% if loop.index % 2 == 1 %}gradeA odd{% else %}gradeA even{% endif %}">
+                                    <td class="  sorting_1">
+                                      <a class='link_a' href="/detail_order/{{order.id}}/" data-id='{{order.id}}'>{{order.id}}</a>
+                                    </td>
+                                    <td class=" ">{{order.customer.name}}</td>
+                                    <td class=" ">
+                                      {{order.start_city.name}}<br/>
+                                      {% if order.finish_city.id is empty %}
+                                        По городу
+                                      {% else %}
+                                        {{order.finish_city.name}}
+                                      {% endif %}
+                                    </td>
+                                    <td class="center ">
+                                      {{order.start_date}}<br/>
+                                      {% if order.finish_date=='null' %}
+                                        Открытая
+                                      {% else %}
+                                        {{order.finish_date}}
+                                      {% endif %}
+                                    </td>
+                                    <td class=" ">
+                                      {% if order.price > 0 %}
+                                        {{order.price}} 
+                                        {% if order.currency=='rub' %}
+                                          руб.
+                                        {% endif %}
+                                      {% else %}
+                                        Договорная
+                                      {% endif %}<br/>
+                                      {% if order.payment_type=='cash' %}
+                                        Нал
+                                      {% elseif order.payment_type=='non_cash' %}
+                                        Безнал
+                                      {% elseif order.payment_type=='both' %}
+                                        Нал/Безнал
+                                      {% endif %}
+                                    </td>
+                                    <td class="center ">{{order.cargo_name}}</td>
+                                    <td class="center ">
+                                      {{order.cargo_weight}} 
+                                      {% if order.weight_unit=='kilo' %}
+                                        кг
+                                      {% elseif order.weight_unit=='ton' %}
+                                        тонн
+                                      {% endif %}
+                                    </td>
+                                    <td class="center ">+79123456789</td>
+                                    <td class="group_icons">
+                                      <a class='link_a' href="/detail_order/{{order.id}}/">
+                                        <i class="fa fa-pencil-square-o edit_icon" aria-hidden="true"></i>
+                                      </a>
+                                      <a data-target="#ask" data-toggle="modal" href="#">
+                                        <i class="fa fa-trash delete_icon" id-order="{{order.id}}" aria-hidden="true"></i>
+                                      </a>
+                                    </td>
+                                  </tr>
+                                {% endfor %} 
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="row-fluid tables" name='done_table'  style='display: none'>
+                            <div class='block'>
+                              <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered dataTable" id="done_table" aria-describedby="example_info">
+                                <thead>
+                                  <tr role="row">
+                                    <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="done_table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">№ заказа</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="done_table" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Имя</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="done_table" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Город (откуда)<br/>Город (куда)</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="done_table" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Дата начала<br/>Дата окончания</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="done_table" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Оплата</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="done_table" rowspan="1" colspan="1" style="width: 110px" aria-label="CSS grade: activate to sort column ascending">Тип груза</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="done_table" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Вес</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="done_table" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Телефон</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="done_table" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Действия</th>
+                                  </tr>
+                                </thead>
+                                <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                {% for order in old_orders %}
+                                  <tr class="{% if loop.index % 2 == 1 %}gradeA odd{% else %}gradeA even{% endif %}">
+                                    <td class="  sorting_1">
+                                      <a class='link_a' href="/detail_order/{{order.id}}/" data-id='{{order.id}}'>{{order.id}}</a>
+                                    </td>
+                                    <td class=" ">{{order.customer.name}}</td>
+                                    <td class=" ">
+                                      {{order.start_city.name}}<br/>
+                                      {% if order.finish_city.id is empty %}
+                                        По городу
+                                      {% else %}
+                                        {{order.finish_city.name}}
+                                      {% endif %}
+                                    </td>
+                                    <td class="center ">
+                                      {{order.start_date}}<br/>
+                                      {% if order.finish_date=='null' %}
+                                        Открытая
+                                      {% else %}
+                                        {{order.finish_date}}
+                                      {% endif %}
+                                    </td>
+                                    <td class=" ">
+                                      {% if order.price > 0 %}
+                                        {{order.price}} 
+                                        {% if order.currency=='rub' %}
+                                          руб.
+                                        {% endif %}
+                                      {% else %}
+                                        Договорная
+                                      {% endif %}<br/>
+                                      {% if order.payment_type=='cash' %}
+                                        Нал
+                                      {% elseif order.payment_type=='non_cash' %}
+                                        Безнал
+                                      {% elseif order.payment_type=='both' %}
+                                        Нал/Безнал
+                                      {% endif %}
+                                    </td>
+                                    <td class="center ">{{order.cargo_name}}</td>
+                                    <td class="center ">
+                                      {{order.cargo_weight}} 
+                                      {% if order.weight_unit=='kilo' %}
+                                        кг
+                                      {% elseif order.weight_unit=='ton' %}
+                                        тонн
+                                      {% endif %}
+                                    </td>
+                                    <td class="center ">+79123456789</td>
+                                    <td class="group_icons">
+                                      <!-- <a class='link_a' href="/detail_order/{{order.id}}/">
+                                        <i class="fa fa-pencil-square-o edit_icon" aria-hidden="true"></i>
+                                      </a>
+                                      <a data-target="#ask" data-toggle="modal" href="#">
+                                        <i class="fa fa-trash delete_icon" id-order="{{order.id}}" aria-hidden="true"></i>
+                                      </a> -->
+                                    </td>
+                                  </tr>
+                                {% endfor %} 
+                                </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              
+
+              <div id="car" class="tab-pane fade">
+              <div style='padding: 25px;'>
+                  <div class="row-fluid">
+                    <div class="block">
+                      <form class='rd-mailform' method="post" action="">
+                        <div class='col-lg-4'>
+                          <!-- <div class='fst'>
+                            <div class='caption-profile-avto'>
+                              Мой город:
+                            </div>
+                            <div class='col-lg-10'>
+                              <label class="z-104 mfSelect" data-add-placeholder>
+                                <input type="text" class="city" id='city-driver' placeholder="Начните вводить город" city-id="" autocomplete="off"/>
+                                <ul class="dropdown" id="city_driver_from"></ul>
+                                <div class='loader' data-id-loader='city-driver' style="top: 8px;right: 20px; display: none;"></div>
+                              </label>
+                            </div>
+                            <div class='col-lg-1 col-sm-1 col-xs-2'><i class="fa fa-times delete-city" data-id='city-driver' aria-hidden="true"></i></div>
+                          </div> -->
+                          <input type='hidden' id='int-for-spec' value="{{all_profile.driver_specialization}}"/>
+
+                          <div class='fst'>
+                            <div class='caption-profile-avto'>
+                              Зона передвижения:
+                            </div>
+                            <div class="int_search col-lg-12">
+                              <input type="checkbox" class="checkbox" id="checkbox-10" name="checkbox"/>
+                              <label for="checkbox-10">По городу</label>
+                            </div>
+                            <div class="int_search col-lg-12">
+                              <input type="checkbox" class="checkbox" id="checkbox-11" name="checkbox"/>
+                              <label for="checkbox-11">Межгород</label>
+                            </div>
+                            <div class="int_search col-lg-12" style='display: none' id='loaders'>
+                              <input type="checkbox" class="checkbox" id="checkbox-12" name="checkbox" data='{{all_profile.loaders}}'/>
+                              <label for="checkbox-12">Грузчики</label>
+                            </div>
+                          </div>
+
+                          <div style="clear: both"></div>
+                          <div class='snd'>
+                            <div class='caption-profile-avto'>
+                              Стоимость:
+                            </div>
+                            <div class='line-avto' id='city-price' style='display: none'>
+                              <div class='subcaption-profile-avto col-lg-4'>
+                                По городу
+                              </div>
+                              <div class='col-lg-5 nopad'>
+                                <input type=text id='rate' value='{{all_profile.rate}}'/>
+                              </div>
+                              <div class='col-lg-3 si'>
+                                руб/ч
+                              </div>
+                            </div>
+                            <div style="clear: both"></div>
+                            <!-- <div class='line-avto' id='ctc-price' style='display: none'>
+                              <div class='subcaption-profile-avto col-lg-4'>
+                                Межгород
+                              </div>
+                              <div class='col-lg-5 nopad'>
+                                <input type=text/ id='city-rate'>
+                              </div>
+                              <div class='col-lg-3 si'>
+                                руб/км
+                              </div>
+                            </div> -->
+                          </div>
+                          <div style="clear: both"></div>
+                        </div>
+                        
+                        <div class='col-lg-4'>
+                          <div class='fst'>
+                            <div class='caption-profile-avto'>
+                              Параметры автомобиля:
+                            </div>
+                            <div class='line-avto'>
+                              <div class='subcaption-profile-avto col-lg-6'>
+                                Марка:
+                              </div>
+                              <div class='col-lg-6 nopad'>
+                                <input type=text id='car_name' value='{{all_profile.car_name}}'/>
+                              </div>
+                            </div>
+                            <div style="clear: both"></div>
+                            <div class='line-avto'>
+                              <div class='subcaption-profile-avto col-lg-6'>
+                                Грузоподъемность:
+                              </div>
+                              <div class='col-lg-4 nopad'>
+                                <input type=text id="capacity" value='{{all_profile.capacity}}'/>
+                              </div>
+                              <div class='col-lg-2 si'>
+                                тонн
+                              </div>
+                            </div>
+                            <div style="clear: both"></div>
+                            <div class='line-avto'>
+                              <div class='subcaption-profile-avto col-lg-6'>
+                                Объем:
+                              </div>
+                              <div class='col-lg-4 nopad'>
+                                <input type=text id="volume" value="{{all_profile.volume}}" />
+                              </div>
+                              <div class='col-lg-2 si'>
+                                м3
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class='col-lg-4'>
+                          <div class='fst'>
+                            <div class='caption-profile-avto'>
+                              Тип кузова:
+                            </div>
+                            <div class='col-lg-12'>
+                              <label class="z-104 mfSelect" data-add-placeholder="">
+                                
+                                	{% for types in body_types %}
+                                		{% if types.id==all_profile.body_type_id%}
+                                			<div class="value" id="type" data="{{types.name}}" data-name="{{types.id}}" style='color:#000'>{{types.name}}</div>
+                                		{% endif %}
+                                		{% if all_profile.body_type_id=='' %}
+                                			<div class="value" id="type">Выберите</div>
+                                		{% endif %}
+                                	{% endfor %}
+                                
+                                <ul class="dropdown" id="type-dropdown" style="margin-top: 0px; opacity: 0; visibility: hidden;">
+
+                                  {% for types in body_types %}
+                                  	<li class="option type-item" id='ti-{{loop.index}}' data-name="{{types.name}}" data='{{types.id}}'>{{types.name}}</li>
+                                  {% endfor %}
+                                </ul>
+                                <span class="mfPlaceHolder"></span>
+                              </label>
+                            </div>
+                          </div>
+                          <div style="clear: both"></div>
+
+                          <div class='snd'>
+                            <div class='caption-profile-avto'>
+                              Тип загрузки:
+                            </div>
+                            <div class="int_search col-lg-12">
+                              <input type="checkbox" class="checkbox ch-type" data-type='{{all_profile.load_type_top}}'  id="driver-profile-checkbox-1" name=""/>
+                              <label for="driver-profile-checkbox-1">Верхняя</label>
+                            </div>
+                            <div class="int_search col-lg-12">
+                              <input type="checkbox" class="checkbox ch-type" data-type='{{all_profile.load_type_rear}}'  id="driver-profile-checkbox-2" name=""/>
+                              <label for="driver-profile-checkbox-2">Боковая</label>
+                            </div>
+                            <div class="int_search col-lg-12">
+                              <input type="checkbox" class="checkbox ch-type" data-type='{{all_profile.load_type_side}}' id="driver-profile-checkbox-3" name=""/>
+                              <label for="driver-profile-checkbox-3">Задняя</label>
+                            </div>
+                          </div>
+                          <div style="clear: both"></div>
+
+                          <div class='snd'>
+                            <div class='caption-profile-avto'>
+                              Тип автомобиля:
+                            </div>
+                            <div class='col-lg-12'>
+                              <label class="z-104 mfSelect" data-add-placeholder="">
+                                <div class="value" id="typeavto" data-type='{{all_profile.car_type}}' data=''>Выберите</div>
+                                <ul class="dropdown" id="typeavto-dropdown" style="margin-top: 0px; opacity: 0; visibility: hidden;">
+                                  <li class="option typeavto-item" id='tai-1' data-name="Одиночка" data='single'>Одиночка</li>
+                                  <li class="option typeavto-item" id='tai-2' data-name="Полуприцеп" data='semitrailer'>Полуприцеп </li>
+                                  <li class="option typeavto-item" id='tai-3' data-name="Одиночка-прицеп" data='trailer'>Одиночка-прицеп </li>
+                                </ul>
+                                <span class="mfPlaceHolder"></span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                      <div style="clear: both"></div>
+                      <a href="#" class="btn btn-lg btn-sunglow offset-3" style='margin-top: 20px;' id='update_car_driver'>Сохранить изменения</a>
+                    </div>
+                  </div>
+                </div>
+                <div id="result_car" class="modal fade" role="dialog" >
+                  <div class='modal-dialog'>
+                    <div class='modal-content'>
+                      <div class='modal-header'>
+                        <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                        <h4 class='modal-title'>Статус</h4>
+                      </div>
+                      <div class='modal-body' id='result-car-modal-body'>
+                        <p></p>
+                      </div>
+                      <div class='modal-footer'>
+                        <button type='button' class='btn btn-default close_reload' data-dismiss='modal'>Закрыть</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="subscription" class="tab-pane fade">
+
+                <div style='padding: 25px;'>
+                  <div class="row-fluid">
+                    <div class="block">
+
+                      <div id="accordion-js" class="accordion">
+                        <section id='new_sub'>
+                          <div class='accordion-item' id='subscription-tab-new_sub' style='padding:30px;{% if subscribes|length >= 3 %}display: none{% endif %}'><h3>Создать новую подписку</h3></div>
+                          <div class="row flow-offset-1 product-info subscription-div" style='margin-top: 0px;' id='subscription-subtab-new_sub'>
+                            <div class="col-lg-12">
+                              <div class="product-info-body text-center text-md-left">
+                                <fieldset>
+                                  <div class='col-lg-12 martop'>
+                                    <div class='col-lg-12 martop'>
+                                      <div class='caption-subscription marbot'>Город</div>
+                                      <div class='col-lg-9'>
+                                        <div class='row'>
+                                          <div class='subcaption-subscription col-lg-3'>Отправления:<span class='compulsory_attr'>&#042;</span></div>
+                                          <div class='col-lg-9'>
+                                            <div class='col-lg-11'>
+                                              <label class="z-104 mfSelect" data-add-placeholder>
+                                                <input type="text" class="city" id='subscription-city-ot-n' placeholder="Начните вводить название города" city-id="" autocomplete="off"/>
+                                                <ul class="dropdown" id="subscription-ot-n"></ul>
+                                                <div class='loader' data-id-loader='subscription-city-ot-n' style="top: 8px;right: 20px; display: none;"></div>
+                                              </label>
+                                              <div class='err' id='err_city_ot-subscription-n' style='display: none'>Выберите город отправления из списка</div>
+                                            </div>
+                                            <div class='col-lg-1 col-sm-1 col-xs-2'><i class="fa fa-times delete-city" data-id='subscription-city-ot-n' aria-hidden="true"></i></div>
+                                          </div>
+                                        </div>
+                                        <div class='row row-sub-to' style="display: none" id='subscription-to-div-n'>
+                                          <div class='subcaption-subscription col-lg-3'>Назначения:<span class='compulsory_attr'>&#042;</span></div>
+                                          <div class='col-lg-9'>
+                                            <div class='col-lg-11'>
+                                              <label class="z-103 mfSelect" data-add-placeholder>
+                                                <input type="text" class="city" id='subscription-city-to-n' placeholder="Начните вводить название города" city-id="" autocomplete="off"/>
+                                                <ul class="dropdown" id="subscription-to-n"></ul>
+                                                <div class='loader' data-id-loader='subscription-city-to-n' style="top: 8px;right: 20px; display: none;"></div>
+                                              </label>
+                                              <div class='err' id='err_city_to-subscription-n' style='display: none'>Выберите город назначения из списка</div>
+                                            </div>
+                                            <div class='col-lg-1 col-sm-1 col-xs-2'><i class="fa fa-times delete-city" data-id='subscription-city-to-n' aria-hidden="true"></i></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class='col-md-3 radio-item'>
+                                        <div class="int_search" style='margin-top: 15px;'>
+                                          <input type="checkbox" class="checkbox" id="subscription-checkbox-incity-n" checked="checked" name=""/>
+                                          <label for="subscription-checkbox-incity-n">По городу</label>
+                                        </div>
+                                        <div class="int_search" style='margin-top: 40px;' data-loop='{{loop.index}}'>
+                                          <input type="checkbox" class="checkbox" id="subscription-checkbox-intercity-n" name=""/>
+                                          <label for="subscription-checkbox-intercity-n">Межгород</label>
+                                        </div>
+                                      </div>
+                                      <div style='clear:both;'></div>
+                                      <hr>
+                                      <div class='caption-subscription marbot martop'>Оплата<span class='compulsory_attr'>&#042;</span></div>
+                                      <div class='err' id='err_pay_status-subscription-n' style='display: none;'>Выберите цену и способ оплаты</div>
+                                      <div class="col-lg-12">
+                                        <div class='int_search'>
+                                          <div class='col-lg-4' style='padding: 0px 0px 20px 0px;'>
+                                            <div class="pull-left" style="padding-top: 15px;">
+                                              <input type="checkbox" class="checkbox" id="subscription-checkbox-fixprice-n" name="">
+                                              <label for="subscription-checkbox-fixprice-n">Фиксированная цена</label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class='int_search'>
+                                          <div class='col-lg-4' style='padding-bottom: 20px;'>                                  
+                                            <div class="pull-left">
+                                              <input type="checkbox" class="checkbox" id="subscription-checkbox-allprice-n" name=""/>
+                                              <label for="subscription-checkbox-allprice-n">По договоренности</label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div style='clear:both'></div>
+                                      <div class="col-lg-12">
+                                        <div class='int_search'>
+                                          <div class='col-lg-4' style='padding: 0px 0px 20px 0px;'>
+                                            <div class="pull-left" style="padding-top: 15px;">
+                                              <input type="checkbox" class="checkbox" id="subscription-checkbox-cash_pay-n" name="radio"/>
+                                              <label for="subscription-checkbox-cash_pay-n">Оплата наличными</label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class='int_search martop'>
+                                          <div class='col-lg-4' style='padding-bottom: 20px;'>                                  
+                                            <div class="pull-left">
+                                              <input type="checkbox" class="checkbox" id="subscription-checkbox-non_cash_pay-n" name="radio"/>
+                                              <label for="subscription-checkbox-non_cash_pay-n">Безналичный расчет</label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div style='clear:both'></div>
+                                      <hr>
+                                      <div class='caption-subscription marbot martop'>Информация о грузе</div>
+                                      <div class='col-lg-9'>
+                                        <div class='row'>
+                                          <div class='subcaption-subscription col-lg-3'>Вес:<span class='compulsory_attr'>&#042;</span></div>
+                                          <div class='col-lg-9'>
+                                            <div class='col-lg-5 col-sm-6'>
+                                              <label class="z-104 mfSelect" data-add-placeholder>
+                                                <input type="text" class="" id='subscription-cargo_weight-ot-n' placeholder="Минимальный вес" autocomplete="off"/>
+                                              </label>
+                                              <div class='err' id='err_weight_ot-subscription-n' style='display: none'>Введите вес</div>
+                                            </div>
+                                            <div class='col-lg-2'>
+                                              <div class='little-hr'></div>
+                                            </div>
+                                            <div class='col-lg-5 col-sm-6'>
+                                              <label class="z-104 mfSelect" data-add-placeholder>
+                                                <input type="text" class="" id='subscription-cargo_weight-to-n' placeholder="Максимальный вес" autocomplete="off"/>
+                                              </label>
+                                              <div class='err' id='err_weight_to-subscription-n' style='display: none'>Введите вес</div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class='subcaption-subscription col-lg-3'>кг</div>
+                                      <div style='clear:both'></div>  
+                                      <hr>
+                                      <div class='caption-subscription marbot martop'>Даты<span class='compulsory_attr'>&#042;</span></div>
+                                      <div class='col-lg-12 martop marbot'>
+                                        <div class="int_search" data-loop='n'>
+                                          <input type="checkbox" class="checkbox" id="subscription-checkbox-open_date-n" name=""/>
+                                          <label for="subscription-checkbox-open_date-n">Открытая дата</label>
+                                        </div>
+                                      </div>
+                                      <div class="martop" id='subscription-dates-n'>
+                                        <div class="pull-left col-lg-6 col-sm-6">
+                                          <!-- <div class="date-start">Дата начала</div> -->
+                                          <input class='datepicker cursor' readonly type='text' id='subscription-startdatetask-n' placeholder='Начало'/>
+                                          <div class='err' id='err_startdate-subscription-n' style="display: none;">Выберите дату начала</div>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6" style="margin-top: 0px;">
+                                          <!-- <div class="date-end">Дата окончания</div> -->
+                                          <input class='datepicker cursor' readonly type='text' id='subscription-enddatetask-n' placeholder='Конец'/>
+                                          <div class='err' id='err_enddate-subscription-n' style="display: none;">Выберите дату окончания</div>
+                                        </div>
+                                      </div>
+                                      <div style='clear:both'></div>
+                                      <div class="mfControls btn-group text-center col-lg-12 marbot martop">
+                                        <a href='#new_sub'><button class="btn btn-sm btn-sunglow marbot" type="submit" id="add-subscription" style="float:none; margin-top: 20px;">Создать подписку</button></a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </fieldset>
+                              </div>
+                            </div>
+                          </div>
+                          <hr>
+                        </section>
+                        {% for sub in subscribes %}
+                        
+                        <section id='sub_{{loop.index}}'>
+                        <div id='sub-mega-div-{{loop.index}}' style='position: relative;'>
+                          <div class='col-lg-4' style='margin-top: 39px;text-align-left;'>
+                            <div class="int_search" id='subscription-div-active-{{loop.index}}' style='margin-left: 60px;' data-loop-id='{{loop.index}}' data-id='{{sub.id}}'>
+                              <input type="checkbox" class="checkbox subscription-active-checkbox" id="subscription-active-checkbox-{{loop.index}}" name="" {% if sub.active=="true" %}checked="checked"{% endif %}/>
+                              <label for="subscription-checkbox-active-{{loop.index}}">{% if sub.active=="true" %}Подписка активна{% else %}Подписка не активна{% endif %}</label>
+                            </div>
+                          </div>
+                          <div class='col-lg-4 sub-right'>
+                            <div class="btn btn-danger delete_subscribe inline-block" data-loop='{{loop.index}}' id='delete_subscribe-{{loop.index}}' data-id="{{sub.id}}">
+                              Удалить подписку
+                            </div>
+                            <div class='go-filter inline-block btn btn-default' data-loop='{{loop.index}}' id='go-filter-{{loop.index}}' data-id="{{sub.id}}"><i class="fa fa-filter" aria-hidden="true"></i></div>
+                          </div>
+                        <div class='accordion-item' id='subscription-tab-{{loop.index}}'>
+                          <h3 class='sub-left' style='color:{% if sub.active=="true" %}#d24b4b{% else %}#CDD1DA{% endif %}'>Подписка №{{loop.index}}</h3>
+                        </div>
+                        <div class="row flow-offset-1 product-info subscription-div" style='margin-top: 0px;' id='subscription-subtab-sub-{{loop.index}}'>
+                          <div style='clear: both;'></div>
+                          <div class="col-lg-12">
+                            <div class="product-info-body text-center text-md-left">
+                              <fieldset>
+                                <div class='col-lg-12 martop'>
+                                  <div class='col-lg-12 martop'>
+                                    <div class='caption-subscription marbot'>Город</div>
+                                    <div class='col-lg-9'>
+                                      <div class='row'>
+                                        <div class='subcaption-subscription col-lg-3'>Отправления:<span class='compulsory_attr'>&#042;</span></div>
+                                        <div class='col-lg-9'>
+                                          <div class='col-lg-11'>
+                                            <label class="z-104 mfSelect" data-add-placeholder>
+                                              <input type="text" value='{{sub.start_city.name}} {{sub.start_city.parent_name}} {{sub.start_city.country_name}}' class="city" id='subscription-city-ot-{{loop.index}}' placeholder="Начните вводить название города" city-id="{{sub.start_city.id}}" autocomplete="off"/>
+                                              <ul class="dropdown" id="subscription-ot-{{loop.index}}"></ul>
+                                              <div class='loader' data-id-loader='subscription-city-ot-{{loop.index}}' style="top: 8px;right: 20px; display: none;"></div>
+                                            </label>
+                                            <div class='err' id='err_city_ot-subscription-{{loop.index}}' style='display: none'>Выберите город отправления из списка</div>
+                                          </div>
+                                          <div class='col-lg-1 col-sm-1 col-xs-2'><i class="fa fa-times delete-city" data-id='subscription-city-ot-{{loop.index}}' aria-hidden="true"></i></div>
+                                        </div>
+                                      </div>
+                                      
+                                      <div class='row' id='subscription-to-div-{{loop.index}}' {% if sub.finish_city is not defined %}style='display: none;'{% endif %}>
+                                        <div class='subcaption-subscription col-lg-3'>Назначения:<span class='compulsory_attr'>&#042;</span></div>
+                                        <div class='col-lg-9'>
+                                          <div class='col-lg-11'>
+                                            <label class="z-103 mfSelect" data-add-placeholder>
+                                              <input type="text" value='{% if sub.finish_city is defined %}{{sub.finish_city.name}} {{sub.finish_city.parent_name}} {{sub.finish_city.country_name}}{% endif %}' class="city" id='subscription-city-to-{{loop.index}}' placeholder="Начните вводить название города" city-id="{{sub.finish_city.id}}" autocomplete="off"/>
+                                              <ul class="dropdown" id="subscription-to-{{loop.index}}"></ul>
+                                              <div class='loader' data-id-loader='subscription-city-to-{{loop.index}}' style="top: 8px;right: 20px; display: none;"></div>
+                                            </label>
+                                            <div class='err' id='err_city_to-subscription-{{loop.index}}' style='display: none'>Выберите город назначения из списка</div>
+                                          </div>
+                                          <div class='col-lg-1 col-sm-1 col-xs-2'><i class="fa fa-times delete-city" data-id='subscription-city-to-{{loop.index}}' aria-hidden="true"></i></div>
+                                        </div>
+                                      </div>
+                                      
+                                    </div>
+                                    <div class='col-md-3 radio-item'>
+                                      <div class="int_search" style='margin-top: 15px;'>
+                                        <input type="checkbox" class="checkbox" id="subscription-checkbox-incity-{{loop.index}}" checked="checked" name=""/>
+                                        <label for="subscription-checkbox-incity-{{loop.index}}">По городу</label>
+                                      </div>
+                                      <div class="int_search" style='margin-top: 40px;' data-loop='{{loop.index}}'>
+                                        <input type="checkbox" class="{% if sub.finish_city.id!='' %}ch_new{% endif %} checkbox" id="subscription-checkbox-intercity-{{loop.index}}" {% if sub.finish_city.id!='' %}checked="checked"{% endif %} name=""/>
+                                        <label for="subscription-checkbox-intercity-{{loop.index}}">Межгород</label>
+                                      </div>
+                                    </div>
+                                    <div style='clear:both;'></div>
+                                    <hr>
+                                    <div class='caption-subscription marbot martop'>Оплата<span class='compulsory_attr'>&#042;</span></div>
+                                    <div class='err' id='err_pay_status-subscription-{{loop.index}}' style='display: none;'>Выберите цену и способ оплаты</div>
+
+                                    {% set pmc=false %}
+                                    {% set pmn=false %}
+                                    {% if sub.payment_method=='cash' %}
+                                      {% set pmc=true %}
+                                    {% endif %}
+                                    {% if sub.payment_method=='non_cash' %}
+                                      {% set pmn=true %}
+                                    {% endif %}
+                                    {% if sub.payment_method=='both' %}
+                                      {% set pmc=true %}
+                                      {% set pmn=true %}
+                                    {% endif %}
+
+                                    {% set pto=false %}
+                                    {% set ptf=false %}
+                                    {% if sub.payment_type=='open' %}
+                                      {% set pto=true %}
+                                    {% endif %}
+                                    {% if sub.payment_type=='fixed' %}
+                                      {% set ptf=true %}
+                                    {% endif %}
+                                    {% if sub.payment_type=='both' %}
+                                      {% set pto=true %}
+                                      {% set ptf=true %}
+                                    {% endif %}
+                                    <div class="col-lg-12">
+                                      <div class='int_search'>
+                                        <div class='col-lg-4' style='padding: 0px 0px 20px 0px;'>
+                                          <div class="pull-left" style="padding-top: 15px;">
+                                            <input type="checkbox" class="checkbox {% if ptf %}ch_new{% endif %}" id="subscription-checkbox-fixprice-{{loop.index}}" {% if ptf %}checked="checked"{% endif %} name="">
+                                            <label for="subscription-checkbox-fixprice-{{loop.index}}">Фиксированная цена</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class='int_search'>
+                                        <div class='col-lg-4' style='padding-bottom: 20px;'>                                  
+                                          <div class="pull-left">
+                                            <input type="checkbox" class="checkbox {% if pto %}ch_new{% endif %}" id="subscription-checkbox-allprice-{{loop.index}}" {% if pto %}checked="checked"{% endif %} name=""/>
+                                            <label for="subscription-checkbox-allprice-{{loop.index}}">По договоренности</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div style='clear:both'></div>
+                                    <div class="col-lg-12">
+                                      <div class='int_search'>
+                                        <div class='col-lg-4' style='padding: 0px 0px 20px 0px;'>
+                                          <div class="pull-left" style="padding-top: 15px;">
+                                            <input type="checkbox" class="checkbox {% if pmc %}ch_new{% endif %}" id="subscription-checkbox-cash_pay-{{loop.index}}" {% if pmc %}checked="checked"{% endif %} name="radio"/>
+                                            <label for="subscription-checkbox-cash_pay-{{loop.index}}">Оплата наличными</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class='int_search martop'>
+                                        <div class='col-lg-4' style='padding-bottom: 20px;'>                                  
+                                          <div class="pull-left">
+                                            <input type="checkbox" class="checkbox {% if pmn %}ch_new{% endif %}" id="subscription-checkbox-non_cash_pay-{{loop.index}}" {% if pmn %}checked="checked"{% endif %} name="radio"/>
+                                            <label for="subscription-checkbox-non_cash_pay-{{loop.index}}">Безналичный расчет</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div style='clear:both'></div>
+                                    <hr>
+                                    <div class='caption-subscription marbot martop'>Информация о грузе</div>
+                                    <div class='col-lg-9'>
+                                      <div class='row'>
+                                        <div class='subcaption-subscription col-lg-3'>Вес:<span class='compulsory_attr'>&#042;</span></div>
+                                        <div class='col-lg-9'>
+                                          <div class='col-lg-5 col-sm-6'>
+                                            <label class="z-104 mfSelect" data-add-placeholder>
+                                              <input type="text" class="" value='{{sub.min_killo}}' id='subscription-cargo_weight-ot-{{loop.index}}' placeholder="Минимальный вес" autocomplete="off"/>
+                                            </label>
+                                            <div class='err' id='err_weight_ot-subscription-{{loop.index}}' style='display: none'>Введите вес</div>
+                                          </div>
+                                          <div class='col-lg-2'>
+                                            <div class='little-hr'></div>
+                                          </div>
+                                          <div class='col-lg-5 col-sm-6'>
+                                            <label class="z-104 mfSelect" data-add-placeholder>
+                                              <input type="text" class="" value='{{sub.max_killo}}' id='subscription-cargo_weight-to-{{loop.index}}' placeholder="Максимальный вес" autocomplete="off"/>
+                                            </label>
+                                            <div class='err' id='err_weight_to-subscription-{{loop.index}}' style='display: none'>Введите вес</div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class='subcaption-subscription col-lg-3'>кг</div>
+                                    <div style='clear:both'></div>  
+                                    <hr>
+                                    <div class='caption-subscription marbot martop'>Даты<span class='compulsory_attr'>&#042;</span></div>
+                                    <div class='col-lg-12 martop marbot'>
+                                      <div class="int_search" data-loop='{{loop.index}}'>
+                                        <input type="checkbox" class="checkbox {% if sub.finish_date=='' %}ch_new{% endif %}" id="subscription-checkbox-open_date-{{loop.index}}" {% if sub.finish_date=='' %} checked="checked"{% endif %} name=""/>
+                                        <label for="subscription-checkbox-open_date-{{loop.index}}">Открытая дата</label>
+                                      </div>
+                                    </div>
+                                    <div class="martop" id='subscription-dates-{{loop.index}}' {% if sub.finish_date=='' %}style="display:none"{% endif %}>
+                                      <div class="pull-left col-lg-6 col-sm-6">
+                                        <!-- <div class="date-start">Дата начала</div> -->
+                                        <input class='datepicker cursor' readonly type='text' id='subscription-startdatetask-{{loop.index}}' value='{{sub.start_date|date("d.m.Y")}}' placeholder='Начало'/>
+                                        <div class='err' id='err_startdate-subscription-{{loop.index}}' style="display: none;">Выберите дату начала</div>
+                                      </div>
+                                      <div class="col-lg-6 col-sm-6" style="margin-top: 0px;">
+                                        <!-- <div class="date-end">Дата окончания</div> -->
+                                        <input class='datepicker cursor' readonly value='{% if sub.finish_date!='' %}{{sub.finish_date|date("d.m.Y")}}{% endif %}' type='text' id='subscription-enddatetask-{{loop.index}}' placeholder='Конец'/>
+                                        <div class='err' id='err_enddate-subscription-{{loop.index}}' style="display: none;">Выберите дату окончания</div>
+                                      </div>
+                                    </div>
+                                    <div style='clear:both'></div>
+                                    <div class="mfControls btn-group text-center col-lg-12 marbot martop">
+                                      <a href='#sub_{{loop.index}}'><button class="btn btn-sm btn-sunglow marbot save_sub" type="submit" id="edit-subscription-{{loop.index}}" data-loop-id='{{loop.index}}' sub-id='{{sub.id}}' style="float:none; margin-top: 20px;">Сохранить изменения в подписке №{{loop.index}}</button></a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </div>
+                        <hr>
+                      </div>
+                      </section>
+                      {% endfor %}
+                      <div id="add_subscribe_done" class="modal fade" role="dialog" style="top:10%">
+                       <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h4 class="modal-title">Статуc новой подписки</h4>
+                          </div>
+                          <div class="modal-body" id='add_subscribe_done_body'>
+                            <p></p>
+                          </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default sub_done" data-name='' data-dismiss="modal" id='close'>Закрыть</button>
+                            </div>
+                        </div>
+                       </div>
+                      </div>
+
+                      <div id="ask" class="modal fade" role="dialog" style="top:10%">
+                       <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" data-name=''>&times;</button>
+                            <h4 class="modal-title">Удалить подписку?</h4>
+                          </div>
+                          <div class="modal-body">
+                            <p>Вы действительно хотите удалить подписку №<span class='sub-num-js'></span></p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" id='btn-delete-sub' data-id="" data-loop=''>Удалить</button>
+                            <button type="button" class="btn btn-default" data-name='' data-dismiss="modal" id=''>Отмена</button>
+                          </div>
+                        </div>
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="well well-2 bg-image bg-image-2 bg-yellow-green">
+        {% include 'subscribe.html' %}
+        {% block subscribe %}
+        {% endblock %}        
+      </section>
+    </main>
+    <footer class="page-footer">
+      {% include 'footer.html' %}
+      {% block footer %}
+      {% endblock %}      
+    </footer>
+  </div>
+  {% include 'scripts.html' %}
+  {% block scripts %}
+  {% endblock %}
+  <script src="/app/views/js/Data_tables.js"></script>
+  <script src="/app/views/js/DT_bootstrap.js"></script>
+  <script type="text/javascript" src="/app/views/js/jquery.rating.min.js"></script>
+  <script src="/app/views/js/jquery.knob.js"></script>
+
+    <!-- jQuery File Upload Dependencies -->
+    <script src="/app/views/js/jquery.ui.widget.js"></script>
+    <script src="/app/views/js/jquery.iframe-transport.js"></script>
+    <script src="/app/views/js/jquery.fileupload.js"></script>
+    
+    <!-- Our main JS file -->
+    <script src="/app/views/js/scriptup.js"></script>
+  <script type="text/javascript">
+  $(function(){
+    $('#rating_3').rating({
+      fx: 'float',
+          image: '/app/views/images/stars.png',
+          width: 20,
+          minimal: 0.6,
+            readOnly: true,
+      url: 'rating.php'
+    });
+  })
+  </script>
+  <script type="text/javascript">
+    jQuery(function($){
+      $("#phone-driver-profile").mask("+7 (999) 999-99-99");
+    });
+  </script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('#accordion-js').find('.accordion-item').click(function(){
+        $(this).next().stop().slideToggle();
+    }).next().stop().hide();
+  });
+  </script>
+</body>
+</html>

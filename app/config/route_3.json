@@ -1,0 +1,36 @@
+[
+		{"action1":"api","action2":"v1","action3":"get_profile_driver","controller":"admin_driver","method":"get_profile_driver"},
+	{"action1":"api","action2":"v1","action3":"get_profile_customer","controller":"admin_customer","method":"get_profile_customer"},
+
+	{"action1":"api","action2":"v1","action3":"close_order","controller":"admin_customer","method":"close_order"},
+	{"action1":"api","action2":"v1","action3":"rating_order","controller":"admin_driver","method":"rating_order"},
+	{"action1":"api","action2":"v1","action3":"update_profile_customer","controller":"order","method":"update_profile_customer"},
+	{"action1":"api","action2":"v1","action3":"update_profile_driver","controller":"admin_driver","method":"update_profile_driver"},
+	{"action1":"api","action2":"v1","action3":"offer_order","controller":"admin_driver","method":"offer_driver"},
+	{"action1":"api","action2":"v1","action3":"delete_subscribe","controller":"admin_driver","method":"delete_subscribe"},
+	{"action1":"api","action2":"v1","action3":"edit_subscribe","controller":"admin_driver","method":"edit_subscribe"},
+
+
+
+	{"action1":"api","action2":"v1","action3":"update_order","controller":"order","method":"update_order"},
+	{"action1":"api","action2":"v1","action3":"delete_order","controller":"order","method":"delete_order"},
+	{"action1":"api","action2":"v1","action3":"response_driver","controller":"admin_driver","method":"respond_order_site"},
+	{"action1":"api","action2":"v1","action3":"get_list_response_drivers","controller":"admin_driver","method":"get_list_response_drivers"},
+	{"action1":"api","action2":"v1","action3":"get_more_drivers","controller":"admin_driver","method":"get_more_drivers"},
+	{"action1":"api","action2":"v1","action3":"get_more_orders","controller":"order","method":"get_more_orders"},
+
+	{"action1":"api","action2":"v1","action3":"add_avatar_customer","controller":"order","method":"add_avatar_customer"},
+	{"action1":"api","action2":"v1","action3":"add_avatar_driver","controller":"admin_driver","method":"add_avatar_driver"},
+
+	{"action1":"api","action2":"v1","action3":"add_subscribe","controller":"admin_driver","method":"add_subscribe"},
+
+	{"action1":"api","action2":"v1","action3":"delete_avatar_customer","controller":"order","method":"delete_avatar_customer"},
+	{"action1":"api","action2":"v1","action3":"delete_avatar_driver","controller":"admin_driver","method":"delete_avatar_driver"},
+	{"action1":"api","action2":"v1","action3":"get_phone","controller":"admin_customer","method":"get_phone"},
+
+
+	{"action1":"api","action2":"v1","action3":"send_code_phone","controller":"auth","method":"send_code_phone"},
+	{"action1":"api","action2":"v1","action3":"send_code_email","controller":"auth","method":"send_code_email"},
+	{"action1":"api","action2":"v1","action3":"check_code_phone_profile","controller":"auth","method":"check_code_phone_profile"},
+	{"action1":"api","action2":"v1","action3":"check_code_email_profile","controller":"auth","method":"check_code_email_profile"},
+	]

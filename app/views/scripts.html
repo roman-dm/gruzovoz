@@ -1,0 +1,36 @@
+{% block scripts %}
+<script src="/app/views/js/core.min.js"></script>
+<script src='/app/views/js/bootstrap.min.js'></script>
+<script src='//code.jquery.com/ui/1.11.4/jquery-ui.js'></script>
+<script src='/app/views/js/datePick.js'></script>
+
+<script src="/app/views/js/mask.js"></script>
+<script src="/app/views/js/script.js"></script>
+<script src="/app/views/js/newscripts.js"></script>
+
+<script src="/app/views/js/select/select2.full.min.js"></script>
+
+
+<script type="text/javascript">
+	jQuery(function($){
+		$("#phone").mask("+7 (999) 999-99-99");
+        $("#login-inpt").mask("+79999999999");
+        $("#auth-code").mask("9999");
+        $("#reg-code").mask("9999");
+	});
+    
+</script>
+
+<script>
+	$(document).ready(function () {
+		$( ".datepicker" ).datepicker();
+	});
+    $(document).ready(function() {
+        $('.js-example-basic-multiple').select2();
+    });
+    
+</script>
+
+
+
+{% endblock %}

@@ -1,0 +1,68 @@
+17-02 19:21:30 /api/v1/customer/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+17-02 19:21:30 {"code":0,"message":"","data":{"profile":{"name":"Имя","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+17-02 19:21:54 /api/v1/customer/drivers_catalogue/?limit=30&offset=0 |  | POST | 
+Параметры: | max_ton= 40 city_id= 1 region_id= 1  |...............................................................................................................................
+17-02 19:21:54 {"code":0,"message":"","data":{"drivers":[{"id":5,"name":"Василий Иванович","avatar":"","car_name":"Победа","rating":0,"rate_in_city":0,"rate_intercity":0,"loaders":"false","capacity":15},{"id":6,"name":"Иван Сергеев","avatar":"","car_name":"","rating":0,"rate_in_city":0,"rate_intercity":0,"loaders":"","capacity":0},{"id":7,"name":"Сергей Петров","avatar":"","car_name":"Gaz","rating":0,"rate_in_city":0,"rate_intercity":0,"loaders":"false","capacity":0}],"total":3}} | 
+________________________________________________________________________________________________________________________________
+17-02 19:21:55 /api/v1/customer/drivers_catalogue/5/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+17-02 19:21:55 {"code":0,"message":"","data":{"profile":{"intercity_driver":true,"in_city_driver":true,"name":"Василий Иванович","avatar":"","car_name":"Победа","car_type":"semitrailer","body_type":[],"capacity":15,"volume":200,"load_type":{"top":true,"rear":true,"side":true},"loaders":"false","rating":0,"rate_intercity":0,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+17-02 19:22:10 /api/v1/customer/drivers_catalogue/0phone |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+17-02 19:22:10 {"code":0,"message":"","data":{"drivers":[],"total":0}} | 
+________________________________________________________________________________________________________________________________
+17-02 19:25:03 /api/v1/customer/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+17-02 19:25:03 {"code":0,"message":"","data":{"profile":{"name":"Имя","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+17-02 19:28:03 /api/v1/customer/drivers_catalogue/?limit=30&offset=0 |  | POST | 
+Параметры: | max_ton= 40 city_id= 1 region_id= 1  |...............................................................................................................................
+17-02 19:28:03 {"code":0,"message":"","data":{"drivers":[{"id":5,"name":"Василий Иванович","avatar":"","car_name":"Победа","rating":0,"rate_in_city":0,"rate_intercity":0,"loaders":"false","capacity":15},{"id":6,"name":"Иван Сергеев","avatar":"","car_name":"","rating":0,"rate_in_city":0,"rate_intercity":0,"loaders":"","capacity":0},{"id":7,"name":"Сергей Петров","avatar":"","car_name":"Gaz","rating":0,"rate_in_city":0,"rate_intercity":0,"loaders":"false","capacity":0}],"total":3}} | 
+________________________________________________________________________________________________________________________________
+17-02 19:28:05 /api/v1/customer/drivers_catalogue/5/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+17-02 19:28:05 {"code":0,"message":"","data":{"profile":{"intercity_driver":true,"in_city_driver":true,"name":"Василий Иванович","avatar":"","car_name":"Победа","car_type":"semitrailer","body_type":[],"capacity":15,"volume":200,"load_type":{"top":true,"rear":true,"side":true},"loaders":"false","rating":0,"rate_intercity":0,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+17-02 19:29:48 /api/v1/customer/drivers_catalogue/0/phone |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+17-02 19:29:48 {"code":26,"message":"Водитель не найден","data":{}} | 
+________________________________________________________________________________________________________________________________
+17-02 19:31:14 /api/v1/customer/drivers_catalogue/5/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+17-02 19:31:14 {"code":0,"message":"","data":{"profile":{"intercity_driver":true,"in_city_driver":true,"name":"Василий Иванович","avatar":"","car_name":"Победа","car_type":"semitrailer","body_type":[],"capacity":15,"volume":200,"load_type":{"top":true,"rear":true,"side":true},"loaders":"false","rating":0,"rate_intercity":0,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+17-02 19:40:19 /api/v1/customer/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+17-02 19:40:19 {"code":0,"message":"","data":{"profile":{"name":"Имя","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+17-02 19:40:30 /api/v1/customer/drivers_catalogue/?limit=30&offset=0 |  | POST | 
+Параметры: | max_ton= 40 city_id= 1 region_id= 1  |...............................................................................................................................
+17-02 19:40:30 {"code":0,"message":"","data":{"drivers":[{"id":5,"name":"Василий Иванович","avatar":"","car_name":"Победа","rating":0,"rate_in_city":0,"rate_intercity":0,"loaders":"false","capacity":15},{"id":6,"name":"Иван Сергеев","avatar":"","car_name":"","rating":0,"rate_in_city":0,"rate_intercity":0,"loaders":"","capacity":0},{"id":7,"name":"Сергей Петров","avatar":"","car_name":"Gaz","rating":0,"rate_in_city":0,"rate_intercity":0,"loaders":"false","capacity":0}],"total":3}} | 
+________________________________________________________________________________________________________________________________
+17-02 19:40:34 /api/v1/customer/drivers_catalogue/5/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+17-02 19:40:34 {"code":0,"message":"","data":{"profile":{"intercity_driver":true,"in_city_driver":true,"name":"Василий Иванович","avatar":"","car_name":"Победа","car_type":"semitrailer","body_type":[],"capacity":15,"volume":200,"load_type":{"top":true,"rear":true,"side":true},"loaders":"false","rating":0,"rate_intercity":0,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+17-02 19:40:40 /api/v1/customer/drivers_catalogue/5/phone |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+17-02 19:40:41 {"code":0,"message":"","data":{"profile":{"intercity_driver":true,"in_city_driver":true,"name":"Василий Иванович","avatar":"","car_name":"Победа","car_type":"semitrailer","body_type":[],"capacity":15,"volume":200,"load_type":{"top":true,"rear":true,"side":true},"loaders":"false","rating":0,"rate_intercity":0,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+17-02 19:41:44 /api/v1/customer/drivers_catalogue/5/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+17-02 19:41:45 {"code":0,"message":"","data":{"profile":{"intercity_driver":true,"in_city_driver":true,"name":"Василий Иванович","avatar":"","car_name":"Победа","car_type":"semitrailer","body_type":[],"capacity":15,"volume":200,"load_type":{"top":true,"rear":true,"side":true},"loaders":"false","rating":0,"rate_intercity":0,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+17-02 19:41:46 /api/v1/customer/drivers_catalogue/5/phone |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+17-02 19:41:47 {"code":0,"message":"","data":{"profile":{"intercity_driver":true,"in_city_driver":true,"name":"Василий Иванович","avatar":"","car_name":"Победа","car_type":"semitrailer","body_type":[],"capacity":15,"volume":200,"load_type":{"top":true,"rear":true,"side":true},"loaders":"false","rating":0,"rate_intercity":0,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+17-02 19:43:45 /api/v1/customer/drivers_catalogue/5/phone |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+17-02 19:43:45 {"code":0,"message":"","data":{"profile":{"intercity_driver":true,"in_city_driver":true,"name":"Василий Иванович","avatar":"","car_name":"Победа","car_type":"semitrailer","body_type":[],"capacity":15,"volume":200,"load_type":{"top":true,"rear":true,"side":true},"loaders":"false","rating":0,"rate_intercity":0,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+17-02 19:45:08 /api/v1/customer/drivers_catalogue/5/phone |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+17-02 19:45:08 {"code":0,"message":"","data":{"profile":{"intercity_driver":true,"in_city_driver":true,"name":"Василий Иванович","avatar":"","car_name":"Победа","car_type":"semitrailer","body_type":[],"capacity":15,"volume":200,"load_type":{"top":true,"rear":true,"side":true},"loaders":"false","rating":0,"rate_intercity":0,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________

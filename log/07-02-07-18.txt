@@ -1,0 +1,4 @@
+02-07 07:54:03 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+02-07 07:54:03 {"code":0,"message":"","data":{"profile":{"name":"Василий","phone":"","phone_confirmed":"false","car_name":"Маз","car_type":"semitrailer","body_type_id":1,"capacity":50,"volume":10,"load_type":{"top":"true","side":"true"},"intercity_driver":true,"in_city_driver":false,"loaders":"","rate_intercity":100,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________

@@ -1,49 +1,105 @@
-<!DOCTYPE html>
-<html class='no-js'>
-	<head>
-        <title>Сраница ошибки 404</title>
-        <meta charset='utf-8'>
+﻿<!DOCTYPE html>
+<html lang="ru" class="wide smoothscroll wow-animation">
+<head>
+	<title>Главная</title>
+	{% include 'header.html' %}
+	{% block header %}
+	{% endblock %}
+<style>
+	#page-preloader {
+	    position: fixed;
+	    left: 0;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    background: #fff;
+	    z-index: 100500;
+	}
 
-    	<link href='/app/views/assets/css/bootstrap.min.css' rel='stylesheet' media='screen'>
-    	<link href='/app/views/assets/css/bootstrap-responsive.min.css' rel='stylesheet' media='screen'>
-       	<link href='/app/views/assets/css/styles.css' rel='stylesheet'>
-       	<link href='/app/views/assets/css/404.css' rel='stylesheet'>
+	#page-preloader .spinner {
+	    width: 86px;
+	    height: 54px;
+	    position: absolute;
+	    left: 50%;
+	    top: 50%;
+	    background: url('/app/views/images/logo.png') no-repeat 50% 50%;
+	    margin: -16px 0 0 -16px;
+	}
+	#driver-preloader{
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    background: #e3e3e3;
+	    z-index: 100500;
+	}
+	#driver-preloader .spinner{
+	    width: 32px;
+	    height: 32px;
+	    position: absolute;
+	    left: 50%;
+	    top: 50%;
+	    background: url('/app/views/images/loading.gif') no-repeat 50% 50%;
+	    margin: -16px 0 0 -16px;
 
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	</head>
-	<body>
-		<div class='container-fluid'>
-            <div class='row-fluid'>
-            	<div class="comingcontainer">
-    				<div class="checkbacksoon">
-		            	<p>
-							<span class="go3d">Н</span>
-							<span class="go3d">Е</span>
-							<span class="go3d">Т</span>
-							<br/>
-							<span class="go3d">Д</span>
-							<span class="go3d">О</span>
-							<span class="go3d">С</span>
-							<span class="go3d">Т</span>
-							<span class="go3d">У</span>
-							<span class="go3d">П</span>
-							<span class="go3d">А</span>
-						</p>
-						<div class='martop'>
-						<p class="error">
-							Похоже, вы выбрали неправильный путь. <br/>Доступ на эту страницу Вам запрещен.
-						</p>
-						</div>
-						<div class='mid mar'>
-							<a href='/'><button class="btn btn-primary btn-large"><i class="fa fa-home"></i><span>Вернуться на главную</span></button></a>
-						</div>
-            		</div>
-            	</div>
-            </div>
-			<hr>
-	        <footer>
-	            <p>Copyright © <a target='blank' href='http://www.alexkam.ru'>Alexkam</a> - All Rights Reserved | Moscow 2016</p>
-	        </footer>
-       	</div>
-	</body>
+	}
+</style>
+</head>
+<body>
+	<div id="page-preloader"><span class="spinner"></span></div>
+	<div class="page">
+		{% include 'old-ie.html' %}
+		{% block oldie %}
+		{% endblock %}
+		<header class="page-header bg">
+			{% include 'navi.html' %}
+			{% block navi %}
+			{% endblock %}
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+					</div>
+					<div class="col-md-6">
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="page-content">
+			<section class="well well-1 bg-image bg-image-1 bg-yellow-green">
+				<div class="container" style='width: 500px;margin:0 auto;'>
+					<div class='row text-center' style='font-size: 20px;line-height: 1.5;display: block'>
+						У Вас нет доступа к данной странице, пожалуйста,<br/>авторизуйтесь или зарегистрируйтесь
+					</div>
+					<div class="row text-center flow-offset-1" style='padding-top: 50px;'>
+						{% include 'red_block.html' %}
+						{% block red_block %}
+						{% endblock %}
+					</div>
+					<div class="col-lg-12 text-center" style='padding-top: 75px;'>
+	                	<a href="#" class="my_back_btn btn btn-sm btn-sunglow" id="">Назад</a>
+	              	</div>
+				</div>
+				
+			</section>
+		</main>
+		<footer class="page-footer">
+			{% include 'footer.html' %}
+			{% block footer %}
+			{% endblock %}			
+		</footer>
+	</div>
+	{% include 'scripts.html' %}
+	{% block scripts %}
+	{% endblock %}
+	<script>
+		$(window).on('load', function () {
+		    var $preloader = $('#page-preloader'),
+		    $spinner   = $preloader.find('.spinner');
+		    $spinner.fadeOut();
+		    $preloader.delay(350).fadeOut('slow');
+		});
+	</script>
+</body>
 </html>

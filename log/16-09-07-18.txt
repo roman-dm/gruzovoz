@@ -1,0 +1,154 @@
+09-07 16:05:23 /api/v1/driver/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:05:23 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:05:46 /api/v1/driver/subscriptions/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:05:46 {"code":0,"message":"","data":{"subscriptions":[{"id":3,"payment_type":"fixed","payment_method":"cash","order_type":"in_city","min_killo":0,"active":"false","notifications":"false","start_date":"","max_killo":4100,"finish_date":"","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}},{"id":4,"payment_type":"both","payment_method":"both","order_type":"both","min_killo":0,"active":"true","notifications":"true","start_date":"2018-07-09T00:00:00+0300","max_killo":4000,"finish_date":"2018-08-27T00:00:00+0300","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":123,"name":"Самара","parent_name":"Самарская область","parent_id":1082931,"region":true,"country_name":"Россия","country_id":1}},{"id":6,"payment_type":"fixed","payment_method":"non_cash","order_type":"intercity","min_killo":0,"active":"false","notifications":"false","start_date":"","max_killo":4000,"finish_date":"","start_city":{"id":124,"name":"Саранск","parent_name":"Мордовия ","parent_id":1052052,"region":true,"country_name":"Россия","country_id":1}}]}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:07:29 /api/v1/driver/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:07:29 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:10:57 /api/v1/driver/subscriptions/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:10:58 {"code":0,"message":"","data":{"subscriptions":[{"id":3,"payment_type":"fixed","payment_method":"cash","order_type":"in_city","min_killo":0,"active":"false","notifications":"false","start_date":"","max_killo":4100,"finish_date":"","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}},{"id":4,"payment_type":"both","payment_method":"both","order_type":"both","min_killo":0,"active":"true","notifications":"true","start_date":"2018-07-09T00:00:00+0300","max_killo":4000,"finish_date":"2018-08-27T00:00:00+0300","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":123,"name":"Самара","parent_name":"Самарская область","parent_id":1082931,"region":true,"country_name":"Россия","country_id":1}},{"id":6,"payment_type":"fixed","payment_method":"non_cash","order_type":"intercity","min_killo":0,"active":"false","notifications":"false","start_date":"","max_killo":4000,"finish_date":"","start_city":{"id":124,"name":"Саранск","parent_name":"Мордовия ","parent_id":1052052,"region":true,"country_name":"Россия","country_id":1}}]}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:11:13 /api/v1/driver/subscriptions/6/ |  | DELETE | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:11:13 {"code":0,"message":"","data":{}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:13:00 /api/v1/driver/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:13:00 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:13:08 /api/v1/driver/subscriptions/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:13:09 {"code":0,"message":"","data":{"subscriptions":[{"id":3,"payment_type":"fixed","payment_method":"cash","order_type":"in_city","min_killo":0,"active":"false","notifications":"false","start_date":"","max_killo":4100,"finish_date":"","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}},{"id":4,"payment_type":"both","payment_method":"both","order_type":"both","min_killo":0,"active":"true","notifications":"true","start_date":"2018-07-09T00:00:00+0300","max_killo":4000,"finish_date":"2018-08-27T00:00:00+0300","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":123,"name":"Самара","parent_name":"Самарская область","parent_id":1082931,"region":true,"country_name":"Россия","country_id":1}}]}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:14:02 /api/v1/driver/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:14:02 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:14:11 /api/v1/driver/subscriptions/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:14:12 {"code":0,"message":"","data":{"subscriptions":[{"id":3,"payment_type":"fixed","payment_method":"cash","order_type":"in_city","min_killo":0,"active":"false","notifications":"false","start_date":"","max_killo":4100,"finish_date":"","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}},{"id":4,"payment_type":"both","payment_method":"both","order_type":"both","min_killo":0,"active":"true","notifications":"true","start_date":"2018-07-09T00:00:00+0300","max_killo":4000,"finish_date":"2018-08-27T00:00:00+0300","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":123,"name":"Самара","parent_name":"Самарская область","parent_id":1082931,"region":true,"country_name":"Россия","country_id":1}}]}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:14:19 /api/v1/driver/subscriptions/3/ |  | PATCH | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:14:19 {"code":0,"message":"","data":{}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:15:34 /api/v1/driver/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:15:34 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:16:41 /api/v1/driver/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:16:41 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:18:30 /api/v1/driver/subscriptions/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:18:30 {"code":0,"message":"","data":{"subscriptions":[{"id":3,"payment_type":"fixed","payment_method":"cash","order_type":"in_city","min_killo":0,"active":"false","notifications":"false","start_date":"","max_killo":4100,"finish_date":"","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}},{"id":4,"payment_type":"both","payment_method":"both","order_type":"both","min_killo":0,"active":"true","notifications":"true","start_date":"2018-07-09T00:00:00+0300","max_killo":4000,"finish_date":"2018-08-27T00:00:00+0300","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":123,"name":"Самара","parent_name":"Самарская область","parent_id":1082931,"region":true,"country_name":"Россия","country_id":1}}]}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:18:34 /api/v1/driver/subscriptions/3/ |  | PATCH | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:18:34 {"code":0,"message":"","data":{}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:20:21 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:20:22 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","phone":"+78888888888","phone_confirmed":"false","car_name":"Ваз","car_type":"semitrailer","body_type_id":2,"capacity":100,"volume":100,"load_type":{"top":"true","rear":"true"},"intercity_driver":true,"in_city_driver":false,"loaders":"","rate_intercity":100,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:22:02 /api/v1/driver/registration/body_types/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:22:02 {"code":0,"message":"","data":{"body_types":[{"id":1,"name":"Фургон"},{"id":2,"name":"Тягач"},{"id":3,"name":"Полуприцеп"},{"id":4,"name":"Прицеп"}]}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:23:23 /api/v1/driver/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:23:23 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:23:30 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:23:30 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","phone":"+78888888888","phone_confirmed":"false","car_name":"Ваз","car_type":"semitrailer","body_type_id":2,"capacity":100,"volume":100,"load_type":{"top":"true","rear":"true"},"intercity_driver":true,"in_city_driver":false,"loaders":"","rate_intercity":100,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:23:32 /api/v1/driver/registration/body_types/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:23:32 {"code":0,"message":"","data":{"body_types":[{"id":1,"name":"Фургон"},{"id":2,"name":"Тягач"},{"id":3,"name":"Полуприцеп"},{"id":4,"name":"Прицеп"}]}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:27:40 /api/v1/driver/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:27:40 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:29:31 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:29:31 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","phone":"+78888888888","phone_confirmed":"false","car_name":"Ваз","car_type":"semitrailer","body_type_id":2,"capacity":100,"volume":100,"load_type":{"top":"true","rear":"true"},"intercity_driver":true,"in_city_driver":false,"loaders":"","rate_intercity":100,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:29:34 /driver/profile/ |  | PATCH | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:29:37 /api/v1/driver/registration/body_types/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:29:37 {"code":0,"message":"","data":{"body_types":[{"id":1,"name":"Фургон"},{"id":2,"name":"Тягач"},{"id":3,"name":"Полуприцеп"},{"id":4,"name":"Прицеп"}]}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:29:47 /api/v1/driver/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:29:47 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:35:06 /api/v1/driver/subscriptions/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:35:07 {"code":0,"message":"","data":{"subscriptions":[{"id":3,"payment_type":"fixed","payment_method":"cash","order_type":"in_city","min_killo":0,"active":"false","notifications":"false","start_date":"","max_killo":4100,"finish_date":"","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}},{"id":4,"payment_type":"both","payment_method":"both","order_type":"both","min_killo":0,"active":"true","notifications":"true","start_date":"2018-07-09T00:00:00+0300","max_killo":4000,"finish_date":"2018-08-27T00:00:00+0300","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":123,"name":"Самара","parent_name":"Самарская область","parent_id":1082931,"region":true,"country_name":"Россия","country_id":1}}]}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:40:09 /api/v1/auth/get_guest_token/ |  | POST | 
+Параметры: | device_id= 7cec69252c484f289ae240dee2d4a637bd903fc1  |...............................................................................................................................
+09-07 16:40:09 {"code":0,"message":"","data":{"token":"8e0a34cfc036858ee06e7b585549f6dd"}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:40:09 /api/v1/auth/send_code/ |  | POST | 
+Параметры: | phone= 8888888888 country_code= +7  |...............................................................................................................................
+09-07 16:40:09 {"code":0,"message":"","data":{}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:40:16 /api/v1/auth/check_code/ |  | POST | 
+Параметры: | code= 11111  |...............................................................................................................................
+09-07 16:40:16 {"code":0,"message":"","data":{"token":"fc62ec241155fe69617d569e404b6240","user_type":"driver"}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:40:16 /api/v1/driver/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:40:17 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:40:22 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:40:22 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","phone":"+78888888888","phone_confirmed":"false","car_name":"Ваз","car_type":"semitrailer","body_type_id":2,"capacity":100,"volume":100,"load_type":{"top":"true","rear":"true"},"intercity_driver":true,"in_city_driver":false,"loaders":"","rate_intercity":100,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:49:36 /api/v1/driver/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:49:36 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:50:31 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:50:31 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","phone":"+78888888888","phone_confirmed":"false","car_name":"Ваз","car_type":"semitrailer","body_type_id":2,"capacity":100,"volume":100,"load_type":{"top":"true","rear":"true"},"intercity_driver":true,"in_city_driver":false,"loaders":"","rate_intercity":100,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:53:11 /api/v1/driver/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:53:11 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:53:16 /api/v1/driver/subscriptions/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:53:17 {"code":0,"message":"","data":{"subscriptions":[{"id":3,"payment_type":"fixed","payment_method":"cash","order_type":"in_city","min_killo":0,"active":"false","notifications":"false","start_date":"","max_killo":4100,"finish_date":"","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}},{"id":4,"payment_type":"both","payment_method":"both","order_type":"both","min_killo":0,"active":"true","notifications":"true","start_date":"2018-07-09T00:00:00+0300","max_killo":4000,"finish_date":"2018-08-27T00:00:00+0300","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":123,"name":"Самара","parent_name":"Самарская область","parent_id":1082931,"region":true,"country_name":"Россия","country_id":1}}]}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:53:18 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:53:18 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","phone":"+78888888888","phone_confirmed":"false","car_name":"Ваз","car_type":"semitrailer","body_type_id":2,"capacity":100,"volume":100,"load_type":{"top":"true","rear":"true"},"intercity_driver":true,"in_city_driver":false,"loaders":"","rate_intercity":100,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:55:18 /api/v1/driver/subscriptions/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:55:19 {"code":0,"message":"","data":{"subscriptions":[{"id":3,"payment_type":"fixed","payment_method":"cash","order_type":"in_city","min_killo":0,"active":"false","notifications":"false","start_date":"","max_killo":4100,"finish_date":"","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}},{"id":4,"payment_type":"both","payment_method":"both","order_type":"both","min_killo":0,"active":"true","notifications":"true","start_date":"2018-07-09T00:00:00+0300","max_killo":4000,"finish_date":"2018-08-27T00:00:00+0300","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":123,"name":"Самара","parent_name":"Самарская область","parent_id":1082931,"region":true,"country_name":"Россия","country_id":1}}]}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:55:20 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:55:20 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","phone":"+78888888888","phone_confirmed":"false","car_name":"Ваз","car_type":"semitrailer","body_type_id":2,"capacity":100,"volume":100,"load_type":{"top":"true","rear":"true"},"intercity_driver":true,"in_city_driver":false,"loaders":"","rate_intercity":100,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:55:45 /api/v1/driver/subscriptions/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:55:45 {"code":0,"message":"","data":{"subscriptions":[{"id":3,"payment_type":"fixed","payment_method":"cash","order_type":"in_city","min_killo":0,"active":"false","notifications":"false","start_date":"","max_killo":4100,"finish_date":"","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}},{"id":4,"payment_type":"both","payment_method":"both","order_type":"both","min_killo":0,"active":"true","notifications":"true","start_date":"2018-07-09T00:00:00+0300","max_killo":4000,"finish_date":"2018-08-27T00:00:00+0300","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":123,"name":"Самара","parent_name":"Самарская область","parent_id":1082931,"region":true,"country_name":"Россия","country_id":1}}]}} | 
+________________________________________________________________________________________________________________________________
+09-07 16:55:47 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+09-07 16:55:47 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","phone":"+78888888888","phone_confirmed":"false","car_name":"Ваз","car_type":"semitrailer","body_type_id":2,"capacity":100,"volume":100,"load_type":{"top":"true","rear":"true"},"intercity_driver":true,"in_city_driver":false,"loaders":"","rate_intercity":100,"rate_in_city":0,"city":{"id":1,"name":"Москва","parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________

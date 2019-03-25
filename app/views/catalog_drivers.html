@@ -1,0 +1,59 @@
+{% block catalog_drivers %}
+<div class="container text-center" id='anchor-driver'>
+	<div id='main-driver-div'>
+		<h2 class="wow fadeIn">Каталог Водителей</h2>
+		{% for driver in list_driver %}
+		<div class="row flow-offset-1 product-info driver-div">
+			<div class="col-lg-4 text-center text-md-left wow fadeInLeft">
+				<img src="{% if driver.avatar=='' %}/app/views/images/noavatar.png{% else %}{{driver.avatar}}{% endif %}" width="370" height="274" alt="">
+			</div>
+			<div class="col-lg-8">
+				<div class="product-info-body text-center text-md-left">
+					<h3><a href="/get_one_driver/{{driver.id}}/">{{driver.name}}</a></h3>
+					<p class="heading-4 product-info-price">
+						<a href="/get_one_driver/{{driver.id}}/">Автомобиль: {{driver.car_name}}</a>
+					</p>
+					<p>Рейтинг: {{driver.rating}}</p>
+
+					<div class="row row-sm-justify">
+						<div class="col-sm-4 col-lg-3 text-sm-left">
+							<h6 class="text-capitalize">Стоимость</h6>
+							<ul class="product-info-list text-sm-left ">
+								<li>По городу: {{driver.rate}} руб/ч</li>
+								<!-- <li>Межгород: 50 руб/км</li> -->
+							</ul>
+						</div>
+						<div class="col-sm-4 col-lg-5 text-sm-left">
+							<h6 class="text-capitalize preffix-1">Параметры автомобиля</h6>
+							<ul class="product-info-list text-sm-left preffix-1">
+								<li>Грузоподъемность: {{driver.capacity}} тонн</li>
+								<li>Способ загрузки: {% if driver.load_type_top %}Верхняя <!-- <i title="Верхняя" class="fa fa-arrow-up" aria-hidden="true"></i> -->{% endif %}{% if driver.load_type_rear %}Задняя <!-- <i title="Задняя" class="fa fa-arrow-down" aria-hidden="true"></i> -->{% endif %}{% if driver.load_type_side %}Боковая<!-- <i title="Боковая" class="fa fa-arrow-right" aria-hidden="true"></i> -->{% endif %}</li>
+								<li>Тип: {% if driver.car_type=='single' %}Одиночка{% endif %}{% if driver.car_type=='semitrailer' %}Полуприцеп{% endif %}{% if driver.car_type=='trailer' %}Одиночка+прицеп{% endif %}</li>
+								<li>Грузчики: {% if driver.loaders %}есть{% else %}нет{% endif %}</li>
+							</ul>
+						</div>
+						<div class="col-sm-4 col-md-3">
+							<div class="inline-block">
+								<ul class="product-info-list-1">
+									<li>
+										<div class="box">
+											<div class="box__left box__middle">
+												<span class="icon icon-xs icon-default fa-thumbs-o-up"></span>
+											</div>
+											<div class="box__body box__middle">Всего заказов: 20</div>
+										</div>
+									</li>
+								</ul>
+								<a href="/get_one_driver/{{driver.id}}/" class="btn btn-md btn-sunglow wow fadeInRight" id='{{driver.id}}'>Подробнее</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		{% endfor %}
+	</div>
+	<a href="#" class="btn btn-lg btn-yellow-green" id='more-drivers' style='margin-top: 50px;'>Больше водителей</a>
+</div>
+{% endblock %}

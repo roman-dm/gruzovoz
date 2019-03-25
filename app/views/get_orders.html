@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru" class="wide smoothscroll wow-animation">
+<head>
+  <title>Заказы</title>
+  {% include 'header.html' %}
+  {% block header %}
+  {% endblock %}
+
+  <!-- <link rel="stylesheet" href="/app/views/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="/app/views/css/DT_bootstrap.css">
+  <link rel="stylesheet" href="/app/views/css/profile-driver.css">
+  <link rel="stylesheet" href="/app/views/css/jquery.rating.css">
+  <link href="/app/views/css/styleup.css" rel="stylesheet" />
+
+</head>
+<body>
+  <div class="page">
+    {% include 'old-ie.html' %}
+    {% block oldie %}
+    {% endblock %}
+    <header class="page-header bg">
+      {% include 'navi.html' %}
+      {% block navi %}
+      {% endblock %}
+    </header>
+
+    <main class="page-content">
+      <section class="well well-1 bg-image bg-image-1 bg-yellow-green" style="padding-top: 25px; padding-bottom: 25px;">
+        <div class="container">
+          <div class="row text-center flow-offset-1">
+            {% include 'search_orders_cd.html' %}
+            {% block search_orders_cd %}
+            {% endblock %}
+          </div>
+        </div>
+      </section>
+      <section class="well well-2">
+        <div class="container text-center">
+
+          <h2 class="wow fadeIn">Каталог Заказов</h2>
+          <div class="row text-center flow-offset-1 main-customer-div">
+            {% for order in orders %}
+            <div class="col-sm-6 col-lg-4 wow fadeIn customer-div">
+              <div class="order-1">
+                <a href="http://gruzovoz.alexkam.ru/detail_order/{{order.id}}/" target="blank" class="order-price-1 heading-5">{% if order.price==0 or order.price=='' %}По договоренности{% else %}{{order.price}} руб.{% endif %}</a>
+                <div style="clear:both;"></div>
+                <a href="http://gruzovoz.alexkam.ru/detail_order/{{order.id}}/" target="blank" class="order-title-1 heading-4">{{order.start_city.name}}<br/>{% if order.finish_city.id == '' %}По городу{% else %}{{order.finish_city.name}}{% endif %}</a>
+                <p class="order-caption-1"><span>{{order.cargo_name}}</span><br/>{{order.comment[:75]}}{% if order.comment|length>75 %}...{% endif %}</p>
+                <div class="incenter">
+                  <a href="http://gruzovoz.alexkam.ru/detail_order/{{order.id}}/" target="blank" class="btn btn-md btn-sunglow wow fadeInRight marbot" id='{{order.id}}'>Подробнее</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <a href="#" class="btn btn-lg btn-yellow-green" id='more-orders' style='margin-top: 20px;'>Больше заказов</a>
+        </div>
+      </section>
+      <section class="well well-2 bg-image bg-image-2 bg-yellow-green">
+        {% include 'subscribe.html' %}
+        {% block subscribe %}
+        {% endblock %}        
+      </section>
+    </main>
+    <footer class="page-footer">
+      {% include 'footer.html' %}
+      {% block footer %}
+      {% endblock %}      
+    </footer>
+  </div>
+  {% include 'scripts.html' %}
+  {% block scripts %}
+  {% endblock %}
+  <script src="/app/views/js/Data_tables.js"></script>
+  <script src="/app/views/js/DT_bootstrap.js"></script>
+  <script type="text/javascript" src="/app/views/js/jquery.rating.min.js"></script>
+  <script src="/app/views/js/jquery.knob.js"></script>
+
+    <!-- jQuery File Upload Dependencies -->
+    <script src="/app/views/js/jquery.ui.widget.js"></script>
+    <script src="/app/views/js/jquery.iframe-transport.js"></script>
+    <script src="/app/views/js/jquery.fileupload.js"></script>
+    
+    <!-- Our main JS file -->
+    <script src="/app/views/js/scriptup.js"></script>
+  <script type="text/javascript">
+  $(function(){
+    $('#rating_3').rating({
+      fx: 'float',
+          image: '/app/views/images/stars.png',
+          width: 20,
+          minimal: 0.6,
+            readOnly: true,
+      url: 'rating.php'
+    });
+  })
+  </script>
+  <script type="text/javascript">
+    jQuery(function($){
+      $("#phone-driver-profile").mask("+7 (999) 999-99-99");
+    });
+  </script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('#accordion-js').find('.accordion-item').click(function(){
+        $(this).next().stop().slideToggle();
+    }).next().stop().hide();
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+{% block red_block %}
+<div class="responsive-tabs search-form">
+	<ul class="resp-tabs-list search-form-list">
+		<li class="heading-5" id='lk-block'>Личный кабинет</li>
+		<li class="heading-5" id='registration-block'>Регистрация</li>
+	</ul>
+	<div class="resp-tabs-container">
+		<div>
+			<div class="search-form-body">
+				<form class='rd-mailform' method="post" action="">
+					<input type="hidden" name="form-type" value="contact"/>
+					<input id='inpt-for-phone-enter' type='hidden'/>
+					<fieldset>
+						<div class="row phone-auth-inpt">
+							<div class="col-md-12">
+								<h6 class="text-none text-regular">Ваш телефон</h6>
+								<label data-add-placeholder>
+									<input type='hidden' value='0' id='sobaka'>
+									<input type='hidden' value='0' id='numeric'>
+									<input type='hidden' value='0' id='alpha'>
+									<input type="text"
+										   id="login-inpt"
+										   name="name"
+										   autocomplete="off"
+										   placeholder="+7__________"
+										   data-constraints=""/>
+									<div class='mark-place'>
+										<i class="fa fa-envelope-o login-mark" aria-hidden="true" style='display: none;'></i>
+										<i class="fa fa-mobile login-mark" aria-hidden="true" style='display: none;'></i>
+									</div>
+								</label>
+							</div>
+						</div>
+						<!-- <div id='timer'></div> -->
+						<div class='red-error-auth martop' style="display: none">
+							Данный телефон не зарегистрирован <br/><span class='enter-link' id='enter-link-auth'>Регистрация?</span>
+						</div>
+						<!-- <div class="row" id='div-pass' style='display: none;'>
+							<div class="col-md-12">
+								<h6 class="text-none text-regular">Пароль</h6>
+								<label data-add-placeholder>
+									<input type="password"
+										   name="name"
+										   placeholder=""
+										   data-constraints=""/>
+								</label>
+							</div>
+						</div> -->
+						<div class="row" id='div-code-auth' style='display: none;margin-top: 20px!important;'>
+							<div class="col-md-12" style="text-align: center;">
+								<a class="btn btn-xl btn-sunglow" href="#" id='phone-auth-send'>Выслать код</a>
+							</div>
+						</div>
+						<div class="row row-xs-middle offset text-center" id='enter' style='display: none;'>
+							<div class="col-lg-6">
+								<a class="btn btn-xl btn-sunglow" href="#">Войти</a>
+							</div>
+							<!-- <div class="col-lg-6 offset">
+								<a class="link link-md link-default" href="#">Забыли пароль?</a>
+							</div> -->
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<div>
+			<div class="search-form-body">
+				<form class='rd-mailform' method="post" action="">
+					<input type="hidden" name="form-type" value="contact"/>
+					<input id='inpt-for-phone' type='hidden'/>
+					<fieldset>
+						<div class="row phone-reg-inpt">
+							<div class="col-md-12">
+								<h6 class="text-none text-regular">Введите номер телефона</h6>
+								<label data-add-placeholder>
+									<input type="text"
+										   name="name"
+										   id="phone"
+										   placeholder="+7 (___) ___-__-__"
+										   autocomplete="off"
+										   data-constraints=""/>
+								</label>
+							</div>
+						</div>
+						<div class='red-error-reg martop' style="display: none">
+							Данный номер телефона уже зарегистрирован! <br/><span class='enter-link' id='enter-link-reg'>Войти в личный кабинет?</span>
+						</div>
+						<div class='yellow-border col-md-12 col-sm-12 col-xs-12' style="margin-top: 20px; padding: 0;">
+							<div class='pull-left iam col-lg-6 col-md-6 col-sm-6 col-xs-6 iamchecked' id='voditel'>Я водитель</div>
+							<div class='pull-left iam col-lg-6 col-md-6 col-sm-6 col-xs-6' id='zakazchik' style='margin-top:0;'>Я заказчик</div>
+						</div>
+						<div style="clear:both"></div>
+						<div class="row row-xs-middle offset text-center" id='div-reg-send' style="margin-top: 30px;display: none;">
+							<div class="col-lg-12">
+								<a class="btn btn-xl btn-sunglow" id='phone-reg-send' name='driver' href="#">Выслать код</a>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

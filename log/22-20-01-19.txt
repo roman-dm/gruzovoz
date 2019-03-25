@@ -1,0 +1,16 @@
+20-01 22:01:52 /api/v1/driver/orders_catalogue/?limit=30&offset=0 |  | POST | 
+Параметры: | payment_method= both payment_type= both start_id= 1 finish_id= 158 order_type= both  |...............................................................................................................................
+20-01 22:01:52 {"code":1,"message":"Проблемы с токеном","data":""} | 
+________________________________________________________________________________________________________________________________
+20-01 22:02:07 /api/v1/driver/orders_catalogue/?limit=30&offset=0 |  | POST | 
+Параметры: | payment_method= both payment_type= both start_id= 1 finish_id= 158 order_type= both  |...............................................................................................................................
+20-01 22:02:07 {"code":0,"message":"","data":{"orders":[],"total":0}} | 
+________________________________________________________________________________________________________________________________
+20-01 22:03:23 /api/v1/driver/orders_catalogue/?limit=30&offset=0 |  | POST | 
+Параметры: | payment_method= both payment_type= both  |...............................................................................................................................
+20-01 22:03:23 {"code":0,"message":"","data":{"orders":[],"total":0}} | 
+________________________________________________________________________________________________________________________________
+20-01 22:03:29 /api/v1/driver/orders_catalogue/?limit=30&offset=0 |  | POST | 
+Параметры: | Параметров нет |...............................................................................................................................
+20-01 22:03:30 {"code":0,"message":"","data":{"orders":[{"id":29,"cargo_name":"абырвалг","cargo_weight":10,"weight_unit":"kilo","price":0,"status":0,"currency":"rub","payment_method":"cash","capacity":0,"body_types":null,"start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":158,"name":"Челябинск","parent_name":"Челябинская область","parent_id":1112201,"region":true,"country_name":"Россия","country_id":1},"start_date":"2018-12-30T18:02:29+0300","finish_date":"-0001-11-30T00:00:00+0230"},{"id":30,"cargo_name":"Новое имя","cargo_weight":10,"weight_unit":"kilo","price":0,"status":0,"currency":"rub","payment_method":"cash","capacity":11,"body_types":[{"id":1,"name":"Фургон"}],"start_city":{"id":null,"name":null,"parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":null,"name":null,"parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"start_date":"2019-01-20T22:03:30+0300","finish_date":"2019-01-20T22:03:30+0300"}],"total":2}} | 
+________________________________________________________________________________________________________________________________

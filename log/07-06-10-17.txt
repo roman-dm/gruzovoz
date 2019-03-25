@@ -1,0 +1,4 @@
+06-10 07:59:19 /api/v1/customer/orders/141/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+06-10 07:59:20 {"code":0,"message":"","data":{"id":141,"views":0,"drivers_count_total":0,"drivers_count_new":0,"cargo_name":"Перевозка 2 роялей","cargo_weight":2,"weight_unit":"killo","price":5200,"currency":"rub","payment_type":"both","comment":"","rating":0,"start_date":"2017-10-06T00:10:06+0300","finish_date":"2017-12-03T16:30:41+0300","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":null,"country_name":"Россия","country_id":1},"finish_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1}}} | 
+________________________________________________________________________________________________________________________________

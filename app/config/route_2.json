@@ -1,0 +1,6 @@
+[
+	{"action1":"detail_order","action2":"int","controller":"main","method":"detail_order"},
+	{"action1":"get_one_customer","action2":"int","controller":"admin_customer","method":"get_one_customer"},
+	{"action1":"main","action1":"detail_order","action2":"int","controller":"main","method":"detail_order"},
+	{"action1":"get_one_driver","action2":"int","controller":"admin_driver","method":"get_one_driver"}
+	]

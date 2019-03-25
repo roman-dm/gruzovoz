@@ -1,0 +1,20 @@
+[
+	{"action1":"main","controller":"main","method":"main"},
+	{"action1":"get_image","controller":"main","method":"file_force_download"},
+	{"action1":"get_image_phone","controller":"main","method":"get_image_phone"},
+	{"action1":"main","action1":"customer","controller":"admin_customer","method":"main"},
+	{"action1":"main","action1":"news","controller":"main","method":"news"},
+	{"action1":"main","action1":"edit_parsing_car","controller":"main","method":"edit_parsing_car"},
+	{"action1":"main","action1":"get_parsing_car","controller":"main","method":"get_parsing_car"},
+	{"action1":"main","action1":"get_parsing_cargo","controller":"main","method":"get_parsing_cargo"},
+	{"action1":"main","action1":"add_grab","controller":"main","method":"grab"},
+	{"action1":"main","action1":"contact","controller":"main","method":"contact"},
+	{"action1":"main","action1":"about","controller":"main","method":"about"},
+	{"action1":"main","action1":"how","controller":"main","method":"how"},
+	{"action1":"main","action1":"new_order","controller":"main","method":"new_order"},
+	{"action1":"main","action1":"profile","controller":"main","method":"profile"},
+	{"action1":"main","action1":"logout","controller":"base","method":"logout"},
+	{"action1":"main","action1":"driver","controller":"admin_driver","method":"main"},
+	{"action1":"get_orders","controller":"order","method":"get_orders"},
+	{"action1":"get_drivers","controller":"admin_driver","method":"get_drivers"}
+	]

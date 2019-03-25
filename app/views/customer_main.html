@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru" class="wide smoothscroll wow-animation">
+<head>
+	<title>Главная заказчик</title>
+	{% include 'header.html' %}
+	{% block header %}
+	{% endblock %}
+</head>
+<style>
+	.rd-navbar-static .rd-navbar-nav > li {
+    margin-left: 5px!important;
+}
+</style>
+<body>
+	<div class="page">
+		{% include 'old-ie.html' %}
+		{% block oldie %}
+		{% endblock %}
+		<header class="page-header bg">
+			{% include 'navi.html' %}
+			{% block navi %}
+			{% endblock %}
+			<div class="container">
+				<div class="row">
+				</div>
+			</div>
+		</header>
+
+		<main class="page-content">
+			<section class="well well-1 bg-image bg-image-1 bg-yellow-green" style="padding-top: 25px; padding-bottom: 25px;">
+				<div class="container">
+					<div class="row text-center flow-offset-1">
+						<div class="col-sm-12 col-lg-12 wow fadeIn search_order">
+							<h2 class="text-center">Поиск водителя</h2>
+							<div class="resp-tabs-container">
+								<div>
+									<div class="search-form-body">
+										<form class='rd-mailform' method="post" action="">
+											<input type="hidden" name="form-type" value="contact"/>
+											<fieldset>
+												<div class="row">
+													<div class='col-lg-4'>
+														<div class='little-caption marbot'>Выберите город</div>
+														<label class="z-103 mfSelect" data-add-placeholder style="margin-top:0!important">
+															<input type="text" class="city" id='voditel-ot-customer' placeholder="Город откуда повезем груз" city-id="" autocomplete="off"/>
+															<ul class="dropdown" id="city_vod_in_customer"></ul>
+															<div class='loader' data-id-loader='voditel-ot-customer' style="top: 8px;right: 20px; display: none;"></div>
+														</label>
+														<!-- <div class="martop" style='display:none' id='city-search-to-customer'>
+															<label class="z-104 mfSelect" data-add-placeholder style="max-width: 100%!important">
+																<input type="text" class="city" id='voditel-to-customer' placeholder="Город куда" city-id="" autocomplete="off"/>
+																<ul class="dropdown" id="city_vod_to_customer"></ul>
+																<div class='loader' data-id-loader='voditel-to-customer' style="top: 8px;right: 20px; display: none;"></div>
+															</label>
+														</div> -->
+														<div class="martop">
+															<div class='little-caption marbot'>Как работает водитель</div>
+															<div class="int_search">
+																<input type="radio" class="radio" id="r-customer-1" name="r"/>
+																<label for="r-customer-1">По городу</label>
+															</div>
+															<div class="int_search">
+																<input type="radio" class="radio" id="r-customer-2" name="r"/>
+																<label for="r-customer-2">Межгород</label>
+															</div>
+														</div>
+													</div>
+													<div class="col-lg-4">
+														<div class='little-caption marbot'>Способ загрузки</div>
+															<div class="int_search">
+																<input type="checkbox" class="checkbox" id="radio-9" name="radio">
+																<label for="radio-9">Боковой</label>
+															</div>
+															<div class="int_search martop">
+																<input type="checkbox" class="checkbox" id="radio-10" name="radio">
+																<label for="radio-10">Сверху</label>
+															</div>
+															<div class="int_search martop">
+																<input type="checkbox" class="checkbox" id="radio-11" name="radio">
+																<label for="radio-11">Задняя</label>
+															</div>
+														</div>
+													<div class="col-lg-4">
+														<div class='little-caption marbot'>Тоннаж</div>
+														<input type="range" name="ageInputName" id="ageInputId" min="1" max="10" oninput="ageOutputId.value = ageInputId.value" value="1" />
+														<output name="ageOutputName" id="ageOutputId">1</output>
+													</div>
+													<div style='clear: both;'></div>
+													<a href="#" class="btn btn-md btn-sunglow wow fadeInRight">поиск</a>
+												</div>
+											</fieldset>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="well well-2">
+				{% include 'catalog_drivers.html' %}
+				{% block catalog_driver %}
+				{% endblock %}	
+			</section>
+			<section class="well well-2 bg-image bg-image-2 bg-yellow-green">
+				{% include 'subscribe.html' %}
+				{% block subscribe %}
+				{% endblock %}				
+			</section>
+		</main>
+		<footer class="page-footer">
+			{% include 'footer.html' %}
+			{% block footer %}
+			{% endblock %}			
+		</footer>
+	</div>
+	{% include 'scripts.html' %}
+	{% block scripts %}
+	{% endblock %}
+</body>
+</html>

@@ -1,0 +1,72 @@
+13-12 08:46:52 /api/v1/driver/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:46:52 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:46:55 /api/v1/driver/orders/?order_type=current&limit=15&offset=0 |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:46:55 {"code":0,"message":"","data":{"orders":[]}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:46:55 /api/v1/driver/orders/?order_type=in_work&limit=15&offset=0 |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:46:55 {"code":0,"message":"","data":{"orders":[]}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:47:10 /api/v1/driver/orders/?order_type=done&limit=15&offset=0 |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:47:10 {"code":0,"message":"","data":{"orders":[]}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:47:12 /api/v1/driver/orders_catalogue/?limit=15&offset=0 |  | POST | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:47:13 {"code":0,"message":"","data":{"orders":[{"id":29,"cargo_name":"абырвалг","cargo_weight":10,"weight_unit":"kilo","price":0,"status":0,"currency":"rub","payment_method":"cash","capacity":0,"body_types":null,"start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":158,"name":"Челябинск","parent_name":"Челябинская область","parent_id":1112201,"region":true,"country_name":"Россия","country_id":1},"start_date":"2018-12-12T09:24:24+0300","finish_date":"-0001-11-30T00:00:00+0230"},{"id":30,"cargo_name":"Новое имя","cargo_weight":10,"weight_unit":"kilo","price":0,"status":0,"currency":"rub","payment_method":"cash","capacity":11,"body_types":[{"id":1,"name":"Фургон"}],"start_city":{"id":null,"name":null,"parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":null,"name":null,"parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"start_date":"2018-12-13T08:47:13+0300","finish_date":"2018-12-13T08:47:13+0300"}],"total":2}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:47:16 /api/v1/driver/orders_catalogue/30/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:47:16 {"code":0,"message":"","data":{"id":30,"cargo_name":"Новое имя","cargo_weight":10,"weight_unit":"kilo","price":0,"currency":"rub","payment_type":"cash","comment":"comment","rating":1,"status":0,"start_date":"2018-12-12T09:24:28+0300","finish_date":"-0001-11-30T00:00:00+0230","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":158,"name":"Челябинск","parent_name":"Челябинская область","parent_id":1112201,"region":true,"country_name":"Россия","country_id":1},"customer":{"id":108,"name":"Роман","organization":"","avatar":"","rating":0}}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:47:20 /api/v1/driver/orders_catalogue/29/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:47:20 {"code":0,"message":"","data":{"id":29,"cargo_name":"абырвалг","cargo_weight":10,"weight_unit":"kilo","price":0,"currency":"rub","payment_type":"cash","comment":"comment","rating":0,"status":0,"start_date":"2018-12-12T09:24:24+0300","finish_date":"-0001-11-30T00:00:00+0230","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":158,"name":"Челябинск","parent_name":"Челябинская область","parent_id":1112201,"region":true,"country_name":"Россия","country_id":1},"customer":{"id":108,"name":"Роман","organization":"","avatar":"","rating":0}}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:56:21 /api/v1/driver/profile/base/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:56:21 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","avatar":"","rating":0,"notifications":"false"}}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:56:22 /api/v1/driver/orders/?order_type=current&limit=15&offset=0 |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:56:22 {"code":0,"message":"","data":{"orders":[]}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:56:22 /api/v1/driver/orders/?order_type=in_work&limit=15&offset=0 |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:56:22 {"code":0,"message":"","data":{"orders":[]}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:56:28 /api/v1/driver/orders_catalogue/?limit=15&offset=0 |  | POST | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:56:28 {"code":0,"message":"","data":{"orders":[{"id":29,"cargo_name":"абырвалг","cargo_weight":10,"weight_unit":"kilo","price":0,"status":0,"currency":"rub","payment_method":"cash","capacity":0,"body_types":null,"start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":158,"name":"Челябинск","parent_name":"Челябинская область","parent_id":1112201,"region":true,"country_name":"Россия","country_id":1},"start_date":"2018-12-13T08:47:20+0300","finish_date":"-0001-11-30T00:00:00+0230"},{"id":30,"cargo_name":"Новое имя","cargo_weight":10,"weight_unit":"kilo","price":0,"status":0,"currency":"rub","payment_method":"cash","capacity":11,"body_types":[{"id":1,"name":"Фургон"}],"start_city":{"id":null,"name":null,"parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":null,"name":null,"parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"start_date":"2018-12-13T08:56:28+0300","finish_date":"2018-12-13T08:56:28+0300"}],"total":2}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:56:30 /api/v1/driver/orders_catalogue/29/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:56:30 {"code":0,"message":"","data":{"id":29,"cargo_name":"абырвалг","cargo_weight":10,"weight_unit":"kilo","price":0,"currency":"rub","payment_type":"cash","comment":"comment","rating":0,"status":0,"start_date":"2018-12-13T08:47:20+0300","finish_date":"-0001-11-30T00:00:00+0230","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":158,"name":"Челябинск","parent_name":"Челябинская область","parent_id":1112201,"region":true,"country_name":"Россия","country_id":1},"customer":{"id":108,"name":"Роман","organization":"","avatar":"","rating":0}}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:56:34 /api/v1/driver/orders_catalogue/30/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:56:34 {"code":0,"message":"","data":{"id":30,"cargo_name":"Новое имя","cargo_weight":10,"weight_unit":"kilo","price":0,"currency":"rub","payment_type":"cash","comment":"comment","rating":1,"status":0,"start_date":"2018-12-13T08:47:16+0300","finish_date":"-0001-11-30T00:00:00+0230","start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":158,"name":"Челябинск","parent_name":"Челябинская область","parent_id":1112201,"region":true,"country_name":"Россия","country_id":1},"customer":{"id":108,"name":"Роман","organization":"","avatar":"","rating":0}}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:56:40 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:56:40 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","phone":9999999999,"phone_confirmed":"false","car_name":"Ваз","car_type":"semitrailer","body_type_id":2,"body_type_name":"Тягач","capacity":100,"volume":100,"load_type":{"top":"true","rear":"true","side":"true"},"intercity_driver":true,"in_city_driver":false,"loaders":"","rate_intercity":100,"rate_in_city":0,"city":{"id":124,"name":"Саранск","parent_name":"Мордовия ","parent_id":1052052,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:56:47 /api/v1/driver/registration/body_types/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:56:47 {"code":0,"message":"","data":{"body_types":[{"id":1,"name":"Фургон"},{"id":2,"name":"Тягач"},{"id":3,"name":"Полуприцеп"},{"id":4,"name":"Прицеп"}]}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:58:58 /api/v1/driver/orders_catalogue/?limit=15&offset=0 |  | POST | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:58:58 {"code":0,"message":"","data":{"orders":[{"id":29,"cargo_name":"абырвалг","cargo_weight":10,"weight_unit":"kilo","price":0,"status":0,"currency":"rub","payment_method":"cash","capacity":0,"body_types":null,"start_city":{"id":1,"name":"Москва","parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":158,"name":"Челябинск","parent_name":"Челябинская область","parent_id":1112201,"region":true,"country_name":"Россия","country_id":1},"start_date":"2018-12-13T08:56:30+0300","finish_date":"-0001-11-30T00:00:00+0230"},{"id":30,"cargo_name":"Новое имя","cargo_weight":10,"weight_unit":"kilo","price":0,"status":0,"currency":"rub","payment_method":"cash","capacity":11,"body_types":[{"id":1,"name":"Фургон"}],"start_city":{"id":null,"name":null,"parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"finish_city":{"id":null,"name":null,"parent_name":"","parent_id":"","region":false,"country_name":"Россия","country_id":1},"start_date":"2018-12-13T08:58:58+0300","finish_date":"2018-12-13T08:58:58+0300"}],"total":2}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:59:14 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:59:14 {"code":0,"message":"","data":{"profile":{"name":"Водитель 1","phone":9999999999,"phone_confirmed":"false","car_name":"Ваз","car_type":"semitrailer","body_type_id":2,"body_type_name":"Тягач","capacity":100,"volume":100,"load_type":{"top":"true","rear":"true","side":"true"},"intercity_driver":true,"in_city_driver":false,"loaders":"","rate_intercity":100,"rate_in_city":0,"city":{"id":124,"name":"Саранск","parent_name":"Мордовия ","parent_id":1052052,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________
+13-12 08:59:23 /api/v1/driver/profile/ |  | PATCH | 
+Параметры: | Параметров нет |...............................................................................................................................
+13-12 08:59:23 {"code":18,"message":"Не выбран не один тип загрузки","data":{}} | 
+________________________________________________________________________________________________________________________________

@@ -1,0 +1,21 @@
+{% block catalog_customers %}
+<div class="container text-center" id='anchor-customer'>
+	<h2 class="wow fadeIn">Каталог Заказов</h2>
+	<div class="row text-center flow-offset-1" id='main-customer-div'>
+		{% for order in list_order %}
+		<div class="col-sm-6 col-lg-4 wow fadeIn customer-div">
+			<div class="order-1">
+				<a href="/detail_order/{{order.id}}/" class="order-price-1 heading-5">{% if order.price==0 or order.price=='' %}По договоренности{% else %}{{order.price}} руб.{% endif %}</a>
+				<div style="clear:both;"></div>
+				<a href="/detail_order/{{order.id}}/" class="order-title-1 heading-4">{{order.start_city.name}}<br/>{% if order.finish_city.id == '' %}По городу{% else %}{{order.finish_city.name}}{% endif %}</a>
+				<p class="order-caption-1"><span>{{order.cargo_name}}</span><br/>{{order.comment[:75]}}{% if order.comment|length>75 %}...{% endif %}</p>
+				<div class="incenter">
+					<a target='blank' href="/detail_order/{{order.id}}/" class="btn btn-md btn-sunglow wow fadeInRight marbot" id='{{order.id}}'>Подробнее</a>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	<a href="#" class="btn btn-lg btn-yellow-green" id='more-orders' style='margin-top: 20px;'>Больше заказов</a>
+</div>
+{% endblock %}

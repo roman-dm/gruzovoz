@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru" class="wide smoothscroll wow-animation">
+<head>
+	<title>New order</title>
+	{% include 'header.html' %}
+	{% block header %}
+	{% endblock %}
+	<link rel="stylesheet" href="/app/views/css/zakaz.css">
+</head>
+
+  <style>
+    .rd-navbar-static .rd-navbar-nav > li {
+      {% if profile.status == 'customer' %}margin-left: 5px;{% endif %}
+      {% if profile.status == 'driver' %}margin-left: 10px;{% endif %}
+    }
+  </style>
+<body>
+	<div class="page">
+		{% include 'old-ie.html' %}
+		{% block oldie %}
+		{% endblock %}
+		<header class="page-header bg">
+			{% include 'navi.html' %}
+			{% block navi %}
+			{% endblock %}
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+					</div>
+					<div class="col-md-6">	
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="page-content">
+<!-- 			<section class="well well-1 bg-image bg-image-1 bg-yellow-green">
+				<div class="container">
+					<div class="row text-center flow-offset-1">
+					</div>
+				</div>
+			</section> -->
+			<section class="well well-2">
+				<div class="container text-center">
+					<h2 class="wow fadeIn">Новый заказ</h2>
+					<div class='mid-zakaz' style='margin:0 auto;max-width:900px;min-height: 1px;'>
+						<div class="col-lg-12">
+							<div class="search-form-body">
+								<form class='rd-mailform' method="post" action="">
+									<input type="hidden" name="form-type" value="contact"/>
+									<fieldset>
+										<div class='caption-zakaz marbot'>Город</div>
+										<div class='col-lg-9'>
+											<div class='row'>
+												<div class='subcaption-zakaz col-lg-3'>Отправления:<span class='compulsory_attr'>&#042;</span></div>
+												<div class='col-lg-9'>
+													<div class='col-lg-11'>
+														<label class="z-104 mfSelect" data-add-placeholder>
+															<input type="text" class="city" id='new-zakaz-ot' placeholder="Начните вводить название города" city-id="" autocomplete="off"/>
+															<ul class="dropdown" id="zakaz-ot-zakaz"></ul>
+															<div class='loader' data-id-loader='new-zakaz-ot' style="top: 8px;right: 20px; display: none;"></div>
+														</label>
+														<div class='err' id='err_city_ot' style='display: none'>Выберите город отправления из списка</div>
+													</div>
+													<div class='col-lg-1 col-sm-1 col-xs-2'><i class="fa fa-times delete-city" data-id='new-zakaz-ot' aria-hidden="true"></i></div>
+												</div>
+											</div>
+											<div class='row row-to' style="display: none">
+												<div class='subcaption-zakaz col-lg-3'>Назначения:<span class='compulsory_attr'>&#042;</span></div>
+												<div class='col-lg-9'>
+													<div class='col-lg-11'>
+														<label class="z-103 mfSelect" data-add-placeholder>
+															<input type="text" class="city" id='new-zakaz-to' placeholder="Начните вводить название города" city-id="" autocomplete="off"/>
+															<ul class="dropdown" id="zakaz-to-zakaz"></ul>
+															<div class='loader' data-id-loader='new-zakaz-to' style="top: 8px;right: 20px; display: none;"></div>
+														</label>
+														<div class='err' id='err_city_to' style='display: none'>Выберите город назначения из списка</div>
+													</div>
+													<div class='col-lg-1 col-sm-1 col-xs-2'><i class="fa fa-times delete-city" data-id='new-zakaz-to' aria-hidden="true"></i></div>
+												</div>
+											</div>
+										</div>
+										<div class='col-md-3 radio-item'>
+											<div class="int_search">
+												<input type="checkbox" class="checkbox" id="zakaz-checkbox-1" name=""/>
+												<label for="zakaz-checkbox-1">Межгород</label>
+											</div>
+										</div>
+										<div style='clear:both;'></div>
+										<hr>
+										<div class='caption-zakaz marbot martop'>Оплата<span class='compulsory_attr'>&#042;</span></div>
+										<div class='err' id='pay_status' style='display: none; margin-top: -20px;'>Выберите цену и способ оплаты</div>
+											<div class="int_search">
+												<div class='col-lg-4' style='padding-bottom: 20px;'>
+													<div class="pull-left" style="padding-top: 15px;">
+														<input type="radio" class="radio" id="zakaz-radio-5" name="radio">
+														<label for="zakaz-radio-5">Фиксированная цена</label>
+													</div>
+												</div>
+												<div class='col-lg-5'>
+												<div class="big-int" id='price-block' style='padding:0;float: right;display: none;'>
+													<label data-add-placeholder="" class="mfInput" style='max-width: 100%!important'>
+														<input type="text" name="name" data-constraints="" placeholder="Введите цену" disabled="" id='price'>
+													</label>
+													<div class='err' id='err_price' style='display: none'>Введите цену</div>
+												</div>
+												</div>
+												<div style='clear:both'></div>
+											</div>
+											<div class="col-lg-12">
+												<div class="int_search">
+													<input type="radio" class="radio" id="radio-6" name="radio"/>
+													<label for="radio-6">По договоренности</label>
+												</div>
+											</div>
+											<div class="col-lg-12 martop">
+												<div class="int_search">
+													<input type="checkbox" class="checkbox" id="cash_pay" name="radio"/>
+													<label for="cash_pay">Оплата наличными</label>
+												</div>
+												<div class="int_search martop">
+													<input type="checkbox" class="checkbox" id="non_cash_pay" name="radio"/>
+													<label for="non_cash_pay">Безналичный расчет</label>
+												</div>
+											</div>
+											<div style='clear:both'></div>
+											<hr>
+											<div class='caption-zakaz marbot martop'>Информация о грузе</div>
+											<div class='col-lg-12'>
+												<div class='row'>
+													<div class='subcaption-zakaz col-lg-3'>Тип кузаова автомобиля:<span class='compulsory_attr'>&#042;</span></div>
+													<div class='col-lg-9'>
+														<select class="js-example-basic-multiple" id='bt-list' name="states[]" multiple="multiple">
+															{% for bt in body_types %}		
+														  		<option value="{{bt.id}}">{{bt.name}}</option>
+														  	{% endfor %}
+														</select>
+														<div class='err' id='bt-list-err' style='display: none'>Выберите тип кузова автомобиля</div>
+													</div>
+												</div>
+												<div class='row'>
+													<div class='subcaption-zakaz col-lg-3'>Наименование:<span class='compulsory_attr'>&#042;</span></div>
+													<div class='col-lg-9'>
+														<label class="z-104 mfSelect" data-add-placeholder>
+															<input type="text" class="" id='cargo_name' placeholder="" autocomplete="off"/>
+														</label>
+														<div class='err' id='cargo_name_err' style='display: none'>Введите наменование груза</div>
+													</div>
+
+												</div>
+												<div class='row'>
+													<div class='subcaption-zakaz col-lg-3'>Вес:<span class='compulsory_attr'>&#042;</span></div>
+													<div class='col-lg-5 col-sm-6'>
+														<label class="z-104 mfSelect" data-add-placeholder>
+															<input type="text" class="" id='cargo_weight' placeholder="" autocomplete="off" pattern="^[ 0-9]+$"/>
+														</label>
+														<div class='err' id='cargo_weight_err' style='display: none'>Введите вес</div>
+													</div>
+													<div class='col-lg-4 col-sm-6'>
+														<label class="z-104 mfSelect" data-add-placeholder="">
+															<div class="value" id='money' data-ajax='kilo' data="кг">кг</div>
+															<ul class="dropdown" id='money-dropdown' style='margin-top: 0px;'>
+																<li class="option money-item" id='mi-1' data-name='кг'>кг</li>
+																<li class="option money-item" id='mi-2' data-name='тонн'>тонн</li>
+															</ul>
+															<span class="mfPlaceHolder"></span>
+														</label>
+													</div>
+												</div>
+											</div>
+											<div style='clear:both'></div>	
+											<hr>
+											<div class='caption-zakaz marbot martop'>Даты<span class='compulsory_attr'>&#042;</span></div>
+											<div class="martop zakaz-dates">
+												<div class="pull-left col-lg-6 col-sm-6">
+													<!-- <div class="date-start">Дата начала</div> -->
+													<input class='datepicker cursor' readonly type='text' id='startdatetask' placeholder='Начало'/>
+													<div class='err' id='startdate-err' style="display: none;">Выберите дату начала</div>
+												</div>
+												<div class="col-lg-6 col-sm-6" style="margin-top: 0px;">
+													<!-- <div class="date-end">Дата окончания</div> -->
+													<input class='datepicker cursor' readonly type='text' id='enddatetask' placeholder='Конец'/>
+													<div class='err' id='enddate-err' style="display: none;">Выберите дату окончания</div>
+												</div>
+											</div>
+											<div style='clear:both'></div>
+											<div class='col-lg-12 martop'>
+													<div class="int_search">
+														<input type="checkbox" class="checkbox" id="zakaz-checkbox-2" name=""/>
+														<label for="zakaz-checkbox-2">Открытая дата</label>
+													</div>
+												</div>
+											<div style='clear:both'></div>
+											<hr>
+											<div class='caption-zakaz marbot martop'>Комментарий</div>
+											<label data-add-placeholder="">
+		                              			<textarea name="message" placeholder="Как можно подробнее опишите Ваш заказ" data-constraints="@NotEmpty" id='new-zakaz-comment'></textarea>
+		        							</label>
+											<div class="mfControls btn-group text-center col-lg-12">
+		              							<button class="btn btn-sm btn-sunglow" type="submit" id="add_order" style="float:none">Разместить заказ</button>
+		            						</div>
+									</fieldset>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="create_oreder_done" class="modal fade" role="dialog" style="top:10%">
+	               <div class="modal-dialog">
+	                <div class="modal-content">
+	                  <div class="modal-header">
+	                    <button type="button" class="close" data-dismiss="modal" data-name='customer'>&times;</button>
+	                    <h4 class="modal-title">Статус нового заказа</h4>
+	                  </div>
+	                  <div class="modal-body">
+	                    <p></p>
+                      <hr>
+	                  </div>
+		                  <div class="modal-footer">
+		                  <a href='http://gruzovoz.alexkam.ru/new_order'><button type="button" class="btn btn-default">Создать еще один заказ</button></a>
+		         		  <a href='http://gruzovoz.alexkam.ru/profile'><button type="button" class="btn btn-default">В личный кабинет</button></a>
+	                      <button type="button" class="btn btn-default" data-name='customer' data-dismiss="modal" id='close'>Закрыть</button>
+		                  </div>
+	                </div>
+	               </div>
+	              </div>
+
+			</section>
+			<section class="well well-2 bg-image bg-image-2 bg-yellow-green">
+				{% include 'subscribe.html' %}
+				{% block subscribe %}
+				{% endblock %}				
+			</section>
+		</main>
+		<footer class="page-footer">
+			{% include 'footer.html' %}
+			{% block footer %}
+			{% endblock %}			
+		</footer>
+	</div>
+	{% include 'scripts.html' %}
+	{% block scripts %}
+	{% endblock %}
+</body>
+</html>

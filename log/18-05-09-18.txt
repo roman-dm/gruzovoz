@@ -1,0 +1,4 @@
+05-09 18:31:35 /api/v1/driver/profile/ |  | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+05-09 18:31:35 {"code":0,"message":"","data":{"profile":{"name":"Driver Emul","phone":9999999999,"phone_confirmed":"false","car_name":"VAZ","car_type":"single","body_type_id":2,"capacity":100,"volume":17,"load_type":{"top":"true","rear":"true","side":"true"},"intercity_driver":true,"in_city_driver":true,"loaders":"","rate_intercity":200,"rate_in_city":1000,"city":{"id":1,"name":"Москва","parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1}}}} | 
+________________________________________________________________________________________________________________________________

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru" class="wide smoothscroll wow-animation">
+<head>
+  <title>ЛК заказчик</title>
+  {% include 'header.html' %}
+  {% block header %}
+  {% endblock %}
+
+  <!-- <link rel="stylesheet" href="/app/views/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="/app/views/css/DT_bootstrap.css">
+  <link rel="stylesheet" href="/app/views/css/profile-customer.css">
+
+</head>
+<body>
+  <div class="page">
+    {% include 'old-ie.html' %}
+    {% block oldie %}
+    {% endblock %}
+    <header class="page-header bg">
+      {% include 'navi.html' %}
+      {% block navi %}
+      {% endblock %}
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+          </div>
+          <div class="col-md-6">  
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <section class="well well-2">
+        <div class="container text-center">
+          <ul class="nav nav-tabs">
+            <li class="active col-lg-3"><a data-toggle="tab" href="#profile">Мой профиль</a></li>
+            <li class='col-lg-3'><a data-toggle="tab" href="#orders">Мои заказы</a></li>
+            <li class='col-lg-3'><a data-toggle="tab" href="#support">Поддержка</a></li>
+          </ul>
+          <div class='col-lg-12'>
+            <div class="tab-content" style='padding-bottom: 50px;'>
+              <div id="profile" class="tab-pane fade in active">
+                <div style='padding: 50px;'>
+                  <div class="col-lg-4">
+                    <div class='div-avatar martop'>
+                      <div class='avatar'>
+                        <img src="/app/views/images/1.jpg" alt="">
+                      </div>
+                      <a href="#" class="btn btn-lg btn-sunglow offset-3 marbot">Изменить аватар</a>
+                    </div>  
+                  </div>
+                  <div class="col-lg-8">
+                    <div class='col-lg-3'>
+                      <div class='caption-profile marbot'>Имя:</div>
+                    </div>
+                    <div class='col-lg-9'>
+                        <input type="text" class="" autocomplete="off"/>
+                    </div>
+                  </div>
+                  <div class="col-lg-8" style='padding-top: 50px;'>
+                    <div class='col-lg-3'>
+                      <div class='caption-profile marbot'>Организация:</div>
+                    </div>
+                    <div class='col-lg-9'>
+                        <input type="text" class="" autocomplete="off"/>
+                    </div>
+                  </div>
+                  <div class="col-lg-8" style='padding-top: 50px;'>
+                    <div class='col-lg-3'>
+                      <div class='caption-profile marbot'>Телефон:</div>
+                    </div>
+                    <div class='col-lg-4'>
+                        <input type="text" class="" autocomplete="off" placeholder="+7 (___) ___-__-__" id='phone-driver-profile'/>
+                    </div>
+                    <div class='col-lg-5'>
+                      <a href="#" class="btn btn-sm btn-sunglow" style="float:right">Подтвердить</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-8" style='padding-top: 50px;'>
+                    <div class='col-lg-3'>
+                      <div class='caption-profile marbot'>Рейтинг:</div>
+                    </div>
+                    <div class='col-lg-9 rating'>
+                        4.5 <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="clear: both"></div>
+              <div id="orders" class="tab-pane fade">
+                <div style='padding: 25px;'>
+                  
+                  <div class="row-fluid">
+                    <div class="block">
+                      <div class="block-content collapse in">
+                        <div class="span12">
+                          <div id="example_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                            <!-- <div class="table-responsive"> -->
+                              <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered dataTable" id="example" aria-describedby="example_info">
+                                <thead>
+                                  <tr role="row">
+                                    <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">№ заказа</th>
+                                    
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Город (откуда)</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Город (куда)</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Дата начала</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Дата окончания</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 110px" aria-label="CSS grade: activate to sort column ascending">Цена</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Тип оплаты</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Тип груза</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Вес</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Просмотры/новые</th>
+                                  </tr>
+                                </thead>
+                                <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                  <tr class="gradeA odd">
+                                    <td class="  sorting_1"><a href="/detail_order/">0122</a></td>
+                                    <td class=" ">Москва</td>
+                                    <td class="center ">По городу</td>
+                                    <td class="center ">01.01.1970</td>
+                                    <td class="  sorting_1">01.01.1970</td>
+                                    <td class=" ">150 руб/ч</td>
+                                    <td class=" ">Безнал</td>
+                                    <td class="center ">Мебель</td>
+                                    <td class="center ">1 т</td>
+                                    <td class=" ">2(1)</td>
+                                  </tr><tr class="gradeA even">
+                                    <td class="  sorting_1"><a href="/detail_order/">123456789</a></td>
+                                   
+                                    <td class=" ">Москва</td>
+                                    <td class="center ">По городу</td>
+                                    <td class="center ">01.01.1970</td>
+                                    <td class="  sorting_1">01.01.1970</td>
+                                    <td class=" ">150 руб/ч</td>
+                                    <td class=" ">Безнал</td>
+                                    <td class="center ">Мебель</td>
+                                    <td class="center ">1 т</td>
+                                    <td class=" ">2(1)</td>
+                                  </tr><tr class="gradeA odd">
+                                    <td class="  sorting_1"><a href="/detail_order/">123456789</a></td>
+                                    <td class=" ">Москва</td>
+                                    <td class="center ">По городу</td>
+                                    <td class="center ">01.01.1970</td>
+                                    <td class="  sorting_1">01.01.1970</td>
+                                    <td class=" ">150 руб/ч</td>
+                                    <td class=" ">Безнал</td>
+                                    <td class="center ">Мебель</td>
+                                    <td class="center ">1 т</td>
+                                    <td class=" ">2(1)</td>
+                                  </tr>
+                                  
+                                </tbody>
+                              </table>
+                            <!-- </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div style="clear: both"></div>
+              <div id="support" class="tab-pane fade">
+                Раздел в разработке
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="well well-2 bg-image bg-image-2 bg-yellow-green">
+        {% include 'subscribe.html' %}
+        {% block subscribe %}
+        {% endblock %}        
+      </section>
+    </main>
+    <footer class="page-footer">
+      {% include 'footer.html' %}
+      {% block footer %}
+      {% endblock %}      
+    </footer>
+  </div>
+  {% include 'scripts.html' %}
+  {% block scripts %}
+  {% endblock %}
+  <script src="/app/views/js/Data_tables.js"></script>
+  <script src="/app/views/js/DT_bootstrap.js"></script>
+  <script type="text/javascript">
+    jQuery(function($){
+      $("#phone-driver-profile").mask("+7 (999) 999-99-99");
+    });
+  </script>
+</body>
+</html>

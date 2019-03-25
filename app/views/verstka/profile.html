@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru" class="wide smoothscroll wow-animation">
+<head>
+  <title>ЛК водитель</title>
+  {% include 'header.html' %}
+  {% block header %}
+  {% endblock %}
+
+  <!-- <link rel="stylesheet" href="/app/views/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="/app/views/css/DT_bootstrap.css">
+  <link rel="stylesheet" href="/app/views/css/profile-driver.css">
+
+</head>
+<body>
+  <div class="page">
+    {% include 'old-ie.html' %}
+    {% block oldie %}
+    {% endblock %}
+    <header class="page-header bg">
+      {% include 'navi.html' %}
+      {% block navi %}
+      {% endblock %}
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+          </div>
+          <div class="col-md-6">  
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <section class="well well-2">
+        <div class="container text-center">
+          <ul class="nav nav-tabs">
+            <li class="active col-lg-3"><a data-toggle="tab" href="#profile">Мой профиль</a></li>
+            <li class='col-lg-3'><a data-toggle="tab" href="#orders">Мои заказы</a></li>
+            <li class='col-lg-3'><a data-toggle="tab" href="#car">Мой автомобиль</a></li>
+            <li class='col-lg-3'><a data-toggle="tab" href="#support">Поддержка</a></li>
+          </ul>
+          <div class='col-lg-12'>
+            <div class="tab-content" style='padding-bottom: 50px;'>
+              <div id="profile" class="tab-pane fade in active">
+                <div style='padding: 50px;'>
+                  <div class="col-lg-4">
+                    <div class='div-avatar martop'>
+                      <div class='avatar'>
+                        <img src="/app/views/images/1.jpg" alt="">
+                      </div>
+                      <a href="#" class="btn btn-lg btn-sunglow offset-3 marbot">Изменить аватар</a>
+                    </div>  
+                  </div>
+                  <div class="col-lg-8">
+                    <div class='col-lg-3'>
+                      <div class='caption-profile marbot'>Имя:</div>
+                    </div>
+                    <div class='col-lg-9'>
+                        <input type="text" class="" autocomplete="off"/>
+                    </div>
+                  </div>
+                  <div class="col-lg-8" style='padding-top: 50px;'>
+                    <div class='col-lg-3'>
+                      <div class='caption-profile marbot'>Телефон:</div>
+                    </div>
+                    <div class='col-lg-4'>
+                        <input type="text" class="" autocomplete="off" placeholder="+7 (___) ___-__-__" id='phone-driver-profile'/>
+                    </div>
+                    <div class='col-lg-5'>
+                      <a href="#" class="btn btn-sm btn-sunglow" style="float:right">Подтвердить</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-8" style='padding-top: 50px;'>
+                    <div class='col-lg-3'>
+                      <div class='caption-profile marbot'>Рейтинг:</div>
+                    </div>
+                    <div class='col-lg-9 rating'>
+                        4.5 <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div class="col-lg-8" style='padding-top: 50px;'>
+                    <div class='col-lg-3'>
+                      <div class='caption-profile marbot'>Подписки:</div>
+                    </div>
+                    <div class='col-lg-9'>
+                      <div class='col-lg-4 nopad'>
+                        <label class="z-104 mfSelect" data-add-placeholder>
+                          <input type="text" class="city" id='zakaz-ot' placeholder="" city-id="" autocomplete="off"/>
+                          <ul class="dropdown" id="zakaz-ot-zakaz"></ul>
+                          <div class='loader' data-id-loader='zakaz-ot' style="top: 8px;right: 20px; display: none;"></div>
+                        </label>
+                      </div>
+                      <div class='col-lg-4 nopad'>
+                        <label class="z-104 mfSelect" data-add-placeholder>
+                          <input type="text" class="city" id='zakaz-ot' placeholder="" city-id="" autocomplete="off"/>
+                          <ul class="dropdown" id="zakaz-ot-zakaz"></ul>
+                          <div class='loader' data-id-loader='zakaz-ot' style="top: 8px;right: 20px; display: none;"></div>
+                        </label>
+                      </div>
+                      <div class='col-lg-4 nopad'>
+                        <label class="z-104 mfSelect" data-add-placeholder>
+                          <input type="text" class="city" id='zakaz-ot' placeholder="" city-id="" autocomplete="off"/>
+                          <ul class="dropdown" id="zakaz-ot-zakaz"></ul>
+                          <div class='loader' data-id-loader='zakaz-ot' style="top: 8px;right: 20px; display: none;"></div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="clear: both"></div>
+              <div id="orders" class="tab-pane fade">
+                <div style='padding: 25px;'>
+                  
+                  <div class="row-fluid">
+                    <div class="block">
+                      <div class="block-content collapse in">
+                        <div class="span12">
+                          <div id="example_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                            <!-- <div class="table-responsive"> -->
+                              <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered dataTable" id="example" aria-describedby="example_info">
+                                <thead>
+                                  <tr role="row">
+                                    <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">№ заказа</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Имя</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Город (откуда)</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Город (куда)</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Дата начала</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Дата окончания</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 110px" aria-label="CSS grade: activate to sort column ascending">Цена</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Тип оплаты</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Тип груза</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Вес</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Телефон</th>
+                                  </tr>
+                                </thead>
+                                <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                  <tr class="gradeA odd">
+                                    <td class="  sorting_1"><a href="#">123456789</a></td>
+                                    <td class=" ">Пупкин Василий</td>
+                                    <td class=" ">Москва</td>
+                                    <td class="center ">По городу</td>
+                                    <td class="center ">01.01.1970</td>
+                                    <td class="  sorting_1">01.01.1970</td>
+                                    <td class=" ">150 руб/ч</td>
+                                    <td class=" ">Безнал</td>
+                                    <td class="center ">Мебель</td>
+                                    <td class="center ">1 т</td>
+                                    <td class="center ">+79123456789</td>
+                                  </tr><tr class="gradeA even">
+                                    <td class="  sorting_1"><a href="#">123456789</a></td>
+                                    <td class=" ">Пупкин Василий</td>
+                                    <td class=" ">Москва</td>
+                                    <td class="center ">По городу</td>
+                                    <td class="center ">01.01.1970</td>
+                                    <td class="  sorting_1">01.01.1970</td>
+                                    <td class=" ">150 руб/ч</td>
+                                    <td class=" ">Безнал</td>
+                                    <td class="center ">Мебель</td>
+                                    <td class="center ">1 т</td>
+                                    <td class="center ">+79123456789</td>
+                                  </tr><tr class="gradeA odd">
+                                    <td class="  sorting_1"><a href="#">123456789</a></td>
+                                    <td class=" ">Пупкин Василий</td>
+                                    <td class=" ">Москва</td>
+                                    <td class="center ">По городу</td>
+                                    <td class="center ">01.01.1970</td>
+                                    <td class="  sorting_1">01.01.1970</td>
+                                    <td class=" ">150 руб/ч</td>
+                                    <td class=" ">Безнал</td>
+                                    <td class="center ">Мебель</td>
+                                    <td class="center ">1 т</td>
+                                    <td class="center ">+79123456789</td>
+                                  </tr>
+                                  
+                                </tbody>
+                              </table>
+                            <!-- </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div style="clear: both"></div>
+              <div id="car" class="tab-pane fade">
+              <div style='padding: 25px;'>
+                  
+                  <div class="row-fluid">
+                    <div class="block">
+                      <form class='rd-mailform' method="post" action="bat/rd-mailform.php">
+                        <div class='col-lg-4'>
+                          
+                          <div class='fst'>
+                            <div class='caption-profile-avto'>
+                              Мой город:
+                            </div>
+                            <div class='col-lg-12'>
+                              <label class="z-104 mfSelect" data-add-placeholder>
+                                <input type="text" class="city" id='city-driver' placeholder="Начните вводить город" city-id="" autocomplete="off"/>
+                                <ul class="dropdown" id="city_driver_from"></ul>
+                                <div class='loader' data-id-loader='city-driver' style="top: 8px;right: 20px; display: none;"></div>
+                              </label>
+                            </div>
+                          </div>
+                          <div style="clear: both"></div>
+                          <div class='snd'>
+                            <div class='caption-profile-avto'>
+                              Зона передвижения:
+                            </div>
+                            <div class="int_search col-lg-12">
+                              <input type="checkbox" class="checkbox" id="checkbox-10" name="checkbox"/>
+                              <label for="checkbox-10">По городу</label>
+                            </div>
+                            <div class="int_search col-lg-12">
+                              <input type="checkbox" class="checkbox" id="checkbox-11" name="checkbox"/>
+                              <label for="checkbox-11">Межгород</label>
+                            </div>
+                            <div class="int_search col-lg-12" style='display: none' id='loader'>
+                              <input type="checkbox" class="checkbox" id="checkbox-12" name="checkbox"/>
+                              <label for="checkbox-12">Грузчики</label>
+                            </div>
+                          </div>
+                          <div style="clear: both"></div>
+                          <div class='snd'>
+                            <div class='caption-profile-avto'>
+                              Стоимость:
+                            </div>
+                            <div class='line-avto' id='city-price' style='display: none'>
+                              <div class='subcaption-profile-avto col-lg-4'>
+                                По городу
+                              </div>
+                              <div class='col-lg-5 nopad'>
+                                <input type=text/>
+                              </div>
+                              <div class='col-lg-3 si'>
+                                руб/ч
+                              </div>
+                            </div>
+                            <div style="clear: both"></div>
+                            <div class='line-avto' id='ctc-price' style='display: none'>
+                              <div class='subcaption-profile-avto col-lg-4'>
+                                Межгород
+                              </div>
+                              <div class='col-lg-5 nopad'>
+                                <input type=text/>
+                              </div>
+                              <div class='col-lg-3 si'>
+                                руб/км
+                              </div>
+                            </div>
+                          </div>
+                          <div style="clear: both"></div>
+                        </div>
+                          
+                        <div class='col-lg-4'>
+                          <div class='fst'>
+                            <div class='caption-profile-avto'>
+                              Параметры автомобиля:
+                            </div>
+                            <div class='line-avto'>
+                              <div class='subcaption-profile-avto col-lg-6'>
+                                Марка:
+                              </div>
+                              <div class='col-lg-6 nopad'>
+                                <input type=text/>
+                              </div>
+                            </div>
+                            <div style="clear: both"></div>
+                            <div class='line-avto'>
+                              <div class='subcaption-profile-avto col-lg-6'>
+                                Грузоподъемность:
+                              </div>
+                              <div class='col-lg-4 nopad'>
+                                <input type=text/>
+                              </div>
+                              <div class='col-lg-2 si'>
+                                тонн
+                              </div>
+                            </div>
+                            <div style="clear: both"></div>
+                            <div class='line-avto'>
+                              <div class='subcaption-profile-avto col-lg-6'>
+                                Объем:
+                              </div>
+                              <div class='col-lg-4 nopad'>
+                                <input type=text/>
+                              </div>
+                              <div class='col-lg-2 si'>
+                                м3
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class='col-lg-4'>
+                          <div class='fst'>
+                            <div class='caption-profile-avto'>
+                              Тип кузова:
+                            </div>
+                            <div class='col-lg-12'>
+                              <label class="z-104 mfSelect" data-add-placeholder="">
+                                <div class="value" id="type">Выберите</div>
+                                <ul class="dropdown" id="type-dropdown" style="margin-top: 0px; opacity: 0; visibility: hidden;">
+                                  <li class="option type-item" id='ti-1' data-name="Седан">Седан</li>
+                                  <li class="option type-item" id='ti-2' data-name="Универсал">Универсал</li>
+                                </ul>
+                                <span class="mfPlaceHolder"></span>
+                              </label>
+                            </div>
+                          </div>
+                          <div style="clear: both"></div>
+
+                          <div class='snd'>
+                            <div class='caption-profile-avto'>
+                              Тип загрузки:
+                            </div>
+                            <div class="int_search col-lg-12">
+                              <input type="checkbox" class="checkbox" id="driver-profile-checkbox-1" name=""/>
+                              <label for="driver-profile-checkbox-1">Верхняя</label>
+                            </div>
+                            <div class="int_search col-lg-12">
+                              <input type="checkbox" class="checkbox" id="driver-profile-checkbox-2" name=""/>
+                              <label for="driver-profile-checkbox-2">Боковая</label>
+                            </div>
+                            <div class="int_search col-lg-12">
+                              <input type="checkbox" class="checkbox" id="driver-profile-checkbox-3" name=""/>
+                              <label for="driver-profile-checkbox-3">Задняя</label>
+                            </div>
+                          </div>
+                          <div style="clear: both"></div>
+
+                          <div class='snd'>
+                            <div class='caption-profile-avto'>
+                              Тип автомобиля:
+                            </div>
+                            <div class='col-lg-12'>
+                              <label class="z-104 mfSelect" data-add-placeholder="">
+                                <div class="value" id="typeavto">Выберите</div>
+                                <ul class="dropdown" id="typeavto-dropdown" style="margin-top: 0px; opacity: 0; visibility: hidden;">
+                                  <li class="option typeavto-item" id='tai-1' data-name="Прицеп">Прицеп</li>
+                                  <li class="option typeavto-item" id='tai-2' data-name="Полуприцеп">Полуприцеп</li>
+                                </ul>
+                                <span class="mfPlaceHolder"></span>
+                              </label>
+                            </div>
+                          </div>
+
+                        </div>
+                      </form>
+                      <div style="clear: both"></div>
+                      <a href="#" class="btn btn-lg btn-sunglow offset-3">Сохранить изменения</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="clear: both"></div>
+              <div id="support" class="tab-pane fade">
+                Раздел в разработке
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="well well-2 bg-image bg-image-2 bg-yellow-green">
+        {% include 'subscribe.html' %}
+        {% block subscribe %}
+        {% endblock %}        
+      </section>
+    </main>
+    <footer class="page-footer">
+      {% include 'footer.html' %}
+      {% block footer %}
+      {% endblock %}      
+    </footer>
+  </div>
+  {% include 'scripts.html' %}
+  {% block scripts %}
+  {% endblock %}
+  <script src="/app/views/js/Data_tables.js"></script>
+  <script src="/app/views/js/DT_bootstrap.js"></script>
+  <script type="text/javascript">
+    jQuery(function($){
+      $("#phone-driver-profile").mask("+7 (999) 999-99-99");
+    });
+  </script>
+</body>
+</html>

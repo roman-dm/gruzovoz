@@ -1,0 +1,46 @@
+03-11 10:47:21 /api/v1/customer/drivers_catalogue/ | app | token=999956655c112146708a24b2cd21dbb5e | POST | 
+Параметры: | name= Роман phone= 89161836860 device_id= ljadlfj123112sfdlfjda country_id= 1 city_id= 124 car_name= Ford Transit car_type= trailer body_type_id= 2 capacity= 2 volume= 10 load_type_rear= true driver_specialization= in_city rate_intercity= 1200  |...............................................................................................................................
+03-11 10:47:21 {"code":0,"message":"","data":{"drivers":[{"id":57,"name":"Роман","avatar":"","car_name":"Ford Transit","rating":0,"rate_in_city":1200,"rate_intercity":0,"loaders":"","capacity":10}]}} | 
+________________________________________________________________________________________________________________________________
+03-11 10:47:42 /api/v1/customer/drivers_catalogue/ | app | token=999956655c112146708a24b2cd21dbb5e | POST | 
+Параметры: | Параметров нет |...............................................................................................................................
+03-11 10:47:42 {"code":0,"message":"","data":{"drivers":[{"id":46,"name":"Alex danger","avatar":"/get_image/?image=a1648796c66b89df17a084be4111","car_name":"MAz-KamaZ","rating":0,"rate_in_city":0,"rate_intercity":0,"loaders":"false","capacity":0},{"id":45,"name":"джонло","avatar":"/get_image/?image=a1648796c66b89df17a084be4","car_name":"маз","rating":3.9,"rate_in_city":1000,"rate_intercity":0,"loaders":"","capacity":25},{"id":47,"name":"Васян","avatar":"","car_name":"мазай","rating":4,"rate_in_city":1000,"rate_intercity":0,"loaders":"","capacity":25},{"id":48,"name":"Васисуалий","avatar":"","car_name":"МАЗ","rating":0,"rate_in_city":0,"rate_intercity":0,"loaders":"","capacity":56},{"id":49,"name":"Васисуалий","avatar":"/get_image/?image=a1648796c66b89df17a084be41","car_name":"МАЗ","rating":2,"rate_in_city":0,"rate_intercity":0,"loaders":"","capacity":56},{"id":56,"name":"Василий","avatar":"","car_name":"Маз","rating":0,"rate_in_city":100,"rate_intercity":0,"loaders":"","capacity":50},{"id":57,"name":"Роман","avatar":"","car_name":"Ford Transit","rating":0,"rate_in_city":1200,"rate_intercity":0,"loaders":"","capacity":10}]}} | 
+________________________________________________________________________________________________________________________________
+03-11 10:48:54 /api/v1/customer/drivers_catalogue/ | app | token=999956655c112146708a24b2cd21dbb5e | POST | 
+Параметры: | region_id= 1052052  |...............................................................................................................................
+03-11 10:48:54 {"code":0,"message":"","data":{"drivers":[{"id":57,"name":"Роман","avatar":"","car_name":"Ford Transit","rating":0,"rate_in_city":1200,"rate_intercity":0,"loaders":"","capacity":10}]}} | 
+________________________________________________________________________________________________________________________________
+03-11 10:49:28 /api/v1/customer/drivers_catalogue/ | app | token=999956655c112146708a24b2cd21dbb5e | POST | 
+Параметры: | region_id= 1052052  |...............................................................................................................................
+03-11 10:49:28 {"code":0,"message":"","data":{"drivers":[{"id":47,"name":"Васян","avatar":"","car_name":"мазай","rating":4,"rate_in_city":1000,"rate_intercity":0,"loaders":"","capacity":25},{"id":49,"name":"Васисуалий","avatar":"/get_image/?image=a1648796c66b89df17a084be41","car_name":"МАЗ","rating":2,"rate_in_city":0,"rate_intercity":0,"loaders":"","capacity":56},{"id":57,"name":"Роман","avatar":"","car_name":"Ford Transit","rating":0,"rate_in_city":1200,"rate_intercity":0,"loaders":"","capacity":10}]}} | 
+________________________________________________________________________________________________________________________________
+03-11 10:49:53 /api/v1/customer/drivers_catalogue/ | app | token=999956655c112146708a24b2cd21dbb5e | POST | 
+Параметры: | region_id= 1052052 offset= 1 limit= 2  |...............................................................................................................................
+03-11 10:49:53 {"code":0,"message":"","data":{"drivers":[{"id":49,"name":"Васисуалий","avatar":"/get_image/?image=a1648796c66b89df17a084be41","car_name":"МАЗ","rating":2,"rate_in_city":0,"rate_intercity":0,"loaders":"","capacity":56},{"id":57,"name":"Роман","avatar":"","car_name":"Ford Transit","rating":0,"rate_in_city":1200,"rate_intercity":0,"loaders":"","capacity":10}]}} | 
+________________________________________________________________________________________________________________________________
+03-11 10:57:11 /api/v1/customer/drivers_catalogue/ | app | token=999956655c112146708a24b2cd21dbb5e | POST | 
+Параметры: | region_id= 1052052 offset= 1 limit= 2  |...............................................................................................................................
+03-11 10:57:11 {"code":0,"message":"","data":{"drivers":[{"id":49,"name":"Васисуалий","avatar":"/get_image/?image=a1648796c66b89df17a084be41","car_name":"МАЗ","rating":2,"rate_in_city":0,"rate_intercity":0,"loaders":"","capacity":56},{"id":57,"name":"Роман","avatar":"","car_name":"Ford Transit","rating":0,"rate_in_city":1200,"rate_intercity":0,"loaders":"","capacity":10}]}} | 
+________________________________________________________________________________________________________________________________
+03-11 10:57:27 /api/v1/customer/drivers_catalogue/ | app | token=999956655c112146708a24b2cd21dbb5e | POST | 
+Параметры: | region_id= 1052052 offset= 1 limit= 2 max_ton= 20  |...............................................................................................................................
+03-11 10:57:27 {"code":0,"message":"","data":{"drivers":[]}} | 
+________________________________________________________________________________________________________________________________
+03-11 10:58:07 /api/v1/customer/drivers_catalogue/ | app | token=999956655c112146708a24b2cd21dbb5e | POST | 
+Параметры: | region_id= 1052052 offset= 1 limit= 2 max_ton= 20  |...............................................................................................................................
+03-11 10:58:07 {"code":0,"message":"","data":{"drivers":[]}} | 
+________________________________________________________________________________________________________________________________
+03-11 10:58:26 /api/v1/customer/drivers_catalogue/ | app | token=999956655c112146708a24b2cd21dbb5e | POST | 
+Параметры: | region_id= 1052052 offset= 1 limit= 2 max_ton= 20  |...............................................................................................................................
+03-11 10:58:26 {"code":0,"message":"","data":{"drivers":[]}} | 
+________________________________________________________________________________________________________________________________
+03-11 10:58:40 /api/v1/customer/drivers_catalogue/ | app | token=999956655c112146708a24b2cd21dbb5e | POST | 
+Параметры: | region_id= 1052052 offset= 1 limit= 2 max_ton= 20  |...............................................................................................................................
+03-11 10:58:40 {"code":0,"message":"","data":{"drivers":[]}} | 
+________________________________________________________________________________________________________________________________
+03-11 10:59:23 /api/v1/customer/drivers_catalogue/ | app | token=999956655c112146708a24b2cd21dbb5e | POST | 
+Параметры: | region_id= 1052052 offset= 1 limit= 2 max_ton= 20  |...............................................................................................................................
+03-11 10:59:23 {"code":0,"message":"","data":{"drivers":[]}} | 
+________________________________________________________________________________________________________________________________
+03-11 10:59:53 /api/v1/customer/drivers_catalogue/ | app | token=999956655c112146708a24b2cd21dbb5e | POST | 
+Параметры: | region_id= 1052052 offset= 1 limit= 2 max_ton= 20  |...............................................................................................................................

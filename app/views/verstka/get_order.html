@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru" class="wide smoothscroll wow-animation">
+<head>
+  <title>DetailZakaz(customer)</title>
+  {% include 'header.html' %}
+  {% block header %}
+  {% endblock %}
+  <link rel="stylesheet" href="/app/views/css/DT_bootstrap.css">
+  <link rel="stylesheet" href="/app/views/css/zakaz.css">
+  <link rel="stylesheet" href="/app/views/css/details.css">
+</head>
+<body>
+  <div class="page">
+    {% include 'old-ie.html' %}
+    {% block oldie %}
+    {% endblock %}
+    <header class="page-header bg">
+      {% include 'navi.html' %}
+      {% block navi %}
+      {% endblock %}
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+          </div>
+          <div class="col-md-6">  
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+<main class="page-content">
+      <section class="well well-2">
+        <div class="container text-center">
+          <ul class="nav nav-tabs">
+            <li class="active col-lg-6"><a data-toggle="tab" href="#editzakaz">Редактирование заказа</a></li>
+            <li class='col-lg-6 blink2'><a data-toggle="tab" href="#driversanswers" id='blink2'>Водители</a></li>
+          </ul>
+          <div class='col-lg-12'>
+            <div class="tab-content" style='padding-bottom: 50px;'>
+              <div id="editzakaz" class="tab-pane fade in active">
+                <div class="container text-center">
+                  <h2 class="wow fadeIn zakaz-number" style='display: inline-block;' id='123456789'>Заказ №123456789</h2><div style='display: inline-block; padding: 45px 0 0 20px;' class='delete_link' id='delete_order'>Удалить заказ</div>
+                  <div class='mid-zakaz' style='margin:0 auto;max-width:900px;min-height: 1px;'>
+                    <div class="col-lg-12">
+                      <div class="search-form-body">
+                        <form class='rd-mailform' method="post" action="bat/rd-mailform.php">
+                          <input type="hidden" name="form-type" value="contact"/>
+                          <fieldset>
+                            <div class='caption-zakaz marbot'>Город</div>
+                            <div class='col-lg-9'>
+                              <div class='row'>
+                                <div class='subcaption-zakaz col-lg-3'>Отправления:</div>
+                                <div class='col-lg-9'>
+                                  <div class='city-name'>Москва Россия Московския область</div>
+                                  <!-- <label class="z-104 mfSelect" data-add-placeholder>
+                                    <input type="text" class="city" id='zakaz-ot' placeholder="Начните вводит название города" city-id="" autocomplete="off"/>
+                                    <ul class="dropdown" id="zakaz-ot-zakaz"></ul>
+                                    <div class='loader' data-id-loader='zakaz-ot' style="top: 8px;right: 20px; display: none;"></div>
+                                  </label> -->
+                                </div>
+                              </div>
+                              <div class='row row-to'>
+                                <div class='subcaption-zakaz col-lg-3'>Назначения:</div>
+                                <div class='col-lg-9'>
+                                  <div class='city-name'>Москва Россия Московския область</div>
+                                  <!-- <label class="z-104 mfSelect" data-add-placeholder>
+                                    <input type="text" class="city" id='zakaz-to' placeholder="Начните вводит название города" city-id="" autocomplete="off"/>
+                                    <ul class="dropdown" id="zakaz-to-zakaz"></ul>
+                                    <div class='loader' data-id-loader='zakaz-to' style="top: 8px;right: 20px; display: none;"></div>
+                                  </label> -->
+                                </div>
+                              </div>
+                            </div>
+                            <div style='clear:both;'></div>
+                            <hr>
+                            <div class='caption-zakaz marbot martop'>Оплата</div>
+                              <div class='subcaption-zakaz col-lg-12'>Фиксированная цена: <span>10 000 руб.</span></div>
+                              <div class='subcaption-zakaz col-lg-12'>Безналичный расчет</div>
+                              <div style='clear:both'></div>
+                              <hr>
+                              <div class='caption-zakaz marbot martop'>Информация о грузе</div>
+                              <div class='col-lg-12'>
+                                <div class='row'>
+                                  <div class='subcaption-zakaz col-lg-3'>Наименование:</div>
+                                  <div class='col-lg-9 city-name'>Мешок картошки</div>
+                                </div>
+                                <div class='row'>
+                                  <div class='subcaption-zakaz col-lg-3'>Вес:</div>
+                                  <div class='col-lg-3 col-sm-6 city-name'>25<span> кг</span></div>
+                                  
+                                </div>
+                              </div>
+                              <div style='clear:both'></div>  
+                              <hr>
+                              <div class='caption-zakaz marbot martop'>Даты</div>
+                              <div class="martop">
+                                  <div class='subcaption-zakaz col-lg-6'>Выезда:</div>
+                                  <div class='col-lg-6 col-sm-6 city-name'>01.01.1970</div>
+                                  <div class='subcaption-zakaz col-lg-6'>Приезда:</div>
+                                  <div class='col-lg-6 col-sm-6 city-name'>01.01.1970</div>
+                                  <div class='subcaption-zakaz col-lg-6'>Открытая дата</div>
+                                  <!-- <div class="date-start">Дата начала</div> -->
+                                  <!-- <input class='datepicker cursor' readonly type='text' id='startdatetask' placeholder='Начало'/> -->
+                                <div class="col-lg-6 col-sm-6" style="margin-top: 0px;">
+                                  <!-- <div class="date-end">Дата окончания</div> -->
+                                  <!-- <input class='datepicker cursor' readonly type='text' id='enddatetask' placeholder='Конец'/> -->
+                                </div>
+                              </div>
+                              
+                              
+                              <div style='clear:both'></div>
+                              <hr>
+                              <div class='caption-zakaz marbot martop'>Комментарий</div>
+                              <!-- <label data-add-placeholder="">
+                                                <textarea name="message" placeholder="Как можно подробнее опишите Ваш заказ" data-constraints="@NotEmpty"></textarea>
+                                  </label> -->
+                              
+                          </fieldset>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="clear: both"></div>
+              <div id="driversanswers" class="tab-pane fade">
+                
+              </div>
+              <div style="clear: both"></div>
+              
+                   
+              <div style="clear: both"></div>
+              <div id="support" class="tab-pane fade">
+                Раздел в разработке
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+<!--       <section class="well well-2 bg-image bg-image-2 bg-yellow-green">
+        {% include 'subscribe.html' %}
+        {% block subscribe %}
+        {% endblock %}        
+      </section> -->
+    </main>
+<!--      <section class="well well-1 bg-image bg-image-1 bg-yellow-green">
+        <div class="container">
+          <div class="row text-center flow-offset-1">
+          </div>
+        </div>
+      </section> -->
+      <section class="well well-2">
+
+
+
+
+        
+      </section>
+
+    <footer class="page-footer">
+      {% include 'footer.html' %}
+      {% block footer %}
+      {% endblock %}      
+    </footer>
+  </div>
+  {% include 'scripts.html' %}
+  {% block scripts %}
+  {% endblock %}
+  <script src="/app/views/js/zakaz.js"></script>
+</body>
+</html>

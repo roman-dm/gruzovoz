@@ -1,0 +1,11 @@
+[
+	{"action1":"api","action2":"v1","action3":"driver","action4":"profile","action5":"base","controller":"admin_driver","method":"get_left_profile"},
+	{"action1":"api","action2":"v1","action3":"driver","action4":"profile","action5":"avatar","controller":"admin_driver","method":"delete_avatar"},
+	{"action1":"api","action2":"v1","action3":"customer","action4":"profile","action5":"avatar","controller":"admin_customer","method":"delete_avatar"},
+	{"action1":"api","action2":"v1","action3":"customer","action4":"profile","action5":"base","controller":"admin_customer","method":"get_left_profile"},
+	{"action1":"api","action2":"v1","action3":"driver","action4":"subscriptions","action5":"int","controller":"admin_driver","method":"get_delete_subscriptions"},
+	{"action1":"api","action2":"v1","action3":"driver","action4":"orders_catalogue","action5":"count","controller":"admin_driver","method":"orders_catalogue_count"},
+    {"action1":"api","action2":"v1","action3":"driver","action4":"orders_catalogue","action5":"int","controller":"admin_driver","method":"get_order"},
+	{"action1":"api","action2":"v1","action3":"driver","action4":"registration","action5":"body_types","controller":"admin_driver","method":"get_body_type"},
+	{"action1":"api","action2":"v1","action3":"customer","action4":"orders","action5":"int","controller":"order","method":"get_order"}
+	]

@@ -1,0 +1,92 @@
+{% block search_customer %}
+<div class="col-sm-6 col-lg-6 wow fadeIn search_order">
+	<h2 class="text-center">Поиск Заказа</h2>
+	<div class="resp-tabs-container">
+		<div>
+			<div class="search-form-body">
+				<form class='rd-mailform' method="post" action="bat/rd-mailform.php">
+					<input type="hidden" name="form-type" value="contact"/>
+					<fieldset>
+						<div class="row">
+							<div class='col-lg-11'>
+								<label class="z-104 mfSelect" data-add-placeholder>
+									<input type="text" class="city" id='customer-ot' placeholder="Начните вводить название города" city-id="" autocomplete="off"/>
+									<ul class="dropdown" id="city_cus_in"></ul>
+									<div class='loader' data-id-loader='customer-ot' style="top: 8px;right: 20px; display: none;"></div>
+								</label>
+								<div class='err' id='err_city_ot' style='display: none'>Выберите город отправления из списка</div>
+							</div>
+							<div class='col-lg-1 col-sm-1 col-xs-2'><i class="fa fa-times delete-city" data-id='customer-ot' aria-hidden="true"></i></div>
+							<div class="martop">
+								<div class='little-caption marbot'>Как перемещаемся</div>
+								<div class="int_search">
+									<input type="radio" class="radio" id="radio-3" name="radio"/>
+									<label for="radio-3">По городу</label>
+								</div>
+								<div class="int_search">
+									<input type="radio" class="radio" id="radio-4" name="radio"/>
+									<label for="radio-4">Межгород</label>
+								</div>
+							</div>
+							<!-- <div class="martop" style='display:none' id='city-zakaz-to'>
+								<label class="z-104 mfSelect" data-add-placeholder style="max-width: 100%!important">
+									<input type="text" class="city" id='zakaz-to' placeholder="Город куда" city-id="" autocomplete="off"/>
+									<ul class="dropdown" id="zakaz-to"></ul>
+									<div class='loader' data-id-loader='zakaz-to' style="top: 8px;right: 20px; display: none;"></div>
+								</label>
+							</div> -->
+							<div class="martop">
+								<div class='little-caption marbot'>Укажите даты</div>
+								<div class="pull-left col-md-5 col-sm-5 col-lg-6 col-xs-5 nopad">
+									<!-- <div class="date-start">Дата начала</div> -->
+									<input class='datepicker cursor' readonly type='text' id='startdatetask' placeholder='Начало'/>
+								</div>
+								<div class="col-md-5 col-sm-5 col-lg-6 col-xs-5 nopad" style="float:right">
+									<!-- <div class="date-end">Дата окончания</div> -->
+									<input class='datepicker cursor' readonly type='text' id='enddatetask' placeholder='Конец'/>
+								</div>
+							</div>
+							<div class="martop">
+								<div class='little-caption marbot'>Оплата</div>
+								<div class="int_search">
+									<div class="pull-left">
+										<input type="checkbox" class="checkbox" id="radio-5" name="radio">
+										<label for="radio-5">Фиксированная цена</label>
+									</div>
+									<div style='clear:both'></div>
+								</div>
+								<div class="int_search">
+									<input type="checkbox" class="checkbox" id="radio-6" name="radio"/>
+									<label for="radio-6">По договоренности</label>
+								</div>
+							</div>
+							<div class="martop">
+								<div class="int_search">
+									<input type="checkbox" class="checkbox" id="radio-7" name="radio"/>
+									<label for="radio-7">Оплата наличными</label>
+								</div>
+								<div class="int_search">
+									<input type="checkbox" class="checkbox" id="radio-8" name="radio"/>
+									<label for="radio-8">Безналичный расчет</label>
+								</div>
+							</div>
+							<div class="martop"><div class='little-caption marbot inline-block'>Тоннаж</div>
+								<div class="inline-block int_search" style='margin-left: 20px; margin-top: -2px;'>
+									<input type="checkbox" class="checkbox" id="tonna-cus" name="">
+									<label for="tonna-cus">Отключить</label>
+								</div>
+							</div>
+							<div class="martop" id='ton-cus-div' style='position: relative;'>
+								<span class='lower' id='lower2'>&lt;</span>
+								<input type="range" name="ageInputName" id="ageInputId_customer" min="1" max="25" oninput="ageOutputId_customer.value = ageInputId_customer.value" value="1" />
+								<output name="ageOutputName" id="ageOutputId_customer">1</output>
+							</div>
+							<a href="#anchor-customer" class="btn btn-md btn-sunglow wow fadeInRight" id='search_customer_mainpage'>поиск</a>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+[
+	{"action1":"api","action2":"v1","action3":"customer","action4":"profile","controller":"admin_customer","method":"get_profile"},
+	{"action1":"api","action2":"v1","action3":"driver","action4":"profile","controller":"admin_driver","method":"get_profile"},
+		{"action1":"api","action2":"v1","action3":"driver","action4":"orders_catalogue","controller":"admin_driver","method":"orders_catalogue"},
+	{"action1":"api","action2":"v1","action3":"driver","action4":"registration","controller":"admin_driver","method":"registration_driver"},
+{"action1":"api","action2":"v1","action3":"driver","action4":"subscriptions","controller":"admin_driver","method":"subscriptions"},
+
+	{"action1":"api","action2":"v1","action3":"geocoding","action4":"countries","controller":"geocoding","method":"countries"},
+	{"action1":"api","action2":"v1","action3":"geocoding","action4":"search","controller":"geocoding","method":"search"},
+	{"action1":"api","action2":"v1","action3":"geocoding","action4":"regions","controller":"geocoding","method":"regions"},
+
+
+
+	{"action1":"api","action2":"v1","action3":"customer","action4":"registration","controller":"order","method":"registration"},
+	{"action1":"api","action2":"v1","action3":"customer","action4":"add_order","controller":"order","method":"add_order"},
+	{"action1":"api","action2":"v1","action3":"customer","action4":"orders","controller":"order","method":"orders"},
+	{"action1":"api","action2":"v1","action3":"auth","controller":"auth","action4":"get_guest_token","method":"get_guest_token"},
+	{"action1":"api","action2":"v1","action3":"auth","controller":"auth","action4":"send_code","method":"send_code"},
+	{"action1":"api","action2":"v1","action3":"auth","controller":"auth","action4":"authorization_site","method":"authorization_site"},
+	{"action1":"api","action2":"v1","action3":"auth","controller":"auth","action4":"registration","method":"registration"},
+	{"action1":"api","action2":"v1","action3":"auth","controller":"auth","action4":"check_code","method":"check_code"},
+	{"action1":"api","action2":"v1","action3":"auth","controller":"auth","action4":"check_code_site","method":"check_code_site"},
+	{"action1":"api","action2":"v1","action3":"auth","controller":"auth","action4":"check_code_enter","method":"check_code_enter"},
+    {"action1":"api","action2":"v1","action3":"auth","controller":"auth","action4":"check_email","method":"check_email"}
+	]

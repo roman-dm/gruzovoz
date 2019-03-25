@@ -1,34 +1,61 @@
 {% block navi %}
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container-fluid">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="#">Электронная учительская (личный кабинет)</a>
-            <div class="inline" id="digital_watch">
-            </div>
-            <div class="nav-collapse collapse inline" style="float:right">
-                <ul class="nav pull-right">
-                    <li class="dropdown">
-                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> {{profile.sUserSecondName}} {{profile.sUserName}} {{profile.sUserThirdName}}<i class="caret"></i>
-                        </a>
-                        <input class="idUser" type="hidden" value="{{profile.iUserId}}">
-                        <input class="mainPageUser" type="hidden" value="{{profile.sMainPage}}">
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a tabindex="-1" href="#">Профиль (в разработке)</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a tabindex="-1" href="/logout">Выход</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<div class="rd-navbar-wrap">
+	<nav class="rd-navbar" data-rd-navbar-lg="rd-navbar-static">
+		<div class="rd-navbar-inner">
+			<div class="rd-navbar-panel">
+				<button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar"><span></span></button>
+				<div class="rd-navbar-brand">
+					<a href="/" class="brand-name"></a>
+				</div>
+				<button class="rd-navbar-toggle list" data-rd-navbar-toggle=".rd-navbar-inline-list"><span></span></button>
+			</div>
+			<div class="rd-navbar-nav-wrap">
+				<ul class="rd-navbar-nav">
+					<li {% if profile.current_page=='' %}class="active"{% endif %}><a href="/">Главная</a></li>
+					{% if profile.status == 'driver' or profile.status == 'customer' %}
+						{% if profile.status == 'customer' %}	
+							<li>
+							<a href="http://gruzovoz.alexkam.ru/new_order">Новый заказ</a>
+							</li>
+						{% endif %}
+						<li>
+		                	<a href="http://gruzovoz.alexkam.ru/profile/#orders">Мои заказы</a>
+		            	</li>
+		            	<li class="rd-navbar--has-dropdown rd-navbar-submenu  {% if profile.current_page=='profile' %}active{% endif %}"><a href="#">Профиль</a>
+							<ul class="rd-navbar-dropdown">
+			                  <li>
+			                    <a href="http://gruzovoz.alexkam.ru/profile/">Редактировать</a>
+			                  </li>
+			                  <li>
+			                    <a href="/logout/">Выход</a>
+			                  </li>
+	                		</ul>
+						</li>
+			        {% endif %}
+					<li><a href="/how/">Как это работает</a></li>
+					<li><a href="/contact/">Контакты</a></li>	
+					<li><a href="/about/">О нас</a></li>	
+				</ul>
+			</div>
+			<ul class="rd-navbar-inline-list">
+				<li><a class="icon icon-sm icon-silver fa-vk" href="#"></a></li>
+				<li><a class="icon icon-sm icon-silver fa-instagram" href="#"></a></li>
+				<li><a class="icon icon-sm icon-silver fa-android" href="#"></a></li>
+				<li><a class="icon icon-sm icon-silver fa-apple" href="#"></a></li>
+			</ul>
+			<div class="rd-navbar-contact">
+				<a href="callto:#">+7(123)456-78-90</a>
+			</div>
+		</div>
+	</nav>
+	<input type="hidden" name="" id='inpt-back' value='{{profile.current_page}}'/>
+	<div class='container text-center'>
+	{% if profile.current_page!='' %}
+<!-- 		<a href='' id='back-btn' class="btn btn-md btn-sunglow wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">Назад</a> -->
+	{% endif %}
+	{% if profile.current_page!='new_order' and profile.status == 'customer' %}
+		<a href="http://gruzovoz.alexkam.ru/new_order" class="btn btn-md btn-sunglow wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">Создать новый заказ</a>
+	{% endif %}
+	</div>
 </div>
 {% endblock %}

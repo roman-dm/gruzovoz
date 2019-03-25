@@ -1,0 +1,146 @@
+07-10 15:00:29 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:00:29 {"code":23,"message":"Не удалось получить адрес водителя","data":{}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:00:32 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:00:32 {"code":23,"message":"Не удалось получить адрес водителя","data":{}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:01:38 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:02:16 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:02:28 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:03:35 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:03:37 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:04:00 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:04:02 {"code":0,"message":"","data":{"phone":null}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:04:23 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:04:23 {"code":0,"message":"","data":{"phone":""}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:04:25 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:04:25 {"code":0,"message":"","data":{"phone":""}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:05:49 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:05:49 {"code":0,"message":"","data":{"phone":71111111111}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:27:46 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:27:46 {"code":0,"message":"","data":{"phone":71111111111}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:28:02 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:28:02 {"code":0,"message":"","data":{"phone":71111111111}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:28:30 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:28:30 {"code":0,"message":"","data":{"phone":71111111111}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:29:07 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:29:07 {"code":0,"message":"","data":{"phone":71111111111}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:29:37 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:29:40 {"code":0,"message":"","data":{"phone":79999999999}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:30:41 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:30:41 {"code":0,"message":"","data":{"phone":79999999999}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:32:09 /api/v1/customer/orders/142/drivers/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:32:09 {"code":0,"message":"","data":{"drivers":[]}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:32:29 /api/v1/customer/orders/142/drivers/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:32:29 {"code":0,"message":"","data":{"drivers":[{"id":null,"avatar":"","name":null,"car_name":null,"rating":null,"price":null,"rate":null,"loaders":null,"currency":null}]}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:33:05 /api/v1/customer/orders/142/drivers/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:33:05 {"code":0,"message":"","data":{"drivers":[{"id":null,"avatar":"","name":null,"car_name":null,"rating":null,"price":null,"rate":null,"loaders":null,"currency":null}]}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:33:26 /api/v1/customer/orders/142/drivers/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:33:26 {"code":0,"message":"","data":{"drivers":[{"id":null,"avatar":"","name":null,"car_name":null,"rating":null,"price":null,"rate":null,"loaders":null,"currency":null}]}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:33:27 /api/v1/customer/orders/142/drivers/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:33:34 {"code":0,"message":"","data":{"drivers":[{"id":null,"avatar":"","name":null,"car_name":null,"rating":null,"price":null,"rate":null,"loaders":null,"currency":null}]}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:33:39 /api/v1/customer/orders/142/drivers/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:33:39 {"code":0,"message":"","data":{"drivers":[{"id":null,"avatar":"","name":null,"car_name":null,"rating":null,"price":null,"rate":null,"loaders":null,"currency":null}]}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:33:41 /api/v1/customer/orders/142/drivers/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:33:41 {"code":0,"message":"","data":{"drivers":[{"id":null,"avatar":"","name":null,"car_name":null,"rating":null,"price":null,"rate":null,"loaders":null,"currency":null}]}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:33:42 /api/v1/customer/orders/142/drivers/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:33:42 {"code":0,"message":"","data":{"drivers":[{"id":null,"avatar":"","name":null,"car_name":null,"rating":null,"price":null,"rate":null,"loaders":null,"currency":null}]}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:34:22 /api/v1/customer/orders/142/drivers/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:34:22 {"code":0,"message":"","data":{"drivers":[{"id":null,"avatar":"","name":null,"car_name":null,"rating":null,"price":null,"rate":null,"loaders":null,"currency":null}]}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:34:37 /api/v1/customer/orders/142/drivers/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:34:37 {"code":0,"message":"","data":{"drivers":[{"id":47,"intercity_driver":true,"in_city_driver":true,"avatar":"","name":"Васян","car_name":"мазай","rating":0,"price":5200,"rate":1000,"loaders":"","currency":"rub"}]}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:34:46 /api/v1/customer/orders/142/drivers/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:34:46 {"code":0,"message":"","data":{"drivers":[{"id":47,"intercity_driver":true,"in_city_driver":true,"avatar":"","name":"Васян","car_name":"мазай","rating":0,"price":5200,"rate":1000,"loaders":"","currency":"rub"}]}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:50:43 /api/v1/driver/orders_catalogue/142/respond | app | token=f3942bae9d36ffcb20b3f84d5b0eaddd | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:50:43 {"code":0,"message":"","data":{"id":125,"cargo_name":"груз 400","cargo_weight":400,"weight_unit":null,"price":0,"currency":null,"payment_type":null,"comment":123,"rating":0,"start_date":"2017-08-29T00:00:00+0300","finish_date":"2017-08-30T00:00:00+0300","start_city":{"id":1,"name":"Москва","parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1},"finish_city":{"id":null,"name":null,"parent_name":null,"parent_id":null,"region":true,"country_name":"Россия","country_id":1},"customer":{"id":67,"name":"","organization":"","avatar":0,"rating":0}}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:50:51 /api/v1/driver/orders_catalogue/142/respond/ | app | token=f3942bae9d36ffcb20b3f84d5b0eaddd | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:50:51 {"code":12,"message":"Вы уже откликнулись на заказ","data":{}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:51:45 /api/v1/driver/orders_catalogue/142/respond/ | app | token=2fc21d52e2c0b88188cda447ac5a14f7 | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:51:45 {"code":30,"message":"Вы не можете откликнуться на заказ","data":{}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:52:33 /api/v1/driver/orders_catalogue/142/respond/ | app | token=ae8e145d00c00fc0d81b5fdc229d75da | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:52:33 {"code":0,"message":"","data":{}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:52:43 /api/v1/customer/orders/142/drivers/ | app | token=f3942bae9d36ffcb20b3f84d5b0eaddd | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:52:43 {"code":0,"message":"","data":{"drivers":[{"id":47,"intercity_driver":true,"in_city_driver":true,"avatar":"","name":"Васян","car_name":"мазай","rating":0,"price":5200,"rate":1000,"loaders":"","currency":"rub"},{"id":46,"intercity_driver":true,"in_city_driver":true,"avatar":"","name":"Alex danger","car_name":"MAz-KamaZ","rating":0,"price":5200,"rate":0,"loaders":"false","currency":"rub"}]}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:55:27 /api/v1/customer/orders/142/drivers/ | app | token=f3942bae9d36ffcb20b3f84d5b0eaddd | POST | 
+Параметры: | comment= Тестовый заказ cargo_name= Перевозка 2 роялей cargo_weight= 2 weight_unit= killo price= 5200 currency= rub payment_method= both start_city_id= 69 finish_city_id= 1 start_date= 2017-12-03T16:30:41 0300 finish_date= 2017-12-03T16:30:41 0300  |...............................................................................................................................
+07-10 15:55:27 {"code":0,"message":"","data":{"drivers":[{"id":47,"intercity_driver":true,"in_city_driver":true,"avatar":"","name":"Васян","car_name":"мазай","rating":0,"price":5200,"rate":1000,"loaders":"","currency":"rub"},{"id":46,"intercity_driver":true,"in_city_driver":true,"avatar":"","name":"Alex danger","car_name":"MAz-KamaZ","rating":0,"price":5200,"rate":0,"loaders":"false","currency":"rub"}]}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:56:04 /api/v1/customer/orders/142/drivers/?called=true | app | token=f3942bae9d36ffcb20b3f84d5b0eaddd | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+07-10 15:56:04 {"code":0,"message":"","data":{"drivers":[{"id":47,"intercity_driver":true,"in_city_driver":true,"avatar":"","name":"Васян","car_name":"мазай","rating":0,"price":5200,"rate":1000,"loaders":"","currency":"rub"}]}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:56:42 /api/v1/customer/drivers_catalogue/142/phone/ | app | token=ffd23a8d246e62b20f52fa385e6e9927 | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+07-10 15:56:46 {"code":0,"message":"","data":{"phone":79161521282}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:56:54 /api/v1/customer/orders/142/drivers/ | app | token=f3942bae9d36ffcb20b3f84d5b0eaddd | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+07-10 15:56:54 {"code":0,"message":"","data":{"drivers":[{"id":47,"intercity_driver":true,"in_city_driver":true,"avatar":"","name":"Васян","car_name":"мазай","rating":0,"price":5200,"rate":1000,"loaders":"","currency":"rub"},{"id":46,"intercity_driver":true,"in_city_driver":true,"avatar":"","name":"Alex danger","car_name":"MAz-KamaZ","rating":0,"price":5200,"rate":0,"loaders":"false","currency":"rub"}]}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:58:44 /api/v1/customer/orders/142/drivers/ | app | token=f3942bae9d36ffcb20b3f84d5b0eaddd | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+07-10 15:58:44 {"code":0,"message":"","data":{"drivers":[{"id":47,"intercity_driver":true,"in_city_driver":true,"avatar":"","name":"Васян","car_name":"мазай","rating":0,"price":5200,"rate_in_city":0,"rate_intercity":1000,"loaders":"","currency":"rub"},{"id":46,"intercity_driver":true,"in_city_driver":true,"avatar":"","name":"Alex danger","car_name":"MAz-KamaZ","rating":0,"price":5200,"rate_in_city":0,"rate_intercity":0,"loaders":"false","currency":"rub"}]}} | 
+________________________________________________________________________________________________________________________________
+07-10 15:59:21 /api/v1/customer/orders/142/drivers/ | app | token=f3942bae9d36ffcb20b3f84d5b0eaddd | GET | 
+Параметры: | Параметров нет |...............................................................................................................................
+07-10 15:59:21 {"code":0,"message":"","data":{"drivers":[{"id":47,"intercity_driver":true,"in_city_driver":true,"avatar":"","name":"Васян","car_name":"мазай","rating":0,"price":5200,"rate_in_city":0,"rate_intercity":1000,"loaders":"","currency":"rub"},{"id":46,"intercity_driver":true,"in_city_driver":true,"avatar":"","name":"Alex danger","car_name":"MAz-KamaZ","rating":0,"price":2200,"rate_in_city":0,"rate_intercity":0,"loaders":"false","currency":"rub"}]}} | 
+________________________________________________________________________________________________________________________________

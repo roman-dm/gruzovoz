@@ -1,0 +1,8 @@
+[
+	{"action1":"api","action2":"v1","action3":"customer","action4":"orders","action5":"int","action6":"refuse_driver","controller":"order","method":"refuseDriver"},
+	{"action1":"api","action2":"v1","action3":"customer","action4":"orders","action5":"int","action6":"rate","controller":"order","method":"rateOrder"},
+	{"action1":"api","action2":"v1","action3":"customer","action4":"orders","action5":"int","action6":"drivers","controller":"order","method":"getRespondDriver"},
+	{"action1":"api","action2":"v1","action3":"customer","action4":"orders","action5":"drivers_catalogue","action6":"int","controller":"order","method":"getProfileDriver"},
+	{"action1":"api","action2":"v1","action3":"driver","action4":"orders_catalogue","action5":"int","action6":"respond","controller":"admin_driver","method":"respond_order"},
+	{"action1":"api","action2":"v1","action3":"driver","action4":"customers","action5":"int","action6":"phone","controller":"admin_driver","method":"get_phone_customer"}
+	]

@@ -1,0 +1,110 @@
+{% block search_orders_cd %}
+<div class="col-sm-12 col-lg-12 wow fadeIn search_order">
+	<h2 class="text-center">Поиск Заказа</h2>
+	<div class="resp-tabs-container">
+		<div>
+			<div class="search-form-body">
+				<form class='rd-mailform' method="post" action="">
+					<input type="hidden" name="form-type" value="contact"/>
+					<fieldset>
+						<div class="row">
+							<div class='col-lg-3'>
+								<div class='little-caption marbot'>Выберите город</div>
+								<div class='row' style='margin-top: 0px;'>
+								<div class='col-lg-10'>
+									<label class="z-103 mfSelect" data-add-placeholder  style="margin-top:0!important">
+									  <input type="text" class="city" id='search_driver_ot' placeholder="Откуда" city-id="" autocomplete="off"/>
+									  <ul class="dropdown" id="search_driver_ot_ul"></ul>
+									  <div class='loader' data-id-loader='search_driver_ot' style="top: 8px;right: 20px; display: none;"></div>
+									</label>
+								</div>
+								<div class='col-lg-1 col-sm-1 col-xs-2'><i class="fa fa-times delete-city" data-id='search_driver_ot' aria-hidden="true"></i></div>
+								</div>
+								<!-- <label class="z-103 mfSelect" data-add-placeholder style="margin-top:0!important">
+									<input type="text" class="city" id='search_driver_ot' placeholder="Начните вводить название города" city-id="" autocomplete="off"/>
+									<ul class="dropdown" id="search_driver_ul"></ul>
+									<div class='loader' data-id-loader='search_driver_ot' style="top: 8px;right: 20px; display: none;"></div>
+								</label>
+								<label class="z-103 mfSelect" data-add-placeholder style="margin-top:0!important">
+									<input type="text" class="city" id='zakaz-ot' placeholder="Город откуда" city-id="" autocomplete="off"/>
+									<ul class="dropdown" id="city_zakaz_in"></ul> 
+									<div class='loader' data-id-loader='zakaz-ot' style="top: 8px;right: 20px; display: none;"></div>
+								</label> -->
+								<div class="martop">
+									<div class='little-caption marbot'>Как работает водитель</div>
+									<div class="int_search">
+										<input type="radio" class="radio" id="radio-3" name="radio"/>
+										<label for="radio-3">По городу</label>
+									</div>
+									<div class="int_search">
+										<input type="radio" class="radio" id="radio-4" name="radio"/>
+										<label for="radio-4">Межгород</label>
+									</div>
+								</div>
+								<!-- <div class="martop" style='display:none' id='city-zakaz-to'>
+									<label class="z-104 mfSelect" data-add-placeholder style="max-width: 100%!important">
+										<input type="text" class="city" id='zakaz-to' placeholder="Город куда" city-id="" autocomplete="off"/>
+										<ul class="dropdown" id="zakaz-to"></ul>
+										<div class='loader' data-id-loader='zakaz-to' style="top: 8px;right: 20px; display: none;"></div>
+									</label>
+								</div> -->
+							</div>
+							<div class='col-lg-2'>
+								<div class='little-caption marbot'>Выберите даты</div>
+								<div class="">
+									<!-- <div class="date-start">Дата начала</div> -->
+									<input class='datepicker cursor' readonly type='text' id='startdatetask' placeholder='Начало'/>
+								</div>
+								<div class="martop">
+									<!-- <div class="date-end">Дата окончания</div> -->
+									<input class='datepicker cursor' readonly type='text' id='enddatetask' placeholder='Конец'/>
+								</div>
+							</div>
+							<div class='col-lg-3'>
+								<div class='little-caption marbot'>Укажите цену</div>
+								<div class="int_search">
+									<input type="checkbox" class="checkbox" id="radio-6" name="radio"/>
+									<label for="radio-6">По договоренности</label>
+								</div>
+								<div class="int_search">
+									<div class="pull-left" style="padding-top: 15px;">
+										<input type="checkbox" class="checkbox" id="radio-5" name="radio">
+										<label for="radio-5">Фиксированная цена</label>
+									</div>
+									<!-- <div class='col-lg-12' style='padding: 0px;margin-top:10px;'>
+										<div class="big-int int-price pull-left" style='padding:0;display:none'>
+											<label data-add-placeholder="" class="mfInput" style='max-width: 100%!important'>
+												<input type="text" name="name" data-constraints="" placeholder="Введите цену" disabled="" id='price'>
+											</label>
+										</div>
+									</div> -->
+									<div style='clear:both'></div>
+								</div>
+							</div>
+							<div class='col-lg-2'>
+								<div class='little-caption marbot'>Способ оплаты</div>
+								<div class="int_search">
+									<input type="checkbox" class="checkbox" id="radio-7" name="radio"/>
+									<label for="radio-7">Оплата наличными</label>
+								</div>
+								<div class="int_search">
+									<input type="checkbox" class="checkbox" id="radio-8" name="radio"/>
+									<label for="radio-8">Безналичный расчет</label>
+								</div>
+							</div>
+							<div class='col-lg-2'>
+								<div class='little-caption marbot'>Вес груза</div>
+								<div class="martop">
+									<input type="range" name="ageInputName" id="ageInputId" min="1" max="25" oninput="ageOutputId.value = ageInputId.value" value="1" />
+									<output class='pull-left' name="ageOutputName" id="ageOutputId">1</output><span class='pull-left' style='margin-top: 15px; margin-left: 5px;'></span>
+								</div>
+							</div>
+							<a href="#anchor-customer" class="btn btn-md btn-sunglow wow fadeInRight" id='search_customer_mainpage'>поиск</a>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

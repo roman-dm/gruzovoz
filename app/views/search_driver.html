@@ -1,0 +1,68 @@
+{% block search_driver %}
+<div class="col-sm-6 col-lg-6 wow fadeIn search_driver">
+	<h2 class="text-center">Поиск Водителя</h2>
+	<div class="resp-tabs-container">
+		<div>
+			<div class="search-form-body">
+				<form class='rd-mailform' method="post" action="bat/rd-mailform.php">
+					<input type="hidden" name="form-type" value="contact"/>
+					<fieldset>
+						<div class="row">
+								<div class='col-lg-11'>
+									<label class="z-104 mfSelect" data-add-placeholder>
+										<input type="text" class="city" id='voditel-ot' placeholder="Начните вводить название города" city-id="" autocomplete="off"/>
+										<ul class="dropdown" id="city_vod_in"></ul>
+										<div class='loader' data-id-loader='voditel-ot' style="top: 8px;right: 20px; display: none;"></div>
+									</label>
+									<div class='err' id='err_city_ot' style='display: none'>Выберите город отправления из списка</div>
+								</div>
+								<div class='col-lg-1 col-sm-1 col-xs-2'><i class="fa fa-times delete-city" data-id='voditel-ot' aria-hidden="true"></i></div>
+							<!-- <label class="z-104 mfSelect" data-add-placeholder>
+								<input type="text" class="city" id='voditel-ot' placeholder="Город откуда повезем груз" city-id="" autocomplete="off"/>
+								<ul class="dropdown" id="city_vod_in"></ul>
+								<div class='loader' data-id-loader='voditel-ot' style="top: 8px;right: 20px; display: none;"></div>
+							</label> -->
+							<div class="martop">
+								<div class='little-caption marbot'>Как работает водитель</div>
+								<div class="int_search">
+									<input type="radio" class="radio" id="radio-1" name="radio"/>
+									<label for="radio-1">По городу</label>
+								</div>
+								<div class="int_search">
+									<input type="radio" class="radio" id="radio-2" name="radio"/>
+									<label for="radio-2">Межгород</label>
+								</div>
+							</div>
+							<div class="martop">
+								<div class='little-caption marbot'>Способ загрузки</div>
+								<div class="int_search">
+									<input type="checkbox" class="checkbox" id="radio-9" name="radio">
+									<label for="radio-9">Боковой</label>
+								</div>
+								<div class="int_search">
+									<input type="checkbox" class="checkbox" id="radio-10" name="radio">
+									<label for="radio-10">Сверху</label>
+								</div>
+								<div class="int_search">
+									<input type="checkbox" class="checkbox" id="radio-11" name="radio">
+									<label for="radio-11">Задняя</label>
+								</div>
+							</div>
+							<div class="martop"><div class='little-caption marbot inline-block'>Тоннаж</div>
+								<div class="inline-block int_search" style='margin-left: 20px; margin-top: -2px;'>
+									<input type="checkbox" class="checkbox" id="tonna-driv" name="">
+									<label for="tonna-driv">Отключить</label>
+								</div></div>
+							<div class="martop" id='ton-driv-div' style='position: relative;'>
+								<span class='lower' id='lower1'>&lt;</span><input type="range" name="ageInputName" id="ageInputId_driver" min="1" max="25" oninput="ageOutputId_driver.value = ageInputId_driver.value" value="1" />
+								<output name="ageOutputName" id="ageOutputId_driver">1</output>
+							</div>
+							<a href="#anchor-driver" class="btn btn-md btn-sunglow wow fadeInRight" id='search_driver_mainpage'>поиск</a>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
